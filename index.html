@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PUNCHLINE TOKYO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Noto+Sans+JP:wght@300;400&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #080808;
+      --dark: #111111;
+      --mid: #1a1a1a;
+      --border: #2a2a2a;
+      --text-dim: #555555;
+      --text-mid: #888888;
+      --text-light: #cccccc;
+      --white: #f0ede8;
+      --accent: #c8a96e;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--black);
+      color: var(--white);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* ─── CURSOR ─── */
+    * { cursor: none; }
+    .cursor {
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.15s ease;
+      transform: translate(-50%, -50%);
+    }
+    .cursor-ring {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(200,169,110,0.4);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9998;
+      transition: transform 0.4s ease, width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+      transform: translate(-50%, -50%);
+    }
+
+    /* ─── NOISE OVERLAY ─── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.4;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 60px;
+    }
+    nav::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(8,8,8,0.95), transparent);
+      z-index: -1;
+      pointer-events: none;
+    }
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px;
+      letter-spacing: 0.15em;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 48px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ─── HERO ─── */
+    #hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 60px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(120px, 18vw, 260px);
+      letter-spacing: -0.02em;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(200,169,110,0.06);
+      white-space: nowrap;
+      user-select: none;
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 2; }
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.3s forwards;
+    }
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(52px, 8vw, 110px);
+      letter-spacing: 0.04em;
+      line-height: 0.92;
+      color: var(--white);
+      opacity: 0;
+      animation: fadeUp 1s ease 0.5s forwards;
+    }
+    .hero-title span { color: var(--accent); }
+    .hero-sub {
+      margin-top: 32px;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      color: var(--text-mid);
+      max-width: 480px;
+      line-height: 2;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.7s forwards;
+    }
+    .hero-cta {
+      margin-top: 48px;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.9s forwards;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 16px 32px;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .btn:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-arrow {
+      width: 20px;
+      height: 1px;
+      background: currentColor;
+      position: relative;
+      transition: width 0.3s;
+    }
+    .btn:hover .btn-arrow { width: 32px; }
+    .btn-arrow::after {
+      content: '';
+      position: absolute;
+      right: 0; top: -3px;
+      width: 7px; height: 7px;
+      border-top: 1px solid currentColor;
+      border-right: 1px solid currentColor;
+      transform: rotate(45deg);
+    }
+    .hero-scroll {
+      position: absolute;
+      right: 60px; bottom: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      opacity: 0;
+      animation: fadeIn 1s ease 1.4s forwards;
+    }
+    .hero-scroll span {
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      writing-mode: vertical-rl;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: scrollPulse 2s ease infinite;
+    }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 140px 60px; }
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 64px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .section-label::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    /* ─── ABOUT ─── */
+    #about { background: var(--dark); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1200px;
+    }
+    .about-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 4vw, 56px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+    .about-heading em { font-style: italic; color: var(--accent); }
+    .about-body p {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 2.2;
+      margin-bottom: 20px;
+    }
+    .about-stats {
+      display: flex;
+      gap: 48px;
+      margin-top: 48px;
+      padding-top: 48px;
+      border-top: 1px solid var(--border);
+    }
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      font-weight: 300;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.1em;
+      margin-top: 8px;
+    }
+
+    /* ─── SERVICES ─── */
+    #services { background: var(--black); }
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 80px;
+      max-width: 1200px;
+    }
+    .services-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 3.5vw, 48px);
+      font-weight: 300;
+      line-height: 1.2;
+    }
+    .services-count {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 72px;
+      font-weight: 300;
+      color: rgba(200,169,110,0.15);
+      line-height: 1;
+    }
+    .services-list { max-width: 1200px; }
+    .service-item {
+      display: grid;
+      grid-template-columns: 60px 1fr auto;
+      align-items: center;
+      gap: 40px;
+      padding: 36px 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-item::before {
+      content: '';
+      position: absolute;
+      left: -100%; top: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(200,169,110,0.03), transparent);
+      transition: left 0.5s ease;
+    }
+    .service-item:hover::before { left: 100%; }
+    .service-item:first-child { border-top: 1px solid var(--border); }
+    .service-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      color: var(--text-dim);
+      letter-spacing: 0.1em;
+    }
+    .service-name {
+      font-size: 16px;
+      letter-spacing: 0.06em;
+      color: var(--text-light);
+      transition: color 0.3s;
+    }
+    .service-item:hover .service-name { color: var(--white); }
+    .service-name-en {
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.15em;
+      margin-top: 4px;
+    }
+    .service-arrow {
+      width: 40px;
+      height: 1px;
+      background: var(--border);
+      position: relative;
+      transition: width 0.3s, background 0.3s;
+    }
+    .service-item:hover .service-arrow { width: 60px; background: var(--accent); }
+    .service-arrow::after {
+      content: '';
+      position: absolute;
+      right: 0; top: -4px;
+      width: 8px; height: 8px;
+      border-top: 1px solid;
+      border-right: 1px solid;
+      border-color: inherit;
+      transform: rotate(45deg);
+    }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+    #contact::before {
+      content: 'CONTACT';
+      position: absolute;
+      bottom: -40px; right: -20px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 200px;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(200,169,110,0.04);
+      user-select: none;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .contact-inner { max-width: 800px; position: relative; z-index: 2; }
+    .contact-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 4vw, 60px);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .contact-heading em { font-style: italic; color: var(--accent); }
+    .contact-sub {
+      font-size: 13px;
+      color: var(--text-mid);
+      margin-bottom: 56px;
+      letter-spacing: 0.05em;
+    }
+    .contact-form { display: flex; flex-direction: column; gap: 0; }
+    .form-group {
+      position: relative;
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0 8px;
+      margin-bottom: 8px;
+      transition: border-color 0.3s;
+    }
+    .form-group:focus-within { border-color: var(--accent); }
+    .form-label {
+      position: absolute;
+      top: 24px; left: 0;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      transition: top 0.2s, font-size 0.2s, color 0.2s;
+      pointer-events: none;
+    }
+    .form-input:focus ~ .form-label,
+    .form-input:not(:placeholder-shown) ~ .form-label,
+    .form-textarea:focus ~ .form-label,
+    .form-textarea:not(:placeholder-shown) ~ .form-label {
+      top: 4px;
+      font-size: 9px;
+      color: var(--accent);
+    }
+    .form-input, .form-textarea {
+      background: none;
+      border: none;
+      outline: none;
+      width: 100%;
+      color: var(--white);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      padding: 8px 0 4px;
+      letter-spacing: 0.05em;
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: transparent; }
+    .form-textarea { resize: none; height: 120px; }
+    .form-submit {
+      margin-top: 48px;
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      background: none;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 18px 40px;
+      transition: background 0.3s, color 0.3s;
+      cursor: none;
+    }
+    .form-submit:hover { background: var(--accent); color: var(--black); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--black);
+      padding: 48px 60px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 0.12em;
+      color: var(--white);
+    }
+    .footer-copy { font-size: 11px; color: var(--text-dim); letter-spacing: 0.1em; }
+    .footer-links { display: flex; gap: 32px; list-style: none; }
+    .footer-links a {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; }
+      50%       { opacity: 1; }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      nav { padding: 24px; }
+      .nav-links { display: none; }
+      #hero { padding: 0 24px 60px; }
+      section { padding: 100px 24px; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .services-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .service-item { grid-template-columns: 40px 1fr; gap: 20px; }
+      .service-arrow { display: none; }
+      footer { flex-direction: column; gap: 24px; text-align: center; }
+      .footer-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav>
+    <a href="#hero" class="nav-logo">PUNCHLINE TOKYO</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg-text">PUNCHLINE</div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">株式会社 PUNCHLINE TOKYO</p>
+      <h1 class="hero-title">
+        MAKE YOUR<br>
+        BUSINESS<br>
+        <span>LAND.</span>
+      </h1>
+      <p class="hero-sub">
+        WEBの力で、ビジネスをもっと遠くへ。<br>
+        デジタルマーケティングから営業代行まで、<br>
+        成果にこだわるプロフェッショナル集団。
+      </p>
+      <div class="hero-cta">
+        <a href="#services" class="btn">
+          Our Services
+          <span class="btn-arrow"></span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-label">About Us</div>
+    <div class="about-grid">
+      <div class="about-heading reveal">
+        結果を出すことが、<br>
+        私たちの<em>唯一の</em><br>
+        存在理由。
+      </div>
+      <div class="about-body reveal">
+        <p>
+          株式会社PUNCHLINE TOKYOは、WEB制作・デジタルマーケティング・インターネット広告を軸に、クライアントのビジネス成長を支援する会社です。
+        </p>
+        <p>
+          単なる制作・代行にとどまらず、戦略的な視点から課題を捉え、売上につながる施策を一貫して設計・実行します。低コスト型キャッシュレスサービスの提供から、営業代行・セールスアウトソーシングのコンサルティングまで、貴社のビジネスに必要なすべてをワンストップで。
+        </p>
+        <div class="about-stats">
+          <div>
+            <div class="stat-number">6</div>
+            <div class="stat-label">Services</div>
+          </div>
+          <div>
+            <div class="stat-number">Tokyo</div>
+            <div class="stat-label">Based</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="services-header reveal">
+      <div>
+        <div class="section-label">Services</div>
+        <div class="services-heading">私たちが<br>提供するもの</div>
+      </div>
+      <div class="services-count">06</div>
+    </div>
+    <div class="services-list">
+      <div class="service-item reveal">
+        <span class="service-num">01</span>
+        <div>
+          <div class="service-name">WEBページ制作</div>
+          <div class="service-name-en">Web Design &amp; Development</div>
+        </div>
+        <div class="service-arrow"></div>
+      </div>
+      <div class="service-item reveal">
+        <span class="service-num">02</span>
+        <div>
+          <div class="service-name">デジタルマーケティング</div>
+          <div class="service-name-en">Digital Marketing</div>
+        </div>
+        <div class="service-arrow"></div>
+      </div>
+      <div class="service-item reveal">
+        <span class="service-num">03</span>
+        <div>
+          <div class="service-name">インターネット広告</div>
+          <div class="service-name-en">Internet Advertising</div>
+        </div>
+        <div class="service-arrow"></div>
+      </div>
+      <div class="service-item reveal">
+        <span class="service-num">04</span>
+        <div>
+          <div class="service-name">低コスト型キャッシュレスサービス</div>
+          <div class="service-name-en">Low-Cost Cashless Solutions</div>
+        </div>
+        <div class="service-arrow"></div>
+      </div>
+      <div class="service-item reveal">
+        <span class="service-num">05</span>
+        <div>
+          <div class="service-name">営業代行業務</div>
+          <div class="service-name-en">Sales Outsourcing</div>
+        </div>
+        <div class="service-arrow"></div>
+      </div>
+      <div class="service-item reveal">
+        <span class="service-num">06</span>
+        <div>
+          <div class="service-name">セールスアウトソーシング コンサルティング</div>
+          <div class="service-name-en">Sales Outsourcing Consulting</div>
+        </div>
+        <div class="service-arrow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="section-label">Contact</div>
+      <h2 class="contact-heading reveal">
+        一緒に、<em>次のステージ</em>へ。
+      </h2>
+      <p class="contact-sub reveal">お気軽にご相談ください。通常1営業日以内にご返信いたします。</p>
+      <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <input type="text" id="name" class="form-input" placeholder=" " required>
+          <label for="name" class="form-label">お名前 / Name</label>
+        </div>
+        <div class="form-group">
+          <input type="text" id="company" class="form-input" placeholder=" ">
+          <label for="company" class="form-label">会社名 / Company</label>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" class="form-input" placeholder=" " required>
+          <label for="email" class="form-label">メールアドレス / Email</label>
+        </div>
+        <div class="form-group">
+          <textarea id="message" class="form-textarea" placeholder=" " required></textarea>
+          <label for="message" class="form-label">お問い合わせ内容 / Message</label>
+        </div>
+        <button type="submit" class="form-submit">
+          Send Message
+          <span class="btn-arrow"></span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">PUNCHLINE TOKYO</div>
+    <p class="footer-copy">&copy; 2025 株式会社PUNCHLINE TOKYO. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    // カスタムカーソル
+    const cursor = document.getElementById('cursor');
+    const cursorRing = document.getElementById('cursorRing');
+    let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      cursor.style.left = mouseX + 'px';
+      cursor.style.top  = mouseY + 'px';
+    });
+
+    (function animateRing() {
+      ringX += (mouseX - ringX) * 0.12;
+      ringY += (mouseY - ringY) * 0.12;
+      cursorRing.style.left = ringX + 'px';
+      cursorRing.style.top  = ringY + 'px';
+      requestAnimationFrame(animateRing);
+    })();
+
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'translate(-50%,-50%) scale(2)';
+        cursorRing.style.width  = '60px';
+        cursorRing.style.height = '60px';
+        cursorRing.style.opacity = '0.6';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'translate(-50%,-50%) scale(1)';
+        cursorRing.style.width  = '36px';
+        cursorRing.style.height = '36px';
+        cursorRing.style.opacity = '1';
+      });
+    });
+
+    // スクロールアニメーション
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // フォーム送信
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.form-submit');
+      btn.textContent = 'Sent ✓';
+      btn.style.background = 'var(--accent)';
+      btn.style.color = 'var(--black)';
+      setTimeout(() => {
+        e.target.reset();
+        btn.innerHTML = 'Send Message <span class="btn-arrow"></span>';
+        btn.style.background = '';
+        btn.style.color = '';
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
