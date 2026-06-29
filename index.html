@@ -259,9 +259,13 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(36px, 4vw, 56px);
       font-weight: 300;
-      line-height: 1.2;
+      line-height: 1.3;
       color: var(--white);
       letter-spacing: 0.02em;
+    }
+    .about-heading__line {
+      display: block;
+      white-space: nowrap;
     }
     .about-heading em { font-style: italic; color: var(--accent); }
     .about-body p {
@@ -513,12 +517,16 @@
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
     /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+    }
+
     @media (max-width: 768px) {
       nav { padding: 24px; }
       .nav-links { display: none; }
       #hero { padding: 0 24px 60px; }
       section { padding: 100px 24px; }
-      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-heading { font-size: clamp(22px, 7.6vw, 36px); }
       .services-header { flex-direction: column; align-items: flex-start; gap: 16px; }
       .service-item { grid-template-columns: 40px 1fr; gap: 20px; }
       .service-arrow { display: none; }
@@ -573,11 +581,12 @@
   <section id="about">
     <div class="section-label">About Us</div>
     <div class="about-grid">
-      <div class="about-heading reveal">
-        あなたのビジネスを<br>
-        届けることが、私たちの<em>唯一の</em><br>
-        存在理由。
-      </div>
+      <h2 class="about-heading reveal">
+        <span class="about-heading__line">あなたのビジネスを</span>
+        <span class="about-heading__line">届けることが、</span>
+        <span class="about-heading__line">私たちの<em>唯一の</em></span>
+        <span class="about-heading__line">存在理由。</span>
+      </h2>
       <div class="about-body reveal">
         <p>
           株式会社PUNCHLINE TOKYOは、WEB制作・デジタルマーケティング・インターネット広告を軸に、クライアントのビジネス成長を支援する会社です。
