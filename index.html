@@ -116,15 +116,14 @@
     /* ─── HERO ─── */
     #hero {
       min-height: auto;
-      display: flex;
-      flex-direction: column;
-      padding: 0 0 80px;
+      padding: 0;
       position: relative;
       overflow: hidden;
     }
     .hero-bg-text {
       position: absolute;
-      top: 78%;
+      z-index: 2;
+      top: 52%;
       left: 50%;
       transform: translate(-50%, -50%);
       font-family: 'Bebas Neue', sans-serif;
@@ -137,10 +136,13 @@
       pointer-events: none;
     }
     .hero-content {
-      position: relative;
-      z-index: 2;
+      position: absolute;
+      top: 50%;
+      left: 60px;
+      transform: translateY(-44%);
+      z-index: 3;
       width: min(100%, 760px);
-      padding: 72px 60px 0;
+      padding: 0;
     }
     .hero-visual {
       position: relative;
@@ -153,7 +155,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, transparent 55%, rgba(74,144,217,0.12));
+      background: linear-gradient(90deg, rgba(250,250,250,0.86) 0%, rgba(250,250,250,0.66) 48%, rgba(250,250,250,0.28) 100%);
       pointer-events: none;
     }
     .hero-visual img {
@@ -229,6 +231,7 @@
     }
     .hero-scroll {
       position: absolute;
+      z-index: 3;
       right: 60px; bottom: 80px;
       display: flex;
       flex-direction: column;
@@ -589,8 +592,7 @@
       .about-grid { grid-template-columns: 1fr; gap: 48px; }
       #hero {
         min-height: auto;
-        padding: 0 0 80px;
-        justify-content: flex-start;
+        padding: 0;
       }
       .hero-visual {
         width: 100%;
@@ -598,20 +600,38 @@
         min-height: 0;
       }
       .hero-content {
-        width: 100%;
-        padding: 64px 60px 0;
+        left: 60px;
+        width: calc(100% - 120px);
+        padding: 0;
       }
-      .hero-bg-text { top: 78%; }
+      .hero-bg-text { top: 52%; }
     }
 
     @media (max-width: 768px) {
       nav { padding: 24px; }
       .nav-links { display: none; }
       #hero {
-        padding: 0 0 60px;
+        padding: 0;
       }
-      .hero-content { padding: 46px 24px 0; }
-      .hero-bg-text { top: 80%; }
+      .hero-visual {
+        min-height: max(680px, 100svh);
+      }
+      .hero-visual img {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+      .hero-visual::after {
+        background: rgba(250,250,250,0.72);
+      }
+      .hero-content {
+        left: 24px;
+        width: calc(100% - 48px);
+        transform: translateY(-40%);
+      }
+      .hero-bg-text { top: 54%; }
       section { padding: 100px 24px; }
       .about-heading { font-size: clamp(22px, 7.6vw, 36px); }
       .contact-heading { font-size: clamp(34px, 10.2vw, 52px); }
@@ -649,23 +669,23 @@
     <div class="hero-bg-text">PUNCHLINE</div>
     <div class="hero-visual">
       <img src="images/office.jpg" alt="都市を望むオフィス空間">
-    </div>
-    <div class="hero-content">
-      <h1 class="hero-title">
-        MAKE YOUR<br>
-        BUSINESS<br>
-        <span>LAND.</span>
-      </h1>
-      <p class="hero-sub">
-        WEBの力で、ビジネスをもっと遠くへ。<br>
-        デジタルマーケティングから営業代行まで、<br>
-        成果にこだわるプロフェッショナル集団。
-      </p>
-      <div class="hero-cta">
-        <a href="#services" class="btn">
-          Our Services
-          <span class="btn-arrow"></span>
-        </a>
+      <div class="hero-content">
+        <h1 class="hero-title">
+          MAKE YOUR<br>
+          BUSINESS<br>
+          <span>LAND.</span>
+        </h1>
+        <p class="hero-sub">
+          WEBの力で、ビジネスをもっと遠くへ。<br>
+          デジタルマーケティングから営業代行まで、<br>
+          成果にこだわるプロフェッショナル集団。
+        </p>
+        <div class="hero-cta">
+          <a href="#services" class="btn">
+            Our Services
+            <span class="btn-arrow"></span>
+          </a>
+        </div>
       </div>
     </div>
     <div class="hero-scroll">
