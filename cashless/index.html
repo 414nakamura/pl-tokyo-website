@@ -129,7 +129,10 @@
     @media (max-width: 980px) { .simulator-body { grid-template-columns: 1fr; } }
 
     .story-grid { margin-top: 58px; display: grid; grid-template-columns: .9fr 1.1fr; gap: 34px; }
-    .story-summary { background: var(--ink); color: var(--white); padding: 42px; }
+    .story-summary { background: var(--ink); color: var(--white); padding: 42px; position: relative; overflow: hidden; }
+    .story-summary-bg { position: absolute; inset: 0; z-index: 0; }
+    .story-summary-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; opacity: 0.28; }
+    .story-summary > :not(.story-summary-bg) { position: relative; z-index: 1; }
     .story-summary .eyebrow { color: #8ec2f5; }
     .story-summary h3 { margin-top: 22px; font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 300; line-height: 1.2; }
     .story-result { margin-top: 36px; color: #8ec2f5; font-size: 13px; }
@@ -139,8 +142,11 @@
     .story-step h3 { color: var(--accent-dark); font-size: 14px; font-weight: 500; }
     .story-step p { margin-top: 8px; color: var(--body); font-size: 13px; }
     .voice-grid { margin-top: 24px; display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
-    blockquote { border: 1px solid var(--border); padding: 28px; color: var(--body); font-size: 13px; }
+    blockquote { border: 1px solid var(--border); padding: 28px; color: var(--body); font-size: 13px; overflow: hidden; }
     blockquote cite { display: block; margin-top: 16px; color: var(--muted); font-size: 11px; font-style: normal; }
+    .voice-img { display: block; width: calc(100% + 56px); margin: -28px -28px 20px; height: 120px; object-fit: cover; object-position: center; }
+    .counter-visual { width: 100%; height: clamp(200px, 28vw, 380px); overflow: hidden; margin-bottom: 48px; }
+    .counter-visual img { width: 100%; height: 100%; object-fit: cover; object-position: center 60%; display: block; }
 
     .industry-grid { grid-template-columns: repeat(4,1fr); }
     .industry-card { border-bottom: 2px solid var(--accent); background: var(--white); padding: 28px; }
@@ -179,7 +185,7 @@
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { opacity: 1; transform: none; transition: none; } }
     .hero-bg { position: absolute; inset: 0; z-index: 0; }
     .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 75%; display: block; }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(17,17,17,0.72) 0%, rgba(17,17,17,0.45) 100%); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(17,17,17,0.52) 0%, rgba(17,17,17,0.28) 100%); }
     .hero .container { position: relative; z-index: 1; }
     .hero .eyebrow { color: #8ec2f5; }
     .hero .hero-title { color: #ffffff; }
@@ -223,7 +229,7 @@
       .nav-cta { padding: 8px 11px !important; font-size: 9px !important; }
       .hero { padding: 120px 0 90px; }
       .hero-grid { gap: 42px; }
-      .hero-title { font-size: clamp(32px, 10vw, 52px); }
+      .hero-title { font-size: clamp(26px, 7.5vw, 44px); }
       .hero-copy { font-size: 13px; }
       .hero-actions { flex-direction: column; align-items: stretch; }
       .rate-panel { padding: 30px 24px; }
@@ -398,7 +404,7 @@
       <div class="container hero-grid">
         <div>
           <p class="eyebrow">EPARK Cashless Payment</p>
-          <h1 class="hero-title">決済手数料を、<br class="sp-br"><em>利益</em>に変える。</h1>
+          <h1 class="hero-title">決済手数料を、<br><em>利益</em>に変える。</h1>
           <p class="hero-copy">原価高の時代だからこそ、毎月発生する決済コストを見直す。EPARKフィナンシャルパートナーズの公式代理店として、導入から運用までPUNCHLINE TOKYOがサポートします。</p>
           <div class="hero-actions">
             <a class="button button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc3U2jQJU1WvZvQXyvMnes-K10tfJ-ULS4tQVoMx6a6avb8Aw/viewform?usp=header" target="_blank" rel="noopener">無料で相談する →</a>
@@ -451,6 +457,9 @@
 
     <section class="section section--surface" aria-labelledby="payment-title">
       <div class="container">
+        <div class="counter-visual">
+          <img src="../images/counter.JPG" alt="店舗カウンターのキャッシュレス決済シーン" loading="lazy">
+        </div>
         <p class="eyebrow">Payment Methods</p>
         <h2 class="section-title" id="payment-title">これ<span class="num">1</span>台で、<br>幅広い決済に対応。</h2>
         <p class="section-lead">全国30万台を突破したstera terminalで、店舗の多様な決済ニーズをカバーします。</p>
@@ -545,7 +554,10 @@
         <p class="eyebrow">Case Study</p>
         <h2 class="section-title" id="case-title">乗り換えるだけで、<br>経営に<em>余白</em>が生まれた。</h2>
         <div class="story-grid">
-          <article class="story-summary reveal"><p class="eyebrow">東京都内 カフェW様</p><h3>高い手数料から、次の投資へ。</h3><p class="story-result"><strong>年間15万円以上</strong>のコスト削減に成功</p></article>
+          <article class="story-summary reveal">
+            <div class="story-summary-bg"><img src="../images/case_cafe.jpg" alt="" aria-hidden="true" loading="lazy"></div>
+            <p class="eyebrow">東京都内 カフェW様</p><h3>高い手数料から、次の投資へ。</h3><p class="story-result"><strong>年間15万円以上</strong>のコスト削減に成功</p>
+          </article>
           <div class="story-steps">
             <article class="story-step reveal"><h3>課題</h3><p>決済手数料が毎月の経営を圧迫。キャッシュレス需要は増える一方で、このまま続けることに不安がありました。</p></article>
             <article class="story-step reveal"><h3>変化</h3><p>EPARKの決済サービスへ切り替え、手数料率を低減。さらに月額固定費もゼロになりました。</p></article>
@@ -553,7 +565,7 @@
           </div>
         </div>
         <div class="voice-grid">
-          <blockquote>「月のコストが平均約3万円減少。利益率も改善し、本当に助かっています」<cite>飲食店オーナー Y.O様</cite></blockquote>
+          <blockquote><img class="voice-img" src="../images/izakaya.jpg" alt="居酒屋の店内" loading="lazy">「月のコストが平均約3万円減少。利益率も改善し、本当に助かっています」<cite>飲食店オーナー Y.O様</cite></blockquote>
           <blockquote>「忙しい時期でしたが、手続きもサポートいただきスムーズに導入できました」<cite>美容院オーナー S.T様</cite></blockquote>
           <blockquote>「負担なく導入でき、削減できた分を新ブランドの展開に投資できました」<cite>物販事業 事業部長様</cite></blockquote>
         </div>
