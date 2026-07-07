@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>キャッシュレス決済サービス | 株式会社PUNCHLINE TOKYO</title>
+  <title>飲食店の決済手数料を削減｜キャッシュレス導入 - PUNCHLINE TOKYO</title>
   <meta name="description" content="決済手数料2.45%〜、医療機関1.50%〜。初期費用・月額固定費0円のEPARKキャッシュレス決済サービスを、公式代理店PUNCHLINE TOKYOがご案内します。">
   <meta property="og:title" content="キャッシュレス決済サービス | PUNCHLINE TOKYO">
   <meta property="og:description" content="キャッシュレス決済のコストを、もっとシンプルに。業界最安水準2.45%〜、初期・月額費用0円。">
@@ -107,6 +107,24 @@
     .saving strong { color: var(--accent-dark); font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 300; line-height: 1; }
     .saving span { display: block; margin-top: 10px; color: var(--muted); font-size: 11px; }
     .fine-print { margin-top: 18px; color: var(--muted); font-size: 10px; }
+    .simulator-body { margin-top: 58px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .sim-inputs { display: grid; gap: 32px; }
+    .sim-field { display: grid; gap: 14px; }
+    .sim-label { font-size: 12px; font-weight: 500; letter-spacing: .1em; color: var(--muted); text-transform: uppercase; }
+    .sim-range-wrap, .sim-rate-wrap { display: grid; gap: 12px; }
+    input[type="range"] { -webkit-appearance: none; width: 100%; height: 4px; background: var(--border); border-radius: 2px; outline: none; cursor: pointer; }
+    input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%; background: var(--accent); cursor: pointer; }
+    .sim-number-wrap, .sim-custom { display: flex; align-items: baseline; gap: 8px; }
+    .sim-number { width: 110px; border: 1px solid var(--border); background: var(--white); padding: 10px 14px; font-size: 22px; font-family: 'Cormorant Garamond', serif; font-weight: 300; color: var(--accent-dark); -moz-appearance: textfield; }
+    .sim-number::-webkit-outer-spin-button, .sim-number::-webkit-inner-spin-button { -webkit-appearance: none; }
+    .sim-unit { color: var(--muted); font-size: 13px; }
+    .sim-select { border: 1px solid var(--border); background: var(--white); padding: 12px 16px; font-size: 13px; font-family: 'Noto Sans JP', sans-serif; color: var(--ink); cursor: pointer; width: 100%; }
+    .sim-result { border: 1px solid var(--border); background: var(--bg); padding: 40px; display: grid; gap: 28px; }
+    .sim-result-item { display: grid; gap: 10px; }
+    .sim-result-label { color: var(--muted); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+    .sim-result-value { color: var(--accent-dark); font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; line-height: 1; }
+    .sim-result-value--large { font-size: 76px; }
+    @media (max-width: 980px) { .simulator-body { grid-template-columns: 1fr; } }
 
     .story-grid { margin-top: 58px; display: grid; grid-template-columns: .9fr 1.1fr; gap: 34px; }
     .story-summary { background: var(--ink); color: var(--white); padding: 42px; }
@@ -192,6 +210,106 @@
       .footer-meta { text-align: left; }
     }
   </style>
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"ホーム","item":"https://pl-tokyo.com/"},
+        {"@type":"ListItem","position":2,"name":"キャッシュレス決済","item":"https://pl-tokyo.com/cashless/"}
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "株式会社PUNCHLINE TOKYO",
+      "url": "https://pl-tokyo.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "JP",
+        "addressRegion": "東京都",
+        "postalCode": "107-0061",
+        "streetAddress": "港区北青山3-3-1 アールキューブ青山3階"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "EPARKキャッシュレス決済 導入支援",
+      "description": "初期費用・月額固定費0円、決済手数料2.45%〜のキャッシュレス決済サービス導入支援。EPARKフィナンシャルパートナーズ公式代理店。",
+      "provider": {
+        "@type": "Organization",
+        "name": "株式会社PUNCHLINE TOKYO",
+        "url": "https://pl-tokyo.com"
+      },
+      "areaServed": "JP",
+      "url": "https://pl-tokyo.com/cashless/"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "どんな業種でも対応できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "飲食、美容、小売、医療をはじめ、幅広い業種へご案内可能です。業種や営業形態によって条件が異なるため、まずはお気軽にご相談ください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "初期費用・月額サービス利用料は本当に無料ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "初期費用・月額固定費0円でご案内しています。提供条件や付帯サービスによって費用が発生する場合があるため、個別のお見積もりで明確にご説明します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "他社サービスから乗り換えられますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可能です。現在の料率や決済額を伺い、乗り換えによるコスト削減効果を試算します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "相談だけでも大丈夫ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "もちろんです。しつこい営業はいたしません。料率の比較や削減見込みの確認だけでもお気軽にお問い合わせください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "入金タイミングはいつですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "月1〜2回のお振り込みとなります。正確な入金日は契約内容・審査によって異なるため、詳細は担当者よりご案内します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "振込手数料はかかりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "振込1回あたり500円（税込）の振込手数料が発生します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "導入までどのくらいかかりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "審査・書類手続き・端末発送を含め、一般的に申し込みから約1ヶ月程度かかります。お急ぎの場合はご相談ください。"
+          }
+        }
+      ]
+    }
+  ]
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
@@ -296,6 +414,55 @@
       </div>
     </section>
 
+    <section class="section section--surface" id="simulator" aria-labelledby="simulator-title">
+      <div class="container">
+        <p class="eyebrow">Fee Simulator</p>
+        <h2 class="section-title" id="simulator-title">あなたの店舗が<br><em>節約できる金額</em>を試算する。</h2>
+        <p class="section-lead">月間のカード売上と現在の手数料率を入力するだけで、削減効果の目安がわかります。</p>
+        <div class="simulator-body">
+          <div class="sim-inputs">
+            <div class="sim-field">
+              <label class="sim-label" for="sim-sales">月間カード売上金額</label>
+              <div class="sim-range-wrap">
+                <input type="range" id="sim-sales-range" min="10" max="2000" step="10" value="200" aria-hidden="true">
+                <div class="sim-number-wrap">
+                  <input class="sim-number" type="number" id="sim-sales" min="10" max="2000" step="10" value="200" aria-label="月間カード売上（万円）">
+                  <span class="sim-unit">万円</span>
+                </div>
+              </div>
+            </div>
+            <div class="sim-field">
+              <label class="sim-label" for="sim-rate">現在の手数料率</label>
+              <div class="sim-rate-wrap">
+                <select class="sim-select" id="sim-rate-preset" aria-label="手数料率プリセット">
+                  <option value="2.95">2.95%（A社水準）</option>
+                  <option value="3.24" selected>3.24%（B社水準）</option>
+                  <option value="3.40">3.40%（C社水準）</option>
+                  <option value="custom">カスタム入力</option>
+                </select>
+                <div class="sim-custom" id="sim-custom-wrap" style="display:none">
+                  <input class="sim-number" type="number" id="sim-rate" min="0.1" max="10" step="0.01" value="3.24" aria-label="現在の手数料率（%）">
+                  <span class="sim-unit">%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sim-result">
+            <div class="sim-result-item">
+              <span class="sim-result-label">月間削減額（概算）</span>
+              <strong class="sim-result-value" id="sim-monthly">—</strong>
+            </div>
+            <div class="sim-result-item">
+              <span class="sim-result-label">年間削減額（概算）</span>
+              <strong class="sim-result-value sim-result-value--large" id="sim-annual">—</strong>
+            </div>
+            <a class="button button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc3U2jQJU1WvZvQXyvMnes-K10tfJ-ULS4tQVoMx6a6avb8Aw/viewform?usp=header" target="_blank" rel="noopener" style="margin-top:24px">この金額を詳しく試算する →</a>
+          </div>
+        </div>
+        <p class="fine-print" style="margin-top:28px">※概算目安です。実際の削減額は手数料率・月間売上・決済業種などにより異なります。入金はお振込月1〜2回・振込手数料500円/回が発生します。詳細は無料相談でご確認ください。</p>
+      </div>
+    </section>
+
     <section class="section section--surface" aria-labelledby="case-title">
       <div class="container">
         <p class="eyebrow">Case Study</p>
@@ -351,6 +518,9 @@
           <details><summary>初期費用・月額サービス利用料は本当に無料ですか？</summary><p>初期費用・月額固定費0円でご案内しています。提供条件や付帯サービスによって費用が発生する場合があるため、個別のお見積もりで明確にご説明します。</p></details>
           <details><summary>他社サービスから乗り換えられますか？</summary><p>可能です。現在の料率や決済額を伺い、乗り換えによるコスト削減効果を試算します。</p></details>
           <details><summary>相談だけでも大丈夫ですか？</summary><p>もちろんです。しつこい営業はいたしません。料率の比較や削減見込みの確認だけでもお気軽にお問い合わせください。</p></details>
+          <details><summary>入金タイミングはいつですか？</summary><p>月1〜2回のお振り込みとなります。正確な入金日は契約内容・審査によって異なるため、詳細は担当者よりご案内します。</p></details>
+          <details><summary>振込手数料はかかりますか？</summary><p>振込1回あたり500円（税込）の振込手数料が発生します。</p></details>
+          <details><summary>導入までどのくらいかかりますか？</summary><p>審査・書類手続き・端末発送を含め、一般的に申し込みから約1ヶ月程度かかります。お急ぎの場合はご相談ください。</p></details>
         </div>
       </div>
     </section>
@@ -380,6 +550,46 @@
       });
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+  </script>
+  <script>
+  (function() {
+    const EPARK_RATE = 2.45;
+    const salesRange = document.getElementById('sim-sales-range');
+    const salesNum   = document.getElementById('sim-sales');
+    const ratePreset = document.getElementById('sim-rate-preset');
+    const customWrap = document.getElementById('sim-custom-wrap');
+    const rateNum    = document.getElementById('sim-rate');
+    const monthly    = document.getElementById('sim-monthly');
+    const annual     = document.getElementById('sim-annual');
+
+    function currentRate() {
+      return ratePreset.value === 'custom' ? parseFloat(rateNum.value) || 0 : parseFloat(ratePreset.value);
+    }
+
+    function fmt(yen) {
+      if (yen >= 10000) return Math.round(yen / 10000).toLocaleString() + '万円';
+      return Math.round(yen).toLocaleString() + '円';
+    }
+
+    function calc() {
+      const sales = parseFloat(salesNum.value) * 10000;
+      const rate  = currentRate();
+      const diff  = Math.max(0, rate - EPARK_RATE) / 100;
+      const m = sales * diff;
+      monthly.textContent = diff <= 0 ? '差異なし' : '−' + fmt(m);
+      annual.textContent  = diff <= 0 ? '差異なし' : '−' + fmt(m * 12);
+    }
+
+    salesRange.addEventListener('input', () => { salesNum.value = salesRange.value; calc(); });
+    salesNum.addEventListener('input', () => { salesRange.value = Math.min(Math.max(salesNum.value, 10), 2000); calc(); });
+    ratePreset.addEventListener('change', () => {
+      customWrap.style.display = ratePreset.value === 'custom' ? 'flex' : 'none';
+      if (ratePreset.value !== 'custom') rateNum.value = ratePreset.value;
+      calc();
+    });
+    rateNum.addEventListener('input', calc);
+    calc();
+  })();
   </script>
 </body>
 </html>
