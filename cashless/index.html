@@ -134,7 +134,7 @@
     .story-summary-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; opacity: 0.28; }
     .story-summary > :not(.story-summary-bg) { position: relative; z-index: 1; }
     .story-summary .eyebrow { color: #8ec2f5; }
-    .story-summary h3 { margin-top: 22px; font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 300; line-height: 1.2; }
+    .story-summary h3 { margin-top: 22px; font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3vw, 42px); font-weight: 300; line-height: 1.2; }
     .story-result { margin-top: 36px; color: #8ec2f5; font-size: 13px; }
     .story-result strong { display: block; font-family: 'Noto Sans JP', sans-serif; font-size: 58px; font-weight: 500; line-height: 1; }
     .story-steps { display: grid; gap: 12px; }
@@ -247,7 +247,7 @@
       .comparison th, .comparison td { padding: 14px 16px; font-size: 12px; }
       .scroll-hint { display: block; }
       body { padding-bottom: 68px; }
-      .cta .section-title { font-size: clamp(30px, 9vw, 44px); }
+      .cta .section-title { font-size: clamp(22px, 6vw, 44px); }
       .problem-hero { height: 320px; }
       .problem-hero-text { padding-bottom: 28px; }
     }
@@ -423,6 +423,20 @@
       </div>
     </section>
 
+    <section class="section" id="benefits" aria-labelledby="benefit-title">
+      <div class="container">
+        <p class="eyebrow">Four Benefits</p>
+        <h2 class="section-title" id="benefit-title">コストも運用も、<br><em>シンプル</em>に。</h2>
+        <p class="section-lead">低い決済手数料だけではなく、始めやすさと続けやすさを重視したサービス設計です。</p>
+        <div class="benefit-grid">
+          <article class="card benefit-card reveal" data-mark="2.45"><img class="benefit-icon" src="../images/icon_low-fee.png" alt="" aria-hidden="true" loading="lazy"><div class="benefit-value">2.45%〜</div><h3>業界最安水準の手数料率</h3><p>クレジット決済手数料2.45%〜。医療機関には1.50%〜の特別料率をご案内しています。</p></article>
+          <article class="card benefit-card reveal" data-mark="ZERO"><img class="benefit-icon" src="../images/icon_free-setup.png" alt="" aria-hidden="true" loading="lazy"><div class="benefit-value">0円</div><h3>初期費用・月額固定費無料</h3><p>導入時の費用も、月々の固定費もゼロ。コスト負担を抑えてスタートできます。</p></article>
+          <article class="card benefit-card reveal" data-mark="FREE"><img class="benefit-icon" src="../images/icon_no-contract.png" alt="" aria-hidden="true" loading="lazy"><div class="benefit-value">期間縛りなし</div><h3>契約期間の縛りなし</h3><p>安心してご利用いただけるよう、契約期間の縛りを設けていません。</p></article>
+          <article class="card benefit-card reveal" data-mark="24H"><img class="benefit-icon" src="../images/icon_multi-payment.png" alt="" aria-hidden="true" loading="lazy"><div class="benefit-value">24h</div><h3>全国対応・無料電話サポート</h3><p>24時間の電話サポートとWEB明細に対応。導入後も安心して運用できます。</p></article>
+        </div>
+      </div>
+    </section>
+
     <section class="section section--surface" aria-labelledby="problem-title">
       <div class="problem-hero">
         <img src="../images/problem_owner.jpg" alt="" aria-hidden="true" loading="lazy">
@@ -437,20 +451,6 @@
           <article class="card reveal"><span class="card-number">01</span><h3>経営を圧迫する決済手数料</h3><p>売上が増えるほど膨らむカード決済手数料。利益を守るには、固定費と同じように継続的な見直しが必要です。</p></article>
           <article class="card reveal"><span class="card-number">02</span><h3>導入コストへの不安</h3><p>端末導入時の初期費用や毎月の固定費が気になり、キャッシュレス化に踏み出せない。</p></article>
           <article class="card reveal"><span class="card-number">03</span><h3>適正料率がわからない</h3><p>現在の手数料率が業界水準と比べて適正なのか、比較材料がなく判断しづらい。</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="benefits" aria-labelledby="benefit-title">
-      <div class="container">
-        <p class="eyebrow">Four Benefits</p>
-        <h2 class="section-title" id="benefit-title">コストも運用も、<br><em>シンプル</em>に。</h2>
-        <p class="section-lead">低い決済手数料だけではなく、始めやすさと続けやすさを重視したサービス設計です。</p>
-        <div class="benefit-grid">
-          <article class="card benefit-card reveal" data-mark="2.45"><img class="benefit-icon" src="../images/icon_low-fee.png" alt="" aria-hidden="true" loading="lazy"><div class="benefit-value">2.45%〜</div><h3>業界最安水準の手数料率</h3><p>クレジット決済手数料2.45%〜。医療機関には1.50%〜の特別料率をご案内しています。</p></article>
-          <article class="card benefit-card reveal" data-mark="ZERO"><img class="benefit-icon" src="../images/icon_free-setup.png" alt="" aria-hidden="true" loading="lazy"><div class="benefit-value">0円</div><h3>初期費用・月額固定費無料</h3><p>導入時の費用も、月々の固定費もゼロ。コスト負担を抑えてスタートできます。</p></article>
-          <article class="card benefit-card reveal" data-mark="FREE"><img class="benefit-icon" src="../images/icon_no-contract.png" alt="" aria-hidden="true" loading="lazy"><div class="benefit-value">期間縛りなし</div><h3>契約期間の縛りなし</h3><p>安心してご利用いただけるよう、契約期間の縛りを設けていません。</p></article>
-          <article class="card benefit-card reveal" data-mark="24H"><img class="benefit-icon" src="../images/icon_multi-payment.png" alt="" aria-hidden="true" loading="lazy"><div class="benefit-value">24h</div><h3>全国対応・無料電話サポート</h3><p>24時間の電話サポートとWEB明細に対応。導入後も安心して運用できます。</p></article>
         </div>
       </div>
     </section>
@@ -556,7 +556,7 @@
         <div class="story-grid">
           <article class="story-summary reveal">
             <div class="story-summary-bg"><img src="../images/case_cafe.jpg" alt="" aria-hidden="true" loading="lazy"></div>
-            <p class="eyebrow">東京都内 カフェW様</p><h3>高い手数料から、次の投資へ。</h3><p class="story-result"><strong>年間15万円以上</strong>のコスト削減に成功</p>
+            <p class="eyebrow">東京都内 カフェW様</p><h3>高い手数料から、<br>次の投資へ。</h3><p class="story-result"><strong>年間15万円以上</strong>のコスト削減に成功</p>
           </article>
           <div class="story-steps">
             <article class="story-step reveal"><h3>課題</h3><p>決済手数料が毎月の経営を圧迫。キャッシュレス需要は増える一方で、このまま続けることに不安がありました。</p></article>
@@ -622,7 +622,7 @@
         <img src="../images/contact_support.jpg" alt="" aria-hidden="true" loading="lazy">
       </div>
       <div class="container cta-inner">
-        <div><p class="eyebrow">Free Consultation</p><h2 class="section-title" id="cta-title">決済コストを、<br class="sp-br">一度見直してみませんか。</h2><p>ご相談だけでもOKです。フォームから「詳細希望」とお送りいただければ、担当者より折り返しご連絡します。</p></div>
+        <div><p class="eyebrow">Free Consultation</p><h2 class="section-title" id="cta-title">決済コストを、<br>一度見直してみませんか。</h2><p>ご相談だけでもOKです。フォームから「詳細希望」とお送りいただければ、担当者より折り返しご連絡します。</p></div>
         <a class="button button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc3U2jQJU1WvZvQXyvMnes-K10tfJ-ULS4tQVoMx6a6avb8Aw/viewform?usp=header" target="_blank" rel="noopener">無料相談はこちら →</a>
       </div>
     </section>
