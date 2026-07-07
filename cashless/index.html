@@ -175,6 +175,18 @@
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { opacity: 1; transform: none; transition: none; } }
+    .hero-image-wrap { width: 100%; height: clamp(220px, 36vw, 540px); overflow: hidden; margin-bottom: -40px; }
+    .hero-image-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
+    .section-visual { width: 100%; height: clamp(180px, 28vw, 400px); overflow: hidden; margin-bottom: 40px; border-radius: 2px; }
+    .section-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .benefit-icon { width: 64px; height: 64px; object-fit: contain; display: block; margin-bottom: 16px; }
+    .terminal-visual { width: 100%; max-width: 520px; margin: 40px auto 0; overflow: hidden; border: 1px solid var(--border); }
+    .terminal-visual img { width: 100%; height: auto; display: block; }
+    .flow-visual { width: 100%; height: clamp(180px, 24vw, 340px); overflow: hidden; margin-top: 42px; }
+    .flow-visual img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+    .cta { position: relative; }
+    .cta-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+    .cta-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; opacity: 0.22; }
     @media (max-width: 980px) {
       .container { width: min(100% - 64px, 900px); }
       .nav a:not(.nav-cta) { display: none; }
@@ -188,6 +200,10 @@
       .cta .button { justify-self: start; }
     }
     @media (max-width: 620px) {
+      .hero-image-wrap { height: 200px; margin-bottom: -20px; }
+      .section-visual { height: 180px; margin-bottom: 28px; }
+      .benefit-icon { width: 52px; height: 52px; }
+      .flow-visual { height: 180px; margin-top: 28px; }
       .container { width: calc(100% - 40px); }
       .section { padding: 84px 0; }
       .header-inner { width: calc(100% - 36px); height: 70px; }
@@ -328,6 +344,9 @@
 
   <main id="main">
     <section class="hero">
+      <div class="hero-image-wrap">
+        <img src="../images/hero_payment.jpg" alt="キャッシュレス決済イメージ" loading="lazy">
+      </div>
       <div class="container hero-grid">
         <div>
           <p class="eyebrow">EPARK Cashless Payment</p>
@@ -353,6 +372,9 @@
     <section class="section section--surface" aria-labelledby="problem-title">
       <div class="container">
         <p class="eyebrow">Business Issues</p>
+        <div class="section-visual">
+          <img src="../images/problem_owner.jpg" alt="決済コストに悩む店舗オーナー" loading="lazy">
+        </div>
         <h2 class="section-title" id="problem-title">こんな決済の悩み、<br>そのままにしていませんか。</h2>
         <div class="problem-grid">
           <article class="card reveal"><span class="card-number">01</span><h3>経営を圧迫する決済手数料</h3><p>売上が増えるほど膨らむカード決済手数料。利益を守るには、固定費と同じように継続的な見直しが必要です。</p></article>
@@ -368,10 +390,10 @@
         <h2 class="section-title" id="benefit-title">コストも運用も、<br><em>シンプル</em>に。</h2>
         <p class="section-lead">低い決済手数料だけではなく、始めやすさと続けやすさを重視したサービス設計です。</p>
         <div class="benefit-grid">
-          <article class="card benefit-card reveal" data-mark="2.45"><div class="benefit-value">2.45%〜</div><h3>業界最安水準の手数料率</h3><p>クレジット決済手数料2.45%〜。医療機関には1.50%〜の特別料率をご案内しています。</p></article>
-          <article class="card benefit-card reveal" data-mark="ZERO"><div class="benefit-value">0円</div><h3>初期費用・月額固定費無料</h3><p>導入時の費用も、月々の固定費もゼロ。コスト負担を抑えてスタートできます。</p></article>
-          <article class="card benefit-card reveal" data-mark="FREE"><div class="benefit-value">期間縛りなし</div><h3>契約期間の縛りなし</h3><p>安心してご利用いただけるよう、契約期間の縛りを設けていません。</p></article>
-          <article class="card benefit-card reveal" data-mark="24H"><div class="benefit-value">24h</div><h3>全国対応・無料電話サポート</h3><p>24時間の電話サポートとWEB明細に対応。導入後も安心して運用できます。</p></article>
+          <article class="card benefit-card reveal" data-mark="2.45"><img class="benefit-icon" src="../images/icon_low-fee.png" alt="" aria-hidden="true" loading="lazy"><div class="benefit-value">2.45%〜</div><h3>業界最安水準の手数料率</h3><p>クレジット決済手数料2.45%〜。医療機関には1.50%〜の特別料率をご案内しています。</p></article>
+          <article class="card benefit-card reveal" data-mark="ZERO"><img class="benefit-icon" src="../images/icon_free-setup.png" alt="" aria-hidden="true" loading="lazy"><div class="benefit-value">0円</div><h3>初期費用・月額固定費無料</h3><p>導入時の費用も、月々の固定費もゼロ。コスト負担を抑えてスタートできます。</p></article>
+          <article class="card benefit-card reveal" data-mark="FREE"><img class="benefit-icon" src="../images/icon_no-contract.png" alt="" aria-hidden="true" loading="lazy"><div class="benefit-value">期間縛りなし</div><h3>契約期間の縛りなし</h3><p>安心してご利用いただけるよう、契約期間の縛りを設けていません。</p></article>
+          <article class="card benefit-card reveal" data-mark="24H"><img class="benefit-icon" src="../images/icon_multi-payment.png" alt="" aria-hidden="true" loading="lazy"><div class="benefit-value">24h</div><h3>全国対応・無料電話サポート</h3><p>24時間の電話サポートとWEB明細に対応。導入後も安心して運用できます。</p></article>
         </div>
       </div>
     </section>
@@ -381,6 +403,9 @@
         <p class="eyebrow">Payment Methods</p>
         <h2 class="section-title" id="payment-title">これ1台で、<br>幅広い決済に対応。</h2>
         <p class="section-lead">全国30万台を突破したstera terminalで、店舗の多様な決済ニーズをカバーします。</p>
+        <div class="terminal-visual">
+          <img src="../images/terminal_product.jpg" alt="stera terminal 決済端末" loading="lazy">
+        </div>
         <div class="payments">
           <article class="payment-card reveal"><div class="payment-icon">C</div><h3>クレジットカード</h3><p>VISA／Mastercard／JCB／AMEX／Dinersなど。タッチ決済にも対応。</p></article>
           <article class="payment-card reveal"><div class="payment-icon">E</div><h3>電子マネー</h3><p>Suica／PASMO／楽天Edy／WAON／nanacoなどに対応。</p></article>
@@ -506,6 +531,9 @@
           <article class="flow-step"><span class="flow-num">03</span><h3>料率・削減効果をご提案</h3><p>店舗に合わせた特別料率と削減見込みをご案内します。</p></article>
           <article class="flow-step"><span class="flow-num">04</span><h3>お申し込み</h3><p>内容にご納得いただけた場合のみ、お手続きへ進みます。</p></article>
         </div>
+        <div class="flow-visual">
+          <img src="../images/flow_installation.jpg" alt="キャッシュレス端末の導入・設置作業" loading="lazy">
+        </div>
       </div>
     </section>
 
@@ -526,6 +554,9 @@
     </section>
 
     <section class="section cta" aria-labelledby="cta-title">
+      <div class="cta-bg">
+        <img src="../images/contact_support.jpg" alt="" aria-hidden="true" loading="lazy">
+      </div>
       <div class="container cta-inner">
         <div><p class="eyebrow">Free Consultation</p><h2 class="section-title" id="cta-title">決済コストを、<br>一度見直してみませんか。</h2><p>ご相談だけでもOKです。フォームから「詳細希望」とお送りいただければ、担当者より折り返しご連絡します。</p></div>
         <a class="button button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc3U2jQJU1WvZvQXyvMnes-K10tfJ-ULS4tQVoMx6a6avb8Aw/viewform?usp=header" target="_blank" rel="noopener">無料相談はこちら →</a>
