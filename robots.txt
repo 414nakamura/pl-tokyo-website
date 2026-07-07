@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pl-tokyo.com/sitemap.xml

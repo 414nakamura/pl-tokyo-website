@@ -4,6 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>飲食店の決済手数料を削減｜キャッシュレス導入 - PUNCHLINE TOKYO</title>
+  <!-- Favicon -->
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XCETDXT170"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XCETDXT170');
+  </script>
+  <!-- Microsoft Clarity (設定後にIDを追加) -->
+  <!-- CLARITY_PLACEHOLDER -->
   <meta name="description" content="決済手数料2.45%〜、医療機関1.50%〜。初期費用・月額固定費0円のEPARKキャッシュレス決済サービスを、公式代理店PUNCHLINE TOKYOがご案内します。">
   <meta property="og:title" content="キャッシュレス決済サービス | PUNCHLINE TOKYO">
   <meta property="og:description" content="キャッシュレス決済のコストを、もっとシンプルに。業界最安水準2.45%〜、初期・月額費用0円。">
@@ -352,6 +365,15 @@
         gap: 8px;
       }
     }
+    .zentoshin-notice { position: relative; z-index: 90; margin-top: 82px; background: #111111; color: #ffffff; }
+    .zentoshin-notice__inner { width: min(1180px, calc(100% - 48px)); min-height: 64px; margin-inline: auto; padding: 12px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .zentoshin-notice p { font-size: 12px; font-weight: 400; }
+    .zentoshin-notice a { color: #8fc5ff; font-size: 12px; font-weight: 500; white-space: nowrap; text-decoration: none; }
+    @media (max-width: 768px) {
+      .zentoshin-notice { margin-top: 72px; }
+      .zentoshin-notice__inner { align-items: flex-start; flex-direction: column; gap: 4px; padding: 13px 0; }
+      .zentoshin-notice p, .zentoshin-notice a { font-size: 11px; }
+    }
   </style>
   <script type="application/ld+json">
   [
@@ -471,6 +493,13 @@
       </button>
     </div>
   </header>
+
+  <aside class="zentoshin-notice" aria-label="全東信をご利用されていた店舗様へのご案内">
+    <div class="zentoshin-notice__inner">
+      <p>全東信をご利用されていた店舗様へ｜キャッシュレス決済の切替相談を受け付けています</p>
+      <a href="/cashless/zentoshin-switch/">対象業種・相談内容を確認する →</a>
+    </div>
+  </aside>
 
   <main id="main">
     <section class="hero">
