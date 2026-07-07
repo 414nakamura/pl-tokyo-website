@@ -496,7 +496,7 @@
       pointer-events: none;
       line-height: 1;
     }
-    .contact-inner { max-width: 800px; position: relative; z-index: 2; }
+    .contact-inner { max-width: 960px; position: relative; z-index: 2; }
     .contact-heading {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(36px, 4vw, 60px);
@@ -512,36 +512,29 @@
     .contact-sub {
       font-size: 13px;
       color: var(--text-mid);
-      margin-bottom: 56px;
+      margin-bottom: 48px;
       letter-spacing: 0.05em;
     }
     .contact-form { display: flex; flex-direction: column; gap: 0; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
     .form-group {
-      position: relative;
-      border-bottom: 1px solid var(--border);
-      padding: 24px 0 8px;
-      margin-bottom: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      padding: 6px 0 14px;
+      margin-bottom: 28px;
       transition: border-color 0.3s;
     }
     .form-group:focus-within { border-color: var(--accent); }
     .form-label {
-      position: absolute;
-      top: 24px; left: 0;
-      font-size: 11px;
+      display: block;
+      font-size: 10px;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--text-dim);
-      transition: top 0.2s, font-size 0.2s, color 0.2s;
-      pointer-events: none;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 12px;
+      transition: color 0.2s;
     }
-    .form-input:focus ~ .form-label,
-    .form-input:not(:placeholder-shown) ~ .form-label,
-    .form-textarea:focus ~ .form-label,
-    .form-textarea:not(:placeholder-shown) ~ .form-label {
-      top: 4px;
-      font-size: 9px;
-      color: var(--accent);
-    }
+    .form-group:focus-within .form-label { color: var(--accent); }
+    .req { color: var(--accent); margin-left: 2px; }
     .form-input, .form-textarea {
       background: none;
       border: none;
@@ -550,14 +543,17 @@
       color: var(--white);
       font-family: 'Noto Sans JP', sans-serif;
       font-weight: 300;
-      font-size: 14px;
-      padding: 8px 0 4px;
-      letter-spacing: 0.05em;
+      font-size: 15px;
+      padding: 0;
+      letter-spacing: 0.04em;
     }
-    .form-input::placeholder, .form-textarea::placeholder { color: transparent; }
-    .form-textarea { resize: none; height: 120px; }
+    .form-input::placeholder, .form-textarea::placeholder {
+      color: rgba(255,255,255,0.18);
+      font-size: 13px;
+    }
+    .form-textarea { resize: none; height: 140px; }
     .form-submit {
-      margin-top: 48px;
+      margin-top: 40px;
       display: inline-flex;
       align-items: center;
       gap: 16px;
@@ -571,9 +567,11 @@
       text-transform: uppercase;
       padding: 18px 40px;
       transition: background 0.3s, color 0.3s;
-      cursor: none;
+      cursor: pointer;
     }
     .form-submit:hover { background: var(--accent); color: #ffffff; }
+    .form-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+    @media (max-width: 680px) { .form-grid { grid-template-columns: 1fr; gap: 0; } }
 
     /* ─── FOOTER ─── */
     footer {
@@ -881,28 +879,38 @@
       </h2>
       <p class="contact-sub reveal">お気軽にご相談ください。通常1営業日以内にご返信いたします。</p>
       <form class="contact-form reveal" id="contact-form" onsubmit="handleSubmit(event)">
-        <div class="form-group">
-          <input type="text" id="name" name="name" class="form-input" placeholder=" " required>
-          <label for="name" class="form-label">お名前 / Name</label>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name" class="form-label">お名前 / Name<span class="req">*</span></label>
+            <input type="text" id="name" name="name" class="form-input" placeholder="山田 太郎" required>
+          </div>
+          <div class="form-group">
+            <label for="company" class="form-label">会社名（店舗名） / Company</label>
+            <input type="text" id="company" name="company" class="form-input" placeholder="株式会社〇〇 / 〇〇店">
+          </div>
+          <div class="form-group">
+            <label for="phone" class="form-label">電話番号 / Phone</label>
+            <input type="tel" id="phone" name="phone" class="form-input" placeholder="03-0000-0000">
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">メールアドレス / Email<span class="req">*</span></label>
+            <input type="email" id="email" name="email" class="form-input" placeholder="example@mail.com" required>
+          </div>
         </div>
         <div class="form-group">
-          <input type="text" id="company" name="company" class="form-input" placeholder=" ">
-          <label for="company" class="form-label">会社名 / Company</label>
+          <label for="address" class="form-label">導入予定の店舗住所 / Address</label>
+          <input type="text" id="address" name="address" class="form-input" placeholder="東京都渋谷区〇〇 1-2-3">
         </div>
         <div class="form-group">
-          <input type="email" id="email" name="email" class="form-input" placeholder=" " required>
-          <label for="email" class="form-label">メールアドレス / Email</label>
-        </div>
-        <div class="form-group">
-          <textarea id="message" name="message" class="form-textarea" placeholder=" " required></textarea>
-          <label for="message" class="form-label">お問い合わせ内容 / Message</label>
+          <label for="message" class="form-label">お問い合わせ内容 / Message<span class="req">*</span></label>
+          <textarea id="message" name="message" class="form-textarea" placeholder="ご相談内容をご記入ください" required></textarea>
         </div>
         <button type="submit" class="form-submit">
           Send Message
           <span class="btn-arrow"></span>
         </button>
-        <p id="form-success" style="display:none;margin-top:20px;color:var(--accent);font-size:13px;text-align:center;">送信完了しました。1営業日以内にご返信いたします。</p>
-        <p id="form-error" style="display:none;margin-top:20px;color:#e24b4a;font-size:13px;text-align:center;">送信に失敗しました。お手数ですが再度お試しください。</p>
+        <p id="form-success" style="display:none;margin-top:20px;color:var(--accent);font-size:13px;">送信完了しました。1営業日以内にご返信いたします。</p>
+        <p id="form-error" style="display:none;margin-top:20px;color:#e24b4a;font-size:13px;">送信に失敗しました。お手数ですが再度お試しください。</p>
       </form>
     </div>
   </section>
