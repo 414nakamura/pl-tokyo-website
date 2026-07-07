@@ -123,8 +123,9 @@
     .sim-result { border: 1px solid var(--border); background: var(--bg); padding: 40px; display: grid; gap: 28px; }
     .sim-result-item { display: grid; gap: 10px; }
     .sim-result-label { color: var(--muted); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
-    .sim-result-value { color: var(--accent-dark); font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; line-height: 1; }
+    .sim-result-value { color: var(--accent-dark); font-family: 'Noto Sans JP', sans-serif; font-size: 52px; font-weight: 500; line-height: 1; }
     .sim-result-value--large { font-size: 76px; }
+    .num { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; }
     @media (max-width: 980px) { .simulator-body { grid-template-columns: 1fr; } }
 
     .story-grid { margin-top: 58px; display: grid; grid-template-columns: .9fr 1.1fr; gap: 34px; }
@@ -176,10 +177,21 @@
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { opacity: 1; transform: none; transition: none; } }
-    .hero-image-wrap { width: 100%; height: clamp(220px, 36vw, 540px); overflow: hidden; margin-bottom: -40px; }
-    .hero-image-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
-    .section-visual { width: 100%; height: clamp(180px, 28vw, 400px); overflow: hidden; margin-bottom: 48px; border-radius: 2px; }
-    .section-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-bg { position: absolute; inset: 0; z-index: 0; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 75%; display: block; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(17,17,17,0.72) 0%, rgba(17,17,17,0.45) 100%); }
+    .hero .container { position: relative; z-index: 1; }
+    .hero .eyebrow { color: #8ec2f5; }
+    .hero .hero-title { color: #ffffff; }
+    .hero .hero-title em { color: var(--accent); }
+    .hero .hero-copy { color: rgba(255,255,255,0.82); }
+    .hero .button--ghost { border-color: rgba(255,255,255,0.5); color: #ffffff; }
+    .hero .button--ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .problem-hero { position: relative; width: 100%; height: clamp(300px, 42vw, 580px); overflow: hidden; }
+    .problem-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
+    .problem-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(17,17,17,0.65) 0%, rgba(17,17,17,0.38) 100%); }
+    .problem-hero-text { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); padding-bottom: 48px; z-index: 1; }
+    .problem-hero-text .section-title { margin-top: 12px; }
     .benefit-icon { width: 56px; height: 56px; object-fit: contain; display: block; margin-bottom: 20px; background: var(--surface); border-radius: 12px; padding: 10px; }
     .terminal-visual { width: 100%; max-width: 520px; margin: 40px auto 0; overflow: hidden; border: 1px solid var(--border); }
     .terminal-visual img { width: 100%; height: auto; display: block; }
@@ -377,13 +389,14 @@
 
   <main id="main">
     <section class="hero">
-      <div class="hero-image-wrap">
-        <img src="../images/hero_payment.jpg" alt="キャッシュレス決済イメージ" loading="lazy">
+      <div class="hero-bg">
+        <img src="../images/hero_payment.jpg" alt="" aria-hidden="true" loading="eager">
+        <div class="hero-overlay"></div>
       </div>
       <div class="container hero-grid">
         <div>
           <p class="eyebrow">EPARK Cashless Payment</p>
-          <h1 class="hero-title">決済手数料を、<br><em>利益</em>に変える。</h1>
+          <h1 class="hero-title">決済手数料を、<br class="sp-br"><em>利益</em>に変える。</h1>
           <p class="hero-copy">原価高の時代だからこそ、毎月発生する決済コストを見直す。EPARKフィナンシャルパートナーズの公式代理店として、導入から運用までPUNCHLINE TOKYOがサポートします。</p>
           <div class="hero-actions">
             <a class="button button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc3U2jQJU1WvZvQXyvMnes-K10tfJ-ULS4tQVoMx6a6avb8Aw/viewform?usp=header" target="_blank" rel="noopener">無料で相談する →</a>
@@ -403,12 +416,15 @@
     </section>
 
     <section class="section section--surface" aria-labelledby="problem-title">
-      <div class="container">
-        <div class="section-visual">
-          <img src="../images/problem_owner.jpg" alt="決済コストに悩む店舗オーナー" loading="lazy">
+      <div class="problem-hero">
+        <img src="../images/problem_owner.jpg" alt="" aria-hidden="true" loading="lazy">
+        <div class="problem-overlay"></div>
+        <div class="problem-hero-text container">
+          <p class="eyebrow" style="color:#8ec2f5">Business Issues</p>
+          <h2 class="section-title" id="problem-title" style="color:#ffffff">こんな決済の悩み、<br>そのままにしていませんか。</h2>
         </div>
-        <p class="eyebrow">Business Issues</p>
-        <h2 class="section-title" id="problem-title">こんな決済の悩み、<br>そのままにしていませんか。</h2>
+      </div>
+      <div class="container" style="padding-top: 64px;">
         <div class="problem-grid">
           <article class="card reveal"><span class="card-number">01</span><h3>経営を圧迫する決済手数料</h3><p>売上が増えるほど膨らむカード決済手数料。利益を守るには、固定費と同じように継続的な見直しが必要です。</p></article>
           <article class="card reveal"><span class="card-number">02</span><h3>導入コストへの不安</h3><p>端末導入時の初期費用や毎月の固定費が気になり、キャッシュレス化に踏み出せない。</p></article>
@@ -434,7 +450,7 @@
     <section class="section section--surface" aria-labelledby="payment-title">
       <div class="container">
         <p class="eyebrow">Payment Methods</p>
-        <h2 class="section-title" id="payment-title">これ1台で、<br>幅広い決済に対応。</h2>
+        <h2 class="section-title" id="payment-title">これ<span class="num">1</span>台で、<br>幅広い決済に対応。</h2>
         <p class="section-lead">全国30万台を突破したstera terminalで、店舗の多様な決済ニーズをカバーします。</p>
         <div class="terminal-visual">
           <img src="../images/terminal_product.jpg" alt="stera terminal 決済端末" loading="lazy">
@@ -592,7 +608,7 @@
         <img src="../images/contact_support.jpg" alt="" aria-hidden="true" loading="lazy">
       </div>
       <div class="container cta-inner">
-        <div><p class="eyebrow">Free Consultation</p><h2 class="section-title" id="cta-title">決済コストを、<br>一度見直してみませんか。</h2><p>ご相談だけでもOKです。フォームから「詳細希望」とお送りいただければ、担当者より折り返しご連絡します。</p></div>
+        <div><p class="eyebrow">Free Consultation</p><h2 class="section-title" id="cta-title">決済コストを、<br class="sp-br">一度見直してみませんか。</h2><p>ご相談だけでもOKです。フォームから「詳細希望」とお送りいただければ、担当者より折り返しご連絡します。</p></div>
         <a class="button button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc3U2jQJU1WvZvQXyvMnes-K10tfJ-ULS4tQVoMx6a6avb8Aw/viewform?usp=header" target="_blank" rel="noopener">無料相談はこちら →</a>
       </div>
     </section>
