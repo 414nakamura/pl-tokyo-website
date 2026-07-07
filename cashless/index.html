@@ -171,6 +171,18 @@
     .payment-hero-text { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); padding-bottom: 52px; z-index: 1; width: min(1180px, calc(100% - 120px)); }
     .payment-hero-text .section-title { margin-top: 12px; }
     .payment-hero-text .section-lead { margin-top: 16px; }
+    .catalog-heading { text-align: center; }
+    .catalog-heading .section-lead { margin-left: auto; margin-right: auto; }
+    .catalog-devices { margin-top: 48px; display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .catalog-device { border: 1px solid var(--border); border-radius: 22px; background: var(--white); padding: 24px 24px 30px; text-align: center; box-shadow: 0 8px 22px rgba(17,17,17,.08); }
+    .catalog-device img { width: 100%; aspect-ratio: 454 / 400; object-fit: contain; }
+    .catalog-device h3 { margin-top: 16px; font-size: 19px; font-weight: 700; }
+    .catalog-device p { margin-top: 10px; color: var(--body); font-size: 14px; }
+    .catalog-brand-title { margin-top: 68px; text-align: center; font-size: 25px; font-weight: 700; }
+    .catalog-brands { margin-top: 28px; display: grid; grid-template-columns: 1.2fr 1.2fr .7fr; gap: 16px; }
+    .catalog-brand { min-height: 190px; display: flex; flex-direction: column; justify-content: center; border: 1px solid var(--border); border-radius: 16px; background: var(--white); padding: 22px; text-align: center; }
+    .catalog-brand h3 { margin-bottom: 18px; font-size: 15px; font-weight: 700; }
+    .catalog-brand img { width: 100%; height: 92px; object-fit: contain; }
 
     .industry-grid { grid-template-columns: repeat(4,1fr); }
     .industry-card { border-bottom: 2px solid var(--accent); background: var(--white); padding: 28px; }
@@ -274,6 +286,10 @@
       .problem-hero-text { padding-bottom: 28px; }
       .payment-hero { height: 300px; }
       .payment-hero-text { padding-bottom: 28px; width: calc(100% - 40px); }
+      .catalog-devices, .catalog-brands { grid-template-columns: 1fr; }
+      .catalog-device { padding: 18px 18px 26px; }
+      .catalog-brand-title { margin-top: 50px; font-size: 21px; }
+      .catalog-brand { min-height: 160px; }
     }
 
     /* ─── HAMBURGER MENU ─── */
@@ -573,12 +589,19 @@
         </div>
       </div>
       <div class="container" style="padding-top:64px; padding-bottom:120px;">
-        <div class="payments">
-          <article class="payment-card reveal"><div class="payment-icon">C</div><h3>クレジットカード</h3><p>VISA／Mastercard／JCB／AMEX／Dinersなど。タッチ決済にも対応。</p></article>
-          <article class="payment-card reveal"><div class="payment-icon">E</div><h3>電子マネー</h3><p>Suica／PASMO／楽天Edy／WAON／nanacoなどに対応。</p></article>
-          <article class="payment-card reveal"><div class="payment-icon">QR</div><h3>QRコード決済</h3><p>PayPayに対応。今後の対応ブランド詳細はお問い合わせください。</p></article>
+        <div class="catalog-heading"><p class="eyebrow">Payment Terminals</p><h2 class="section-title">豊富な決済端末のご紹介</h2><p class="section-lead">機能性、セキュリティ、店舗環境などを確認し、店舗に合った決済端末をご提案します。</p></div>
+        <div class="catalog-devices">
+          <article class="catalog-device reveal"><img src="../images/terminalitem01.jpg" alt="従業員側とお客様側の操作部が分かれた据え置き型決済端末" loading="lazy" width="454" height="400"><h3>据え置き型</h3><p>コンパクトなボディに、多様な決済機能を集約。</p></article>
+          <article class="catalog-device reveal"><img src="../images/terminalitem02.jpg" alt="タッチ決済とプリンターに対応した非接触型決済端末" loading="lazy" width="454" height="400"><h3>最新の非接触型</h3><p>接触機会を減らすタッチ決済で、スタッフとお客様に安心を。</p></article>
+          <article class="catalog-device reveal"><img src="../images/terminalitem03.jpg" alt="持ち運び可能なコードレスのモバイル型決済端末" loading="lazy" width="454" height="400"><h3>モバイル型</h3><p>コンパクトなコードレス端末で、お席での会計にも対応。</p></article>
         </div>
-        <p class="terminal-note">※対応ブランドや提供条件は、審査・契約内容・端末仕様により異なる場合があります。</p>
+        <p class="terminal-note">※端末の種類・費用・対応機能・提供条件は、審査結果および契約内容により異なります。</p>
+        <h3 class="catalog-brand-title">幅広いキャッシュレスブランドに対応</h3>
+        <div class="catalog-brands">
+          <article class="catalog-brand"><h3>クレジット・デビット・プリペイド</h3><img src="../images/credit_david_prepaid.jpg" alt="Visa、Mastercard、JCB、American Express、Diners Club、Discoverなどの対応ブランド" loading="lazy" width="1636" height="705"></article>
+          <article class="catalog-brand"><h3>電子マネー</h3><img src="../images/traffic_electric_money.jpg" alt="iD、楽天Edy、WAON、nanaco、QUICPay、交通系電子マネーなどの対応ブランド" loading="lazy" width="839" height="480"></article>
+          <article class="catalog-brand"><h3>QRコード決済</h3><img src="../images/paypay_logo.jpg" alt="PayPay" loading="lazy" width="330" height="120"></article>
+        </div>
       </div>
     </section>
 
