@@ -60,6 +60,7 @@
     .hero::before { content: 'CASHLESS'; position: absolute; top: 48%; left: 50%; transform: translate(-50%,-50%); color: transparent; font-family: 'Bebas Neue', sans-serif; font-size: clamp(130px, 21vw, 320px); letter-spacing: -.02em; -webkit-text-stroke: 1px rgba(74,144,217,.09); pointer-events: none; white-space: nowrap; }
     .hero-grid { position: relative; display: grid; grid-template-columns: 1.15fr .85fr; gap: 72px; align-items: center; }
     .hero-title { margin-top: 24px; font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 6.5vw, 94px); font-weight: 300; letter-spacing: -.01em; line-height: 1.03; }
+    .scroll-hint { display: none; color: var(--muted); font-size: 11px; margin-bottom: 8px; text-align: right; }
     .hero-title em { color: var(--accent); font-weight: 400; }
     .hero-copy { max-width: 600px; margin-top: 30px; color: var(--body); font-size: 15px; }
     .hero-actions { margin-top: 42px; display: flex; flex-wrap: wrap; gap: 14px; }
@@ -71,21 +72,21 @@
     .rate-panel::after { content: ''; position: absolute; width: 110px; height: 110px; right: -36px; top: -36px; border-radius: 50%; background: var(--accent-pale); z-index: -1; }
     .rate-label { color: var(--muted); font-size: 12px; letter-spacing: .13em; }
     .rate { display: flex; align-items: baseline; gap: 8px; margin-top: 12px; color: var(--accent-dark); }
-    .rate strong { font-family: 'Cormorant Garamond', serif; font-size: clamp(78px, 9vw, 126px); font-weight: 300; letter-spacing: -.06em; line-height: .9; }
+    .rate strong { font-family: 'Noto Sans JP', sans-serif; font-size: clamp(78px, 9vw, 126px); font-weight: 500; letter-spacing: -.03em; line-height: .9; }
     .rate span { font-size: 30px; font-weight: 500; }
     .rate-note { margin-top: 14px; color: var(--body); font-size: 13px; }
     .zero-grid { margin-top: 34px; padding-top: 28px; border-top: 1px solid var(--border); display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
-    .zero-item strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 300; line-height: 1; }
+    .zero-item strong { display: block; font-family: 'Noto Sans JP', sans-serif; font-size: 38px; font-weight: 500; line-height: 1; }
     .zero-item span { color: var(--muted); font-size: 11px; letter-spacing: .08em; }
 
     .problem-grid, .benefit-grid, .industry-grid { margin-top: 58px; display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
     .card { border: 1px solid var(--border); background: var(--bg); padding: 34px; }
-    .card-number { color: var(--accent); font-family: 'Cormorant Garamond', serif; font-size: 18px; }
+    .card-number { color: var(--accent); font-family: 'Cormorant Garamond', serif; font-size: 28px; }
     .card h3 { margin-top: 24px; font-size: 17px; font-weight: 500; }
     .card p { margin-top: 14px; color: var(--body); font-size: 13px; }
     .benefit-grid { grid-template-columns: repeat(2,1fr); }
     .benefit-card { min-height: 280px; position: relative; overflow: hidden; }
-    .benefit-value { color: var(--accent); font-family: 'Cormorant Garamond', serif; font-size: clamp(42px,5vw,68px); font-weight: 300; line-height: 1; }
+    .benefit-value { color: var(--accent); font-family: 'Noto Sans JP', sans-serif; font-size: clamp(42px,5vw,68px); font-weight: 500; line-height: 1; }
     .benefit-card h3 { margin-top: 22px; }
     .benefit-card::after { content: attr(data-mark); position: absolute; right: 18px; bottom: -35px; color: rgba(74,144,217,.06); font-family: 'Bebas Neue', sans-serif; font-size: 120px; }
 
@@ -104,7 +105,7 @@
     .comparison .featured td { background: var(--accent-pale); color: var(--accent-dark); font-weight: 500; }
     .savings { margin-top: 24px; display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
     .saving { border: 1px solid var(--border); padding: 26px; }
-    .saving strong { color: var(--accent-dark); font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 300; line-height: 1; }
+    .saving strong { color: var(--accent-dark); font-family: 'Noto Sans JP', sans-serif; font-size: 46px; font-weight: 500; line-height: 1; }
     .saving span { display: block; margin-top: 10px; color: var(--muted); font-size: 11px; }
     .fine-print { margin-top: 18px; color: var(--muted); font-size: 10px; }
     .simulator-body { margin-top: 58px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
@@ -131,7 +132,7 @@
     .story-summary .eyebrow { color: #8ec2f5; }
     .story-summary h3 { margin-top: 22px; font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 300; line-height: 1.2; }
     .story-result { margin-top: 36px; color: #8ec2f5; font-size: 13px; }
-    .story-result strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 58px; font-weight: 300; line-height: 1; }
+    .story-result strong { display: block; font-family: 'Noto Sans JP', sans-serif; font-size: 58px; font-weight: 500; line-height: 1; }
     .story-steps { display: grid; gap: 12px; }
     .story-step { border: 1px solid var(--border); padding: 28px 30px; }
     .story-step h3 { color: var(--accent-dark); font-size: 14px; font-weight: 500; }
@@ -177,9 +178,9 @@
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { opacity: 1; transform: none; transition: none; } }
     .hero-image-wrap { width: 100%; height: clamp(220px, 36vw, 540px); overflow: hidden; margin-bottom: -40px; }
     .hero-image-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
-    .section-visual { width: 100%; height: clamp(180px, 28vw, 400px); overflow: hidden; margin-bottom: 40px; border-radius: 2px; }
+    .section-visual { width: 100%; height: clamp(180px, 28vw, 400px); overflow: hidden; margin-bottom: 48px; border-radius: 2px; }
     .section-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .benefit-icon { width: 64px; height: 64px; object-fit: contain; display: block; margin-bottom: 16px; }
+    .benefit-icon { width: 56px; height: 56px; object-fit: contain; display: block; margin-bottom: 20px; background: var(--surface); border-radius: 12px; padding: 10px; }
     .terminal-visual { width: 100%; max-width: 520px; margin: 40px auto 0; overflow: hidden; border: 1px solid var(--border); }
     .terminal-visual img { width: 100%; height: auto; display: block; }
     .flow-visual { width: 100%; height: clamp(180px, 24vw, 340px); overflow: hidden; margin-top: 42px; }
@@ -202,7 +203,7 @@
     @media (max-width: 620px) {
       .hero-image-wrap { height: 200px; margin-bottom: -20px; }
       .section-visual { height: 180px; margin-bottom: 28px; }
-      .benefit-icon { width: 52px; height: 52px; }
+      .benefit-icon { width: 48px; height: 48px; }
       .flow-visual { height: 180px; margin-top: 28px; }
       .container { width: calc(100% - 40px); }
       .section { padding: 84px 0; }
@@ -211,7 +212,7 @@
       .nav-cta { padding: 8px 11px !important; font-size: 9px !important; }
       .hero { padding: 120px 0 70px; }
       .hero-grid { gap: 42px; }
-      .hero-title { font-size: clamp(44px, 13vw, 62px); }
+      .hero-title { font-size: clamp(32px, 10vw, 52px); }
       .hero-copy { font-size: 13px; }
       .hero-actions { flex-direction: column; align-items: stretch; }
       .rate-panel { padding: 30px 24px; }
@@ -224,6 +225,10 @@
       .story-summary { padding: 32px 26px; }
       .footer-inner { align-items: flex-start; flex-direction: column; }
       .footer-meta { text-align: left; }
+      .comparison-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .comparison { min-width: 560px; }
+      .comparison th, .comparison td { padding: 14px 16px; font-size: 12px; }
+      .scroll-hint { display: block; }
     }
   </style>
   <script type="application/ld+json">
@@ -333,10 +338,10 @@
     <div class="header-inner">
       <a class="brand" href="/">PUNCHLINE TOKYO</a>
       <nav class="nav" aria-label="ページ内ナビゲーション">
-        <a href="#benefits">Benefits</a>
-        <a href="#comparison">Cost</a>
-        <a href="#flow">Flow</a>
-        <a href="#faq">FAQ</a>
+        <a href="#benefits">メリット</a>
+        <a href="#comparison">料金比較</a>
+        <a href="#flow">導入の流れ</a>
+        <a href="#faq">よくある質問</a>
         <a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSc3U2jQJU1WvZvQXyvMnes-K10tfJ-ULS4tQVoMx6a6avb8Aw/viewform?usp=header" target="_blank" rel="noopener">無料相談</a>
       </nav>
     </div>
@@ -371,10 +376,10 @@
 
     <section class="section section--surface" aria-labelledby="problem-title">
       <div class="container">
-        <p class="eyebrow">Business Issues</p>
         <div class="section-visual">
           <img src="../images/problem_owner.jpg" alt="決済コストに悩む店舗オーナー" loading="lazy">
         </div>
+        <p class="eyebrow">Business Issues</p>
         <h2 class="section-title" id="problem-title">こんな決済の悩み、<br>そのままにしていませんか。</h2>
         <div class="problem-grid">
           <article class="card reveal"><span class="card-number">01</span><h3>経営を圧迫する決済手数料</h3><p>売上が増えるほど膨らむカード決済手数料。利益を守るには、固定費と同じように継続的な見直しが必要です。</p></article>
@@ -419,6 +424,7 @@
       <div class="container">
         <p class="eyebrow">Cost Comparison</p>
         <h2 class="section-title" id="comparison-title">毎月の差が、<br>年間の<em>利益</em>になる。</h2>
+        <p class="scroll-hint" aria-hidden="true">← 横にスクロールできます</p>
         <div class="comparison-wrap">
           <table class="comparison">
             <thead><tr><th>決済サービス</th><th>手数料率</th><th>初期費用</th><th>月額費用</th></tr></thead>
@@ -481,7 +487,7 @@
               <span class="sim-result-label">年間削減額（概算）</span>
               <strong class="sim-result-value sim-result-value--large" id="sim-annual">—</strong>
             </div>
-            <a class="button button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc3U2jQJU1WvZvQXyvMnes-K10tfJ-ULS4tQVoMx6a6avb8Aw/viewform?usp=header" target="_blank" rel="noopener" style="margin-top:24px">この金額を詳しく試算する →</a>
+            <a class="button button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc3U2jQJU1WvZvQXyvMnes-K10tfJ-ULS4tQVoMx6a6avb8Aw/viewform?usp=header" target="_blank" rel="noopener" style="margin-top:24px">今すぐ無料で相談する →</a>
           </div>
         </div>
         <p class="fine-print" style="margin-top:28px">※概算目安です。実際の削減額は手数料率・月間売上・決済業種などにより異なります。入金はお振込月1〜2回・振込手数料500円/回が発生します。詳細は無料相談でご確認ください。</p>
