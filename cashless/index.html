@@ -77,17 +77,18 @@
 
     .hero { min-height: 100svh; padding: 150px 0 90px; display: grid; align-items: center; position: relative; overflow: hidden; }
     .hero::before { content: 'CASHLESS'; position: absolute; top: 48%; left: 50%; transform: translate(-50%,-50%); color: transparent; font-family: 'Bebas Neue', sans-serif; font-size: clamp(130px, 21vw, 320px); letter-spacing: -.02em; -webkit-text-stroke: 1px rgba(74,144,217,.09); pointer-events: none; white-space: nowrap; }
-    .hero-grid { position: relative; display: grid; grid-template-columns: 1.15fr .85fr; gap: 72px; align-items: center; }
-    .hero-title { margin-top: 24px; font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 6.5vw, 94px); font-weight: 300; letter-spacing: -.01em; line-height: 1.03; }
+    .hero-grid { position: relative; display: grid; grid-template-columns: 1fr; gap: 56px; align-items: start; }
+    .hero-title { margin-top: 24px; font-family: 'Noto Sans JP', sans-serif; font-size: clamp(44px, 6vw, 78px); font-weight: 700; letter-spacing: 0; line-height: 1.35; text-wrap: balance; }
+    .hero-title-line { display: block; width: max-content; max-width: 100%; }
     .scroll-hint { display: none; color: var(--muted); font-size: 11px; margin-bottom: 8px; text-align: right; }
-    .hero-title em { color: var(--accent); font-weight: 400; }
-    .hero-copy { max-width: 600px; margin-top: 30px; color: var(--body); font-size: 15px; }
+    .hero-title em { color: var(--accent); font-weight: 700; }
+    .hero-copy { max-width: 760px; margin-top: 30px; color: var(--body); font-size: 15px; }
     .hero-actions { margin-top: 42px; display: flex; flex-wrap: wrap; gap: 14px; }
     .button { min-height: 54px; display: inline-flex; align-items: center; justify-content: center; gap: 12px; border: 1px solid var(--border); padding: 14px 24px; font-size: 12px; font-weight: 500; letter-spacing: .12em; text-decoration: none; transition: .25s ease; }
     .button--primary { border-color: var(--accent); background: var(--accent); color: var(--white); }
     .button--primary:hover { border-color: var(--accent-dark); background: var(--accent-dark); transform: translateY(-2px); }
     .button--ghost:hover { border-color: var(--accent); color: var(--accent-dark); }
-    .rate-panel { border: 1px solid var(--border); background: rgba(255,255,255,.7); box-shadow: 0 26px 70px rgba(17,17,17,.06); padding: 42px; position: relative; }
+    .rate-panel { width: min(100%, 620px); border: 1px solid var(--border); background: rgba(255,255,255,.78); box-shadow: 0 26px 70px rgba(17,17,17,.06); padding: 42px; position: relative; }
     .rate-panel::after { content: ''; position: absolute; width: 110px; height: 110px; right: -36px; top: -36px; border-radius: 50%; background: var(--accent-pale); z-index: -1; }
     .rate-label { color: var(--muted); font-size: 12px; letter-spacing: .13em; }
     .rate { display: flex; align-items: baseline; gap: 8px; margin-top: 12px; color: var(--accent-dark); }
@@ -250,7 +251,7 @@
       .nav-cta { padding: 8px 11px !important; font-size: 9px !important; }
       .hero { padding: 120px 0 90px; }
       .hero-grid { gap: 42px; }
-      .hero-title { font-size: 22px; word-break: keep-all; overflow-wrap: break-word; }
+      .hero-title { font-size: clamp(22px, 7vw, 34px); word-break: normal; overflow-wrap: anywhere; line-height: 1.45; }
       .hero-copy { font-size: 13px; }
       .hero-actions { flex-direction: column; align-items: stretch; }
       .rate-panel { padding: 30px 24px; }
@@ -510,7 +511,7 @@
       <div class="container hero-grid">
         <div>
           <p class="eyebrow">EPARK Cashless Payment</p>
-          <h1 class="hero-title">決済手数料を、<br><em>利益</em>に変える。</h1>
+          <h1 class="hero-title"><span class="hero-title-line">決済手数料を、</span><span class="hero-title-line"><em>利益</em>に変える。</span></h1>
           <p class="hero-copy">原価高の時代だからこそ、毎月発生する決済コストを見直す。EPARKフィナンシャルパートナーズの公式代理店として、導入から運用までPUNCHLINE TOKYOがサポートします。</p>
           <div class="hero-actions">
             <a class="button button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc3U2jQJU1WvZvQXyvMnes-K10tfJ-ULS4tQVoMx6a6avb8Aw/viewform?usp=header" target="_blank" rel="noopener">無料で相談する →</a>
