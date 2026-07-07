@@ -74,13 +74,14 @@
     }
     /* ハンバーガーメニュー */
     .hamburger{display:none}
+    .zt-mobile-menu{display:none}
     @media(max-width:980px){
       .hamburger{display:flex;flex-direction:column;justify-content:space-between;width:28px;height:18px;background:none;border:none;cursor:pointer;padding:0;z-index:400;flex-shrink:0}
       .hamburger span{display:block;width:100%;height:2px;background:#111;transition:transform .3s ease,opacity .3s ease;border-radius:1px}
       .hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
       .hamburger.open span:nth-child(2){opacity:0}
       .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-      .zt-mobile-menu{display:none;position:fixed;inset:0;z-index:350;background:rgba(250,250,250,0.98);backdrop-filter:blur(12px);flex-direction:column;align-items:center;justify-content:center}
+      .zt-mobile-menu{position:fixed;inset:0;z-index:350;background:rgba(250,250,250,0.98);backdrop-filter:blur(12px);flex-direction:column;align-items:center;justify-content:center}
       .zt-mobile-menu.open{display:flex}
       .zt-mobile-menu ul{list-style:none;text-align:center}
       .zt-mobile-menu li+li{margin-top:28px}
