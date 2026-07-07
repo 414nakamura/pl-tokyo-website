@@ -72,7 +72,29 @@
       .alert ul, .card p, .fit ul, .experience-body p, details p { font-size: 14px; }
       .experience-stat strong { font-size: 36px; }
     }
+    /* ハンバーガーメニュー */
+    .hamburger{display:none}
+    @media(max-width:980px){
+      .hamburger{display:flex;flex-direction:column;justify-content:space-between;width:28px;height:18px;background:none;border:none;cursor:pointer;padding:0;z-index:400;flex-shrink:0}
+      .hamburger span{display:block;width:100%;height:2px;background:#111;transition:transform .3s ease,opacity .3s ease;border-radius:1px}
+      .hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+      .hamburger.open span:nth-child(2){opacity:0}
+      .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+      .zt-mobile-menu{display:none;position:fixed;inset:0;z-index:350;background:rgba(250,250,250,0.98);backdrop-filter:blur(12px);flex-direction:column;align-items:center;justify-content:center}
+      .zt-mobile-menu.open{display:flex}
+      .zt-mobile-menu ul{list-style:none;text-align:center}
+      .zt-mobile-menu li+li{margin-top:28px}
+      .zt-mobile-menu a{font-size:18px;font-weight:500;text-decoration:none;color:#111}
+      .zt-mobile-menu .mm-cta{display:inline-block;margin-top:36px;padding:14px 32px;background:#4a90d9;color:#fff;font-size:15px;font-weight:700;border-radius:2px}
+    }
   </style>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","xirbqmt6z7");
+  </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://pl-tokyo.com/"},{"@type":"ListItem","position":2,"name":"キャッシュレス決済","item":"https://pl-tokyo.com/cashless/"},{"@type":"ListItem","position":3,"name":"全東信利用店舗向け切替相談","item":"https://pl-tokyo.com/cashless/zentoshin-switch/"}]},
@@ -89,7 +111,16 @@
 <body>
   <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
   <a class="skip" href="#main">本文へ移動</a>
-  <header><div class="head"><a class="brand" href="../../index.html">PUNCHLINE TOKYO</a><nav class="page-nav" aria-label="ページ内ナビゲーション"><a href="#support">支援内容</a><a href="#eligibility">対象業種</a><a href="#experience">担当者経験</a><a href="#faq">よくある質問</a><a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSc3U2jQJU1WvZvQXyvMnes-K10tfJ-ULS4tQVoMx6a6avb8Aw/viewform?usp=header" target="_blank" rel="noopener">無料相談</a></nav><a class="back" href="../index.html">総合ページ →</a></div></header>
+  <nav class="zt-mobile-menu" id="zt-mobile-menu" aria-label="モバイルメニュー" aria-hidden="true">
+    <ul>
+      <li><a href="#support" onclick="closeMobileMenu()">支援内容</a></li>
+      <li><a href="#eligibility" onclick="closeMobileMenu()">対象業種</a></li>
+      <li><a href="#experience" onclick="closeMobileMenu()">担当者経験</a></li>
+      <li><a href="#faq" onclick="closeMobileMenu()">よくある質問</a></li>
+      <li><a class="mm-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSc3U2jQJU1WvZvQXyvMnes-K10tfJ-ULS4tQVoMx6a6avb8Aw/viewform?usp=header" target="_blank" rel="noopener">無料相談はこちら →</a></li>
+    </ul>
+  </nav>
+  <header><div class="head"><a class="brand" href="../../index.html">PUNCHLINE TOKYO</a><nav class="page-nav" aria-label="ページ内ナビゲーション"><a href="#support">支援内容</a><a href="#eligibility">対象業種</a><a href="#experience">担当者経験</a><a href="#faq">よくある質問</a><a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSc3U2jQJU1WvZvQXyvMnes-K10tfJ-ULS4tQVoMx6a6avb8Aw/viewform?usp=header" target="_blank" rel="noopener">無料相談</a></nav><button class="hamburger" id="zt-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="zt-mobile-menu"><span></span><span></span><span></span></button><a class="back" href="../index.html">総合ページ →</a></div></header>
   <main id="main">
     <section class="hero"><div class="container hero-grid">
       <div><p class="label">Cashless Switching Support</p><h1><span class="hero-line">全東信のサービス停止で、</span><span class="hero-line"><em>代替決済</em>をお探しの店舗様へ。</span></h1><div class="hero-rate-note"><strong>2.45%〜</strong><span>医療機関 1.50%〜</span><small>キャッシュレス決済手数料・一定条件を満たした場合</small></div><p class="lead">対象業種や必要書類を確認し、EPARKペイメントへの申込手続きをPUNCHLINE TOKYOがサポートします。まずは現在の業種とお困りの状況をお聞かせください。</p><div class="hero-points"><span class="hero-point">対象条件を確認</span><span class="hero-point">費用を個別試算</span><span class="hero-point">申込手続きを支援</span></div><p class="updated">情報更新日：2026年7月7日</p><div class="actions"><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc3U2jQJU1WvZvQXyvMnes-K10tfJ-ULS4tQVoMx6a6avb8Aw/viewform?usp=header" target="_blank" rel="noopener">切替について無料相談 →</a><a class="btn" href="#eligibility">対象業種を確認</a></div></div>
@@ -175,6 +206,24 @@
       }, { threshold: 0.14 });
       revealElements.forEach((element) => observer.observe(element));
     })();
+
+    // ハンバーガーメニュー
+    const hamburger = document.getElementById('zt-hamburger');
+    const mobileMenu = document.getElementById('zt-mobile-menu');
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+      mobileMenu.setAttribute('aria-hidden', !isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    function closeMobileMenu() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+      mobileMenu.setAttribute('aria-hidden', true);
+      document.body.style.overflow = '';
+    }
   </script>
 </body>
 </html>

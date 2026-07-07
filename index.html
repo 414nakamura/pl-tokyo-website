@@ -3,7 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PUNCHLINE TOKYO</title>
+  <title>PUNCHLINE TOKYO｜マーケティング・Web制作・キャッシュレス導入支援（東京）</title>
+  <meta name="description" content="PUNCHLINE TOKYOは、東京を拠点にSEO・MEO・GEO（AI検索対策）、Webサイト制作、キャッシュレス決済導入支援を提供するマーケティング会社です。飲食・美容・医療など幅広い業種でご対応します。">
+  <link rel="canonical" href="https://pl-tokyo.com/">
+  <meta property="og:title" content="PUNCHLINE TOKYO｜マーケティング・Web制作・キャッシュレス導入支援">
+  <meta property="og:description" content="SEO・MEO・GEO対策、Webサイト制作、キャッシュレス決済導入支援を東京を拠点に提供。飲食・美容・医療など幅広い業種でご対応します。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pl-tokyo.com/">
+  <meta property="og:image" content="https://pl-tokyo.com/images/hero_payment.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"Organization","name":"株式会社PUNCHLINE TOKYO","url":"https://pl-tokyo.com/","logo":{"@type":"ImageObject","url":"https://pl-tokyo.com/images/apple-touch-icon.png"},"sameAs":[],"areaServed":"JP","description":"SEO・MEO・GEO（AI検索対策）、Webサイト制作、キャッシュレス決済導入支援を提供するマーケティング会社。"},
+    {"@type":"WebSite","name":"PUNCHLINE TOKYO","url":"https://pl-tokyo.com/","potentialAction":{"@type":"SearchAction","target":"https://pl-tokyo.com/?s={search_term_string}","query-input":"required name=search_term_string"}},
+    {"@type":"Service","name":"マーケティング・Web制作・キャッシュレス導入支援","provider":{"@type":"Organization","name":"株式会社PUNCHLINE TOKYO","url":"https://pl-tokyo.com/"},"areaServed":"JP","description":"SEO・MEO・GEO対策、Webサイト制作、キャッシュレス決済導入支援を提供。飲食・美療・医療など幅広い業種に対応。"}
+  ]}
+  </script>
   <!-- Favicon -->
   <link rel="icon" href="/images/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
@@ -864,27 +880,29 @@
         <span class="contact-heading__line"><em>次のステージ</em>へ。</span>
       </h2>
       <p class="contact-sub reveal">お気軽にご相談ください。通常1営業日以内にご返信いたします。</p>
-      <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+      <form class="contact-form reveal" id="contact-form" onsubmit="handleSubmit(event)">
         <div class="form-group">
-          <input type="text" id="name" class="form-input" placeholder=" " required>
+          <input type="text" id="name" name="name" class="form-input" placeholder=" " required>
           <label for="name" class="form-label">お名前 / Name</label>
         </div>
         <div class="form-group">
-          <input type="text" id="company" class="form-input" placeholder=" ">
+          <input type="text" id="company" name="company" class="form-input" placeholder=" ">
           <label for="company" class="form-label">会社名 / Company</label>
         </div>
         <div class="form-group">
-          <input type="email" id="email" class="form-input" placeholder=" " required>
+          <input type="email" id="email" name="email" class="form-input" placeholder=" " required>
           <label for="email" class="form-label">メールアドレス / Email</label>
         </div>
         <div class="form-group">
-          <textarea id="message" class="form-textarea" placeholder=" " required></textarea>
+          <textarea id="message" name="message" class="form-textarea" placeholder=" " required></textarea>
           <label for="message" class="form-label">お問い合わせ内容 / Message</label>
         </div>
         <button type="submit" class="form-submit">
           Send Message
           <span class="btn-arrow"></span>
         </button>
+        <p id="form-success" style="display:none;margin-top:20px;color:var(--accent);font-size:13px;text-align:center;">送信完了しました。1営業日以内にご返信いたします。</p>
+        <p id="form-error" style="display:none;margin-top:20px;color:#e24b4a;font-size:13px;text-align:center;">送信に失敗しました。お手数ですが再度お試しください。</p>
       </form>
     </div>
   </section>
@@ -947,19 +965,42 @@
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // フォーム送信
-    function handleSubmit(e) {
+    // フォーム送信（Formspree AJAX）
+    async function handleSubmit(e) {
       e.preventDefault();
-      const btn = e.target.querySelector('.form-submit');
-      btn.textContent = 'Sent ✓';
-      btn.style.background = 'var(--accent)';
-      btn.style.color = '#ffffff';
-      setTimeout(() => {
-        e.target.reset();
+      const form = e.target;
+      const btn = form.querySelector('.form-submit');
+      const successMsg = document.getElementById('form-success');
+      const errorMsg = document.getElementById('form-error');
+
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+
+      try {
+        const res = await fetch('https://formspree.io/f/xjgqdvll', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+
+        if (res.ok) {
+          successMsg.style.display = 'block';
+          form.reset();
+          // GA4コンバージョンイベント
+          if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', { event_category: 'contact', event_label: 'formspree' });
+          }
+        } else {
+          errorMsg.style.display = 'block';
+        }
+      } catch (err) {
+        errorMsg.style.display = 'block';
+      } finally {
         btn.innerHTML = 'Send Message <span class="btn-arrow"></span>';
-        btn.style.background = '';
-        btn.style.color = '';
-      }, 3000);
+        btn.disabled = false;
+      }
     }
 
     // ハンバーガーメニュー
