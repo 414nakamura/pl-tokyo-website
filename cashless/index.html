@@ -9,6 +9,12 @@
   <meta property="og:description" content="キャッシュレス決済のコストを、もっとシンプルに。業界最安水準2.45%〜、初期・月額費用0円。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pl-tokyo.com/cashless/">
+  <meta property="og:image" content="https://pl-tokyo.com/images/hero_payment.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="キャッシュレス決済サービス | PUNCHLINE TOKYO">
+  <meta name="twitter:description" content="キャッシュレス決済のコストを、もっとシンプルに。業界最安水準2.45%〜、初期・月額費用0円。">
+  <meta name="twitter:image" content="https://pl-tokyo.com/images/hero_payment.jpg">
   <link rel="canonical" href="https://pl-tokyo.com/cashless/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -256,6 +262,70 @@
       .payment-hero-text { padding-bottom: 28px; width: calc(100% - 40px); }
     }
 
+    /* ─── HAMBURGER MENU ─── */
+    .hamburger { display: none; }
+    @media (max-width: 980px) {
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 28px;
+        height: 18px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 400;
+        flex-shrink: 0;
+      }
+      .hamburger span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: var(--ink);
+        transition: transform .3s ease, opacity .3s ease;
+        border-radius: 1px;
+      }
+      .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+      .hamburger.open span:nth-child(2) { opacity: 0; }
+      .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+      .cashless-mobile-menu {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 350;
+        background: rgba(250,250,250,0.98);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+      }
+      .cashless-mobile-menu.open { display: flex; }
+      .cashless-mobile-menu ul { list-style: none; text-align: center; display: grid; gap: 28px; padding: 0; }
+      .cashless-mobile-menu li a {
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: .12em;
+        text-decoration: none;
+        color: var(--ink);
+        display: block;
+        padding: 4px 0;
+      }
+      .cashless-mobile-menu .mm-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 12px;
+        padding: 14px 32px;
+        background: var(--accent);
+        color: var(--white) !important;
+        font-size: 14px;
+        letter-spacing: .1em;
+      }
+    }
+
     /* ─── STICKY CTA（スマホ下固定）─── */
     .sticky-cta-bar { display: none; }
     @media (max-width: 980px) {
@@ -396,6 +466,9 @@
         <a href="#faq">よくある質問</a>
         <a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSc3U2jQJU1WvZvQXyvMnes-K10tfJ-ULS4tQVoMx6a6avb8Aw/viewform?usp=header" target="_blank" rel="noopener">無料相談</a>
       </nav>
+      <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="cashless-mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
@@ -602,6 +675,9 @@
         <div class="flow-visual">
           <img src="../images/flow_installation.jpg" alt="キャッシュレス端末の導入・設置作業" loading="lazy">
         </div>
+        <div style="margin-top: 48px; text-align: center;">
+          <a class="button button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc3U2jQJU1WvZvQXyvMnes-K10tfJ-ULS4tQVoMx6a6avb8Aw/viewform?usp=header" target="_blank" rel="noopener" style="min-width: 240px; font-size: 14px;">無料で相談する →</a>
+        </div>
       </div>
     </section>
 
@@ -690,6 +766,41 @@
     calc();
   })();
   </script>
+  <script>
+  (function() {
+    const btn = document.querySelector('.hamburger');
+    const menu = document.getElementById('cashless-mobile-menu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', () => {
+      const isOpen = btn.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+      menu.classList.toggle('open', isOpen);
+      menu.setAttribute('aria-hidden', !isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        menu.classList.remove('open');
+        menu.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      });
+    });
+  })();
+  </script>
+
+  <!-- ハンバーガーメニュー -->
+  <nav class="cashless-mobile-menu" id="cashless-mobile-menu" aria-label="モバイルメニュー" aria-hidden="true">
+    <ul>
+      <li><a href="#benefits">メリット</a></li>
+      <li><a href="#comparison">料金比較</a></li>
+      <li><a href="#simulator">シミュレーター</a></li>
+      <li><a href="#flow">導入の流れ</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+      <li><a class="mm-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSc3U2jQJU1WvZvQXyvMnes-K10tfJ-ULS4tQVoMx6a6avb8Aw/viewform?usp=header" target="_blank" rel="noopener">無料相談はこちら →</a></li>
+    </ul>
+  </nav>
 
   <!-- スマホ下固定CTA -->
   <div class="sticky-cta-bar" role="complementary" aria-label="無料相談">
