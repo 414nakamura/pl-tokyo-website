@@ -127,6 +127,13 @@
     }
     .form-textarea { resize: none; height: 140px; }
     .form-note { margin-top: -10px; margin-bottom: 28px; font-size: 11px; color: rgba(255,255,255,0.28); line-height: 1.7; }
+    .inquiry-options { display: flex; flex-direction: column; gap: 14px; margin-top: 2px; }
+    .inquiry-option { display: flex; align-items: center; gap: 12px; cursor: pointer; }
+    .inquiry-option input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--accent); flex-shrink: 0; cursor: pointer; }
+    .inquiry-option span { font-size: 15px; }
+    .privacy-row { display: flex; align-items: flex-start; gap: 10px; margin-top: 20px; }
+    .privacy-row input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--accent); flex-shrink: 0; margin-top: 2px; cursor: pointer; }
+    .privacy-row label { font-size: 12px; line-height: 1.8; cursor: pointer; }
     .form-submit {
       margin-top: 40px;
       display: inline-flex; align-items: center; gap: 16px;
@@ -171,6 +178,8 @@
     .form-input, .form-textarea { color: var(--ink); font-size: 16px; font-weight: 400; letter-spacing: .01em; }
     .form-input::placeholder, .form-textarea::placeholder { color: #999; font-size: 14px; }
     .form-note { color: #666; font-size: 12px; }
+    .inquiry-option span { color: var(--ink); }
+    .privacy-row label { color: #555; }
     .form-submit { background: var(--blue); border-color: var(--blue); color: #fff; font-size: 14px; font-weight: 700; letter-spacing: .12em; }
     .form-submit:hover { background: var(--blue2); border-color: var(--blue2); }
     #form-success { background: #eaf3fc; color: var(--blue2); }
@@ -238,16 +247,45 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="address" class="form-label">導入検討中の店舗（または事業所）の住所 / Address</label>
+          <label for="address" class="form-label">導入予定の店舗住所（任意）</label>
           <input type="text" id="address" name="address" class="form-input" placeholder="東京都渋谷区〇〇 1-2-3">
         </div>
         <div class="form-group">
-          <label for="message" class="form-label">お問い合わせ内容 / Message<span class="req">*</span></label>
-          <textarea id="message" name="message" class="form-textarea" placeholder="ご相談内容をご記入ください（例：キャッシュレス決済を検討しています。飲食店を経営しており、現在現金のみの対応です。）" required></textarea>
+          <p class="form-label">ご相談の内容<span class="req">*</span><span style="font-weight:400;font-size:12px;margin-left:8px;">（複数選択可）</span></p>
+          <div class="inquiry-options" role="group" aria-label="ご相談の内容">
+            <label class="inquiry-option">
+              <input type="checkbox" name="inquiry_type" value="手数料削減・コスト見直し">
+              <span>💳 決済手数料の削減・コスト見直しをしたい</span>
+            </label>
+            <label class="inquiry-option">
+              <input type="checkbox" name="inquiry_type" value="全東信からの切替">
+              <span>🔄 全東信から別の決済サービスに切り替えたい</span>
+            </label>
+            <label class="inquiry-option">
+              <input type="checkbox" name="inquiry_type" value="キャッシュレス新規導入">
+              <span>✨ キャッシュレス決済を新規で導入したい</span>
+            </label>
+            <label class="inquiry-option">
+              <input type="checkbox" name="inquiry_type" value="マーケティング・Web制作">
+              <span>📈 マーケティング支援・Webサイト制作について聞きたい</span>
+            </label>
+            <label class="inquiry-option">
+              <input type="checkbox" name="inquiry_type" value="まず詳しく話を聞きたい">
+              <span>💬 まず詳しく話を聞きたい（内容未定でOK）</span>
+            </label>
+          </div>
         </div>
-        <p class="form-note">* は必須項目です。送信後、自動返信メールは届きません。担当者より直接ご連絡いたします。</p>
-        <button type="submit" class="form-submit">
-          Send Message <span class="arrow-icon"></span>
+        <div class="form-group">
+          <label for="message" class="form-label">補足・詳細（任意）</label>
+          <textarea id="message" name="message" class="form-textarea" placeholder="業種・現在の決済状況・ご不明点など、わかる範囲でご記入ください"></textarea>
+        </div>
+        <p class="form-note">* は必須項目です。送信後、担当者より直接ご連絡いたします（自動返信メールは届きません）。</p>
+        <div class="privacy-row">
+          <input type="checkbox" id="privacy" name="privacy_agreed" value="同意する" required>
+          <label for="privacy">送信内容は担当者との連絡のみに使用し、第三者への提供は行いません。上記に同意の上、送信します。<span class="req">*</span></label>
+        </div>
+        <button type="submit" class="form-submit" style="margin-top:32px;">
+          送信する <span class="arrow-icon"></span>
         </button>
         <div id="form-success">✓ 送信完了しました。1営業日以内にご返信いたします。</div>
         <p id="form-error">送信に失敗しました。お手数ですが再度お試しください。</p>
@@ -270,6 +308,29 @@
       const btn = form.querySelector('.form-submit');
       const successMsg = document.getElementById('form-success');
       const errorMsg = document.getElementById('form-error');
+
+      // チェックボックスバリデーション
+      const checked = form.querySelectorAll('input[name="inquiry_type"]:checked');
+      if (checked.length === 0) {
+        const optionsEl = form.querySelector('.inquiry-options');
+        optionsEl.style.outline = '2px solid #e53e3e';
+        optionsEl.style.borderRadius = '8px';
+        optionsEl.style.padding = '8px';
+        if (!form.querySelector('.inquiry-error')) {
+          const err = document.createElement('p');
+          err.className = 'inquiry-error';
+          err.style.cssText = 'color:#e53e3e;font-size:13px;margin-top:6px;';
+          err.textContent = 'ご相談の内容を1つ以上選択してください。';
+          optionsEl.insertAdjacentElement('afterend', err);
+        }
+        return;
+      }
+      // バリデーション通過後のクリア
+      const optionsEl = form.querySelector('.inquiry-options');
+      optionsEl.style.outline = '';
+      optionsEl.style.padding = '';
+      const inquiryErr = form.querySelector('.inquiry-error');
+      if (inquiryErr) inquiryErr.remove();
 
       btn.textContent = 'Sending...';
       btn.disabled = true;
@@ -294,7 +355,7 @@
       } catch (err) {
         errorMsg.style.display = 'block';
       } finally {
-        btn.innerHTML = 'Send Message <span class="arrow-icon"></span>';
+        btn.innerHTML = '送信する <span class="arrow-icon"></span>';
         btn.disabled = false;
       }
     }

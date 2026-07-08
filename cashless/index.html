@@ -397,6 +397,22 @@
       .zentoshin-notice__inner { align-items: flex-start; flex-direction: column; gap: 4px; padding: 13px 0; }
       .zentoshin-notice p, .zentoshin-notice a { font-size: 11px; }
     }
+    /* 比較表：スマホカード型レイアウト */
+    @media (max-width: 620px) {
+      .comparison-wrap { overflow-x: visible; border: none; background: none; }
+      .comparison { display: block; min-width: 0; border: none; }
+      .comparison thead { display: none; }
+      .comparison tbody, .comparison tr { display: block; }
+      .comparison tr { margin-bottom: 14px; border: 1px solid var(--border); background: #fff; padding: 16px 18px; }
+      .comparison tr.featured { border: 2px solid var(--accent); background: var(--accent-pale); }
+      .comparison td { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding: 10px 0; font-size: 14px; }
+      .comparison td:last-child { border-bottom: none; }
+      .comparison td::before { content: attr(data-label); font-size: 12px; color: var(--muted); font-weight: 500; flex-shrink: 0; margin-right: 10px; }
+      .comparison td:first-child { font-size: 16px; font-weight: 700; border-bottom: 2px solid var(--border); padding-bottom: 12px; margin-bottom: 4px; }
+      .comparison td:first-child::before { display: none; }
+      .comparison tr.featured td:first-child { color: var(--accent-dark); }
+      .scroll-hint { display: none !important; }
+    }
   </style>
   <script type="application/ld+json">
   [
@@ -527,7 +543,7 @@
   <main id="main">
     <section class="hero">
       <div class="hero-bg">
-        <img src="../images/hero_payment.jpg" alt="" aria-hidden="true" loading="eager">
+        <img src="../images/hero_payment.jpg" alt="" aria-hidden="true" loading="eager" fetchpriority="high">
         <div class="hero-overlay"></div>
       </div>
       <div class="container hero-grid">
@@ -620,10 +636,10 @@
           <table class="comparison">
             <thead><tr><th>決済サービス</th><th>手数料率</th><th>初期費用</th><th>月額費用</th></tr></thead>
             <tbody>
-              <tr class="featured"><td>EPARK決済</td><td>2.45%〜<br><small>医療機関1.50%〜</small></td><td>0円</td><td>0円</td></tr>
-              <tr><td>A社</td><td>2.95%〜</td><td>30,000円</td><td>1,650円</td></tr>
-              <tr><td>B社</td><td>3.24%〜</td><td>0円</td><td>0円</td></tr>
-              <tr><td>C社</td><td>3.40%〜</td><td>0円</td><td>1,100円</td></tr>
+              <tr class="featured"><td>EPARK決済</td><td data-label="手数料率">2.45%〜<br><small>医療機関1.50%〜</small></td><td data-label="初期費用">0円</td><td data-label="月額費用">0円</td></tr>
+              <tr><td>A社</td><td data-label="手数料率">2.95%〜</td><td data-label="初期費用">30,000円</td><td data-label="月額費用">1,650円</td></tr>
+              <tr><td>B社</td><td data-label="手数料率">3.24%〜</td><td data-label="初期費用">0円</td><td data-label="月額費用">0円</td></tr>
+              <tr><td>C社</td><td data-label="手数料率">3.40%〜</td><td data-label="初期費用">0円</td><td data-label="月額費用">1,100円</td></tr>
             </tbody>
           </table>
         </div>
@@ -633,6 +649,11 @@
           <div class="saving"><strong>−21.3万円</strong><span>C社から乗り換えた場合の年間削減例</span></div>
         </div>
         <p class="fine-print">※比較値・削減額は参考例です。実際の料率、決済額、導入条件、対象業種などにより異なります。個別の削減見込みは無料相談でご案内します。</p>
+        <div style="margin-top:48px;text-align:center;padding:40px;background:var(--surface);border:1px solid var(--border)">
+          <p style="font-size:15px;font-weight:500;margin-bottom:8px">今の手数料率は、本当に適正ですか？</p>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:24px">お店の売上と現在の料率を伺い、<strong>乗り換え後の削減額を無料で試算します</strong></p>
+          <a class="button button--primary" href="/contact/" target="_blank" rel="noopener">自店舗の削減額を無料で確認する →</a>
+        </div>
       </div>
     </section>
 
@@ -648,7 +669,7 @@
               <div class="sim-range-wrap">
                 <input type="range" id="sim-sales-range" min="10" max="2000" step="10" value="200" aria-hidden="true">
                 <div class="sim-number-wrap">
-                  <input class="sim-number" type="number" id="sim-sales" min="10" max="2000" step="10" value="200" aria-label="月間カード売上（万円）">
+                  <input class="sim-number" type="number" id="sim-sales" min="10" max="2000" step="10" value="200" inputmode="numeric" pattern="[0-9]*" aria-label="月間カード売上（万円）">
                   <span class="sim-unit">万円</span>
                 </div>
               </div>
@@ -663,7 +684,7 @@
                   <option value="custom">カスタム入力</option>
                 </select>
                 <div class="sim-custom" id="sim-custom-wrap" style="display:none">
-                  <input class="sim-number" type="number" id="sim-rate" min="0.1" max="10" step="0.01" value="3.24" aria-label="現在の手数料率（%）">
+                  <input class="sim-number" type="number" id="sim-rate" min="0.1" max="10" step="0.01" value="3.24" inputmode="decimal" pattern="[0-9]*\.?[0-9]*" aria-label="現在の手数料率（%）">
                   <span class="sim-unit">%</span>
                 </div>
               </div>
@@ -678,7 +699,7 @@
               <span class="sim-result-label">年間削減額（概算）</span>
               <strong class="sim-result-value sim-result-value--large" id="sim-annual">—</strong>
             </div>
-            <a class="button button--primary" href="/contact/" target="_blank" rel="noopener" style="margin-top:24px">今すぐ無料で相談する →</a>
+            <a class="button button--primary" id="sim-cta" href="/contact/" target="_blank" rel="noopener" style="margin-top:24px">この削減額で相談してみる →</a>
           </div>
         </div>
         <p class="fine-print" style="margin-top:28px">※概算目安です。実際の削減額は手数料率・月間売上・決済業種などにより異なります。入金はお振込月1〜2回・振込手数料500円/回が発生します。詳細は無料相談でご確認ください。</p>
@@ -704,6 +725,11 @@
           <blockquote><img class="voice-img" src="../images/izakaya.jpg" alt="居酒屋の店内" loading="lazy">「月のコストが平均約3万円減少。利益率も改善し、本当に助かっています」<cite>飲食店オーナー Y.O様</cite></blockquote>
           <blockquote><img class="voice-img" src="../images/biyoin.JPG" alt="美容院の様子" loading="lazy">「忙しい時期でしたが、手続きもサポートいただきスムーズに導入できました」<cite>美容院オーナー S.T様</cite></blockquote>
           <blockquote><img class="voice-img" src="../images/buppan.jpg" alt="物販店舗の様子" loading="lazy">「負担なく導入でき、削減できた分を新ブランドの展開に投資できました」<cite>物販事業 事業部長様</cite></blockquote>
+        </div>
+        <div style="margin-top:56px;text-align:center;padding:40px;background:var(--surface);border:1px solid var(--border)">
+          <p style="font-size:15px;font-weight:500;margin-bottom:8px">自分のお店ではどうなるか、気になりませんか？</p>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:24px">導入事例と同じように、<strong>まずは料率と削減見込みを確認するだけでOKです</strong></p>
+          <a class="button button--primary" href="/contact/" target="_blank" rel="noopener">うちの店でも相談してみる →</a>
         </div>
       </div>
     </section>
@@ -812,6 +838,12 @@
       const m = sales * diff;
       monthly.textContent = diff <= 0 ? '差異なし' : '−' + fmt(m);
       annual.textContent  = diff <= 0 ? '差異なし' : '−' + fmt(m * 12);
+      const ctaBtn = document.getElementById('sim-cta');
+      if (ctaBtn) {
+        ctaBtn.textContent = diff > 0
+          ? '年間' + fmt(m * 12) + '削減できるか確認する →'
+          : 'まず話だけ聞いてみる →';
+      }
     }
 
     salesRange.addEventListener('input', () => { salesNum.value = salesRange.value; calc(); });
