@@ -408,6 +408,15 @@
       .comparison tr.featured td:first-child { color: var(--accent-dark); }
       .scroll-hint { display: none !important; }
     }
+    /* Conversion-first refinements */
+    html{scroll-padding-top:92px}body{font-weight:400;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    a,button,input,select{touch-action:manipulation}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid rgba(74,144,217,.45);outline-offset:3px}
+    .nav a{font-size:12px;letter-spacing:.08em}.nav .nav-line{padding:11px 16px;background:#06c755;color:#fff;border:1px solid #06c755}.nav .nav-cta{background:#111;color:#fff;border-color:#111}
+    .breadcrumbs{position:absolute;top:94px;left:0;right:0;z-index:3}.breadcrumbs ol{width:min(1180px,calc(100% - 120px));margin:auto;display:flex;gap:8px;list-style:none;color:#555;font-size:11px}.breadcrumbs li:not(:last-child)::after{content:'/';margin-left:8px;color:#999}.breadcrumbs a{text-underline-offset:3px}
+    .proof-strip{background:#fff;border-block:1px solid var(--border)}.proof-grid{display:grid;grid-template-columns:repeat(4,1fr)}.proof-item{padding:20px 12px;text-align:center;border-right:1px solid var(--border)}.proof-item:last-child{border-right:0}.proof-item strong{display:block;color:var(--accent-dark);font-size:20px;font-weight:700}.proof-item span{display:block;margin-top:4px;color:#555;font-size:11px;font-weight:500}
+    .button--line{background:#06c755!important;border-color:#06c755!important;color:#fff!important;box-shadow:0 8px 22px rgba(6,199,85,.16)}.button--line:hover{background:#049c43!important}.hero-copy,.section-lead,.card p{font-weight:400}.footer-inner{align-items:flex-start}.footer-links{display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:16px}.footer-links a{color:#bbb;font-size:11px;text-underline-offset:3px}
+    @media(max-width:980px){.breadcrumbs{top:80px}.breadcrumbs ol{width:calc(100% - 48px)}.proof-grid{grid-template-columns:repeat(2,1fr)}.proof-item:nth-child(-n+2){border-bottom:1px solid var(--border)}}
+    @media(max-width:768px){html{scroll-padding-top:74px}.hero-actions .button{width:100%;min-height:58px;font-size:14px}.hero-actions .button--line{order:-1}.proof-item{padding:16px 8px}.proof-item strong{font-size:18px}.section{padding:78px 0}.section-title{font-family:'Noto Sans JP',sans-serif;font-size:clamp(30px,8.4vw,40px);font-weight:700;line-height:1.35}.hero-copy,.section-lead{font-size:15px;line-height:1.9}.footer-inner{gap:24px}}
   </style>
   <script type="application/ld+json">
   [
@@ -520,7 +529,8 @@
         <a href="#comparison">料金比較</a>
         <a href="#flow">導入の流れ</a>
         <a href="#faq">よくある質問</a>
-        <a class="nav-cta" href="/contact/" target="_blank" rel="noopener">無料相談</a>
+        <a class="nav-line" href="https://lin.ee/8MZB401J" target="_blank" rel="noopener">LINE相談</a>
+        <a class="nav-cta" href="/contact/">フォーム相談</a>
       </nav>
       <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="cashless-mobile-menu">
         <span></span><span></span><span></span>
@@ -537,6 +547,7 @@
 
   <main id="main">
     <section class="hero">
+      <nav class="breadcrumbs" aria-label="パンくずリスト"><ol><li><a href="/">ホーム</a></li><li aria-current="page">キャッシュレス決済</li></ol></nav>
       <div class="hero-bg">
         <img src="../images/hero_payment.jpg" alt="" aria-hidden="true" loading="eager" fetchpriority="high">
         <div class="hero-overlay"></div>
@@ -547,8 +558,8 @@
           <h1 class="hero-title"><span class="hero-title-line">決済手数料を、</span><span class="hero-title-line"><em>利益</em>に変える。</span></h1>
           <p class="hero-copy">原価高の時代だからこそ、毎月発生する決済コストを見直す。EPARKフィナンシャルパートナーズの公式代理店として、導入から運用までPUNCHLINE TOKYOがサポートします。</p>
           <div class="hero-actions">
-            <a class="button button--primary" href="/contact/" target="_blank" rel="noopener">無料で相談する →</a>
-            <a class="button button--line" href="https://lin.ee/8MZB401J" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>LINEで相談する</a>
+            <a class="button button--line" href="https://lin.ee/8MZB401J" target="_blank" rel="noopener">LINEで無料相談 →</a>
+            <a class="button button--primary" href="/contact/">フォームで無料相談 →</a>
             <a class="button button--ghost" href="#comparison">料金を比較する</a>
           </div>
         </div>
@@ -563,6 +574,8 @@
         </aside>
       </div>
     </section>
+
+    <aside class="proof-strip" aria-label="サービスの主な特徴"><div class="container proof-grid"><div class="proof-item"><strong>2.45%〜</strong><span>決済手数料</span></div><div class="proof-item"><strong>1.50%〜</strong><span>医療機関</span></div><div class="proof-item"><strong>0円</strong><span>初期・月額固定費</span></div><div class="proof-item"><strong>公式代理店</strong><span>申込から導入まで支援</span></div></div></aside>
 
     <section class="section" id="benefits" aria-labelledby="benefit-title">
       <div class="container">
@@ -648,7 +661,7 @@
         <div style="margin-top:48px;text-align:center;padding:40px;background:var(--surface);border:1px solid var(--border)">
           <p style="font-size:15px;font-weight:500;margin-bottom:8px">今の手数料率は、本当に適正ですか？</p>
           <p style="font-size:13px;color:var(--muted);margin-bottom:24px">お店の売上と現在の料率を伺い、<strong>乗り換え後の削減額を無料で試算します</strong></p>
-          <a class="button button--primary" href="/contact/" target="_blank" rel="noopener">自店舗の削減額を無料で確認する →</a>
+          <a class="button button--primary" href="/contact/">自店舗の削減額を無料で確認する →</a>
         </div>
       </div>
     </section>
@@ -695,7 +708,7 @@
               <span class="sim-result-label">年間削減額（概算）</span>
               <strong class="sim-result-value sim-result-value--large" id="sim-annual">—</strong>
             </div>
-            <a class="button button--primary" id="sim-cta" href="/contact/" target="_blank" rel="noopener" style="margin-top:24px">この削減額で相談してみる →</a>
+            <a class="button button--primary" id="sim-cta" href="/contact/" style="margin-top:24px">この削減額で相談してみる →</a>
           </div>
         </div>
         <p class="fine-print" style="margin-top:28px">※概算目安です。実際の削減額は手数料率・月間売上・決済業種などにより異なります。入金はお振込月1〜2回・振込手数料500円/回が発生します。詳細は無料相談でご確認ください。</p>
@@ -725,7 +738,7 @@
         <div style="margin-top:56px;text-align:center;padding:40px;background:var(--surface);border:1px solid var(--border)">
           <p style="font-size:15px;font-weight:500;margin-bottom:8px">自分のお店ではどうなるか、気になりませんか？</p>
           <p style="font-size:13px;color:var(--muted);margin-bottom:24px">導入事例と同じように、<strong>まずは料率と削減見込みを確認するだけでOKです</strong></p>
-          <a class="button button--primary" href="/contact/" target="_blank" rel="noopener">うちの店でも相談してみる →</a>
+          <a class="button button--primary" href="/contact/">うちの店でも相談してみる →</a>
         </div>
       </div>
     </section>
@@ -754,7 +767,7 @@
           <article class="flow-step"><span class="flow-num">04</span><h3>お申し込み</h3><p>内容にご納得いただけた場合のみ、お手続きへ進みます。</p></article>
         </div>
         <div style="margin-top: 48px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
-          <a class="button button--primary" href="/contact/" target="_blank" rel="noopener" style="min-width:200px; font-size:14px;">無料で相談する →</a>
+          <a class="button button--primary" href="/contact/" style="min-width:200px; font-size:14px;">フォームで無料相談 →</a>
           <a class="button button--line" href="https://lin.ee/8MZB401J" target="_blank" rel="noopener" style="min-width:200px; font-size:14px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>LINEで相談する</a>
         </div>
         <div class="flow-visual" style="margin-top:42px;">
@@ -786,7 +799,7 @@
       <div class="container cta-inner">
         <div><p class="eyebrow">Free Consultation</p><h2 class="section-title" id="cta-title">決済コストを、<br>一度見直してみませんか。</h2><p>ご相談だけでもOKです。フォームから「詳細希望」とお送りいただければ、担当者より折り返しご連絡します。</p></div>
         <div style="display:flex;flex-direction:column;gap:12px;align-items:stretch;">
-          <a class="button button--primary" href="/contact/" target="_blank" rel="noopener">無料相談はこちら →</a>
+          <a class="button button--primary" href="/contact/">フォームで無料相談 →</a>
           <a class="button button--line" href="https://lin.ee/8MZB401J" target="_blank" rel="noopener" style="justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>LINEで相談する</a>
         </div>
       </div>
@@ -795,7 +808,7 @@
 
   <footer>
     <div class="container footer-inner">
-      <div><div class="footer-brand">PUNCHLINE TOKYO</div></div>
+      <div><div class="footer-brand">PUNCHLINE TOKYO</div><nav class="footer-links" aria-label="フッターナビ"><a href="/">会社TOP</a><a href="/cashless/">キャッシュレス</a><a href="/cashless/zentoshin-switch/">全東信切替相談</a><a href="/contact/">お問い合わせ</a></nav></div>
       <div class="footer-meta">株式会社PUNCHLINE TOKYO<br>代表事務所：〒107-0061 東京都港区北青山3-3-1 アールキューブ青山3階<br>EPARKフィナンシャルパートナーズ公式代理店<br>© 2026 PUNCHLINE TOKYO</div>
     </div>
   </footer>
@@ -865,7 +878,7 @@
       <li><a href="#simulator">シミュレーター</a></li>
       <li><a href="#flow">導入の流れ</a></li>
       <li><a href="#faq">よくある質問</a></li>
-      <li><a class="mm-cta" href="/contact/" target="_blank" rel="noopener">無料相談はこちら →</a></li>
+      <li><a class="mm-cta" href="/contact/">フォームで無料相談 →</a></li>
     </ul>
   </nav>
 
@@ -949,7 +962,8 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="white" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
       LINEで無料相談
     </a>
-    <a class="btn-form" href="/contact/" target="_blank" rel="noopener">フォームで相談</a>
+    <a class="btn-form" href="/contact/">フォームで相談</a>
   </div>
+  <script>document.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';var m=h.indexOf('lin.ee')>-1?'line':h.indexOf('/contact/')===0?'form':null;if(m&&typeof gtag==='function')gtag('event','contact_intent',{method:m,page_path:location.pathname});});</script>
 </body>
 </html>

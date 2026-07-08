@@ -16,8 +16,8 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"Organization","name":"株式会社PUNCHLINE TOKYO","url":"https://pl-tokyo.com/","logo":{"@type":"ImageObject","url":"https://pl-tokyo.com/images/apple-touch-icon.png"},"sameAs":[],"areaServed":"JP","description":"SEO・MEO・GEO（AI検索対策）、Webサイト制作、キャッシュレス決済導入支援を提供するマーケティング会社。"},
-    {"@type":"WebSite","name":"PUNCHLINE TOKYO","url":"https://pl-tokyo.com/","potentialAction":{"@type":"SearchAction","target":"https://pl-tokyo.com/?s={search_term_string}","query-input":"required name=search_term_string"}},
-    {"@type":"Service","name":"マーケティング・Web制作・キャッシュレス導入支援","provider":{"@type":"Organization","name":"株式会社PUNCHLINE TOKYO","url":"https://pl-tokyo.com/"},"areaServed":"JP","description":"SEO・MEO・GEO対策、Webサイト制作、キャッシュレス決済導入支援を提供。飲食・美療・医療など幅広い業種に対応。"}
+    {"@type":"WebSite","name":"PUNCHLINE TOKYO","url":"https://pl-tokyo.com/"},
+    {"@type":"Service","name":"マーケティング・Web制作・キャッシュレス導入支援","provider":{"@type":"Organization","name":"株式会社PUNCHLINE TOKYO","url":"https://pl-tokyo.com/"},"areaServed":"JP","description":"SEO・MEO・GEO対策、Webサイト制作、キャッシュレス決済導入支援を提供。飲食・美容・医療など幅広い業種に対応。"}
   ]}
   </script>
   <!-- Favicon -->
@@ -724,9 +724,25 @@
       border-left:1px solid rgba(255,255,255,.1)}
     .sticky-lp-bar .btn-form:active{background:#1c1c1c}
     @media(min-width:769px){.sticky-lp-bar{display:none}}
+
+    /* Conversion-first UI */
+    html{scroll-padding-top:88px}
+    body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    a,button,input,textarea{touch-action:manipulation}
+    a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid rgba(74,144,217,.45);outline-offset:3px}
+    .skip-link-global{position:fixed;left:12px;top:10px;z-index:10000;transform:translateY(-160%);background:#111;color:#fff;padding:10px 16px;font-size:14px;font-weight:700}.skip-link-global:focus{transform:none}
+    nav{padding:18px 42px;background:rgba(250,250,250,.94);border-bottom:1px solid var(--border);backdrop-filter:blur(14px)}
+    nav::after{display:none}.nav-links{align-items:center;gap:30px}.nav-links a{font-size:12px;font-weight:400;letter-spacing:.12em}
+    .nav-cashless>a{padding:10px 15px;border:1px solid var(--accent);color:#2369b0!important}.nav-contact>a{padding:11px 17px;background:#111;color:#fff!important}
+    .hero-cta{display:flex;flex-wrap:wrap;gap:12px}.hero-cta .btn{min-height:56px;font-size:13px;font-weight:400}.hero-cta .btn-primary{background:#4a90d9;color:#fff;border-color:#4a90d9}.hero-cta .btn-line{background:#06c755;color:#fff;border-color:#06c755}
+    .home-proof{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-block:1px solid var(--border)}.home-proof__item{padding:22px 14px;text-align:center;border-right:1px solid var(--border)}.home-proof__item:last-child{border-right:0}.home-proof__item strong{display:block;color:#2369b0;font-size:21px;font-weight:400}.home-proof__item span{display:block;margin-top:4px;color:#555;font-size:11px}
+    @media(pointer:coarse),(hover:none){*{cursor:auto!important}.cursor,.cursor-ring{display:none!important}}
+    @media(max-width:768px){html{scroll-padding-top:72px}nav{padding:17px 20px}.hero-sub{font-size:14px;line-height:1.9}.hero-cta{display:grid;grid-template-columns:1fr;width:100%}.hero-cta .btn{width:100%;max-width:360px}.home-proof{grid-template-columns:repeat(2,1fr)}.home-proof__item{padding:16px 8px}.home-proof__item:nth-child(-n+2){border-bottom:1px solid var(--border)}.home-proof__item strong{font-size:18px}.mobile-menu ul{gap:24px}.mobile-menu a{font-size:30px}}
   </style>
 </head>
 <body>
+
+  <a class="skip-link-global" href="#hero">本文へ移動</a>
 
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursorRing"></div>
@@ -736,13 +752,13 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
-      <li class="nav-has-dropdown"><a href="/cashless/">Cashless</a>
+      <li class="nav-has-dropdown nav-cashless"><a href="/cashless/">Cashless</a>
         <ul class="nav-dropdown">
           <li><a href="/cashless/">キャッシュレス決済LP</a></li>
           <li><a href="/cashless/zentoshin-switch/">全東信スイッチ</a></li>
         </ul>
       </li>
-      <li><a href="#contact">Contact</a></li>
+      <li class="nav-contact"><a href="/contact/">Contact</a></li>
     </ul>
     <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
       <span></span><span></span><span></span>
@@ -769,16 +785,10 @@
           BUSINESS<br>
           <span>LAND.</span>
         </h1>
-        <p class="hero-sub">
-          WEBの力で、ビジネスをもっと遠くへ。<br>
-          デジタルマーケティングから営業代行まで、<br>
-          成果にこだわるプロフェッショナル集団。
-        </p>
+        <p class="hero-sub">決済手数料2.45%〜、医療機関1.50%〜。<br>キャッシュレス導入からWEB集客まで、<br>事業の利益と成長を一緒に設計します。</p>
         <div class="hero-cta">
-          <a href="#services" class="btn">
-            Our Services
-            <span class="btn-arrow"></span>
-          </a>
+          <a href="/cashless/" class="btn btn-primary">キャッシュレス導入を見る <span class="btn-arrow"></span></a>
+          <a href="https://lin.ee/8MZB401J" class="btn btn-line" target="_blank" rel="noopener">LINEで無料相談 <span class="btn-arrow"></span></a>
         </div>
       </div>
     </div>
@@ -787,6 +797,13 @@
       <span>Scroll</span>
     </div>
   </section>
+
+  <aside class="home-proof" aria-label="キャッシュレス導入支援の主な特徴">
+    <div class="home-proof__item"><strong>2.45%〜</strong><span>決済手数料</span></div>
+    <div class="home-proof__item"><strong>1.50%〜</strong><span>医療機関</span></div>
+    <div class="home-proof__item"><strong>0円</strong><span>初期費用・月額固定費</span></div>
+    <div class="home-proof__item"><strong>公式代理店</strong><span>申込から導入まで支援</span></div>
+  </aside>
 
   <!-- ABOUT -->
   <section id="about">
@@ -1116,5 +1133,6 @@
     window.addEventListener('scroll',tick,{passive:true});
   })();
   </script>
+  <script>document.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';var m=h.indexOf('lin.ee')>-1?'line':h.indexOf('/contact/')===0?'form':null;if(m&&typeof gtag==='function')gtag('event','contact_intent',{method:m,page_path:location.pathname});});</script>
 </body>
 </html>
