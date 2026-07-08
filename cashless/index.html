@@ -305,7 +305,8 @@
     /* ─── HAMBURGER MENU ─── */
     .hamburger { display: none; }
     @media (max-width: 980px) {
-      .nav a:not(.nav-cta) { display: none; }
+      .nav a { display: none; }
+      .nav .nav-line { display: inline-flex; }
       .hamburger {
         display: flex;
         flex-direction: column;
