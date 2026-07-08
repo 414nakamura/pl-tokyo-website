@@ -82,7 +82,7 @@
     .nav a:hover { color: var(--accent-dark); }
     .nav .nav-cta { border: 1px solid var(--accent); color: var(--accent-dark); padding: 11px 17px; }
 
-    .hero { min-height: 100svh; padding: 110px 0 70px; display: grid; align-items: center; position: relative; overflow: hidden; }
+    .hero { padding: 150px 0 90px; display: grid; position: relative; overflow: hidden; }
     .hero::before { content: 'CASHLESS'; position: absolute; top: 48%; left: 50%; transform: translate(-50%,-50%); color: transparent; font-family: 'Bebas Neue', sans-serif; font-size: clamp(130px, 21vw, 320px); letter-spacing: -.02em; -webkit-text-stroke: 1px rgba(74,144,217,.09); pointer-events: none; white-space: nowrap; }
     .hero-grid { position: relative; display: grid; grid-template-columns: 1fr; gap: 56px; align-items: start; }
     .hero-title { margin-top: 24px; font-family: 'Noto Sans JP', sans-serif; font-size: clamp(44px, 6vw, 78px); font-weight: 700; letter-spacing: 0; line-height: 1.35; text-wrap: balance; }
@@ -272,7 +272,7 @@
       .header-inner { width: calc(100% - 36px); height: 70px; }
       .brand { font-size: 18px; }
       .nav-line { padding: 8px 12px !important; font-size: 10px !important; letter-spacing: .04em !important; }
-      .hero { padding: 88px 0 50px; }
+      .hero { padding: 108px 0 60px; }
       .hero-grid { gap: 42px; }
       .hero-title { font-size: clamp(22px, 7vw, 34px); word-break: normal; overflow-wrap: anywhere; line-height: 1.45; }
       .hero-copy { font-size: 13px; }
@@ -334,39 +334,49 @@
       .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
       .cashless-mobile-menu {
-        display: none;
         position: fixed;
         inset: 0;
         z-index: 350;
-        background: rgba(250,250,250,0.98);
-        backdrop-filter: blur(12px);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: stretch;
+        background: rgba(20,35,40,.28);
+        backdrop-filter: blur(3px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity .3s ease, visibility .3s ease;
       }
-      .cashless-mobile-menu.open { display: flex; }
-      .cashless-mobile-menu ul { list-style: none; text-align: center; display: grid; gap: 28px; padding: 0; }
-      .cashless-mobile-menu li a {
-        font-size: 15px;
-        font-weight: 500;
-        letter-spacing: .12em;
-        text-decoration: none;
-        color: var(--ink);
-        display: block;
-        padding: 4px 0;
+      .cashless-mobile-menu.open { opacity: 1; visibility: visible; pointer-events: auto; }
+      .cashless-mobile-menu ul {
+        width: min(86vw, 360px);
+        height: 100%;
+        padding: 110px 38px 56px;
+        list-style: none;
+        text-align: left;
+        background: rgba(250,250,250,.98);
+        box-shadow: -16px 0 40px rgba(0,0,0,.14);
+        transform: translateX(100%);
+        transition: transform .32s cubic-bezier(.4,0,.2,1);
+        overflow-y: auto;
       }
+      .cashless-mobile-menu.open ul { transform: translateX(0); }
+      .cashless-mobile-menu li + li { margin-top: 28px; }
+      .cashless-mobile-menu li a { font-size: 17px; font-weight: 500; text-decoration: none; color: #111; display: block; }
+      .cashless-mobile-menu .mm-line,
       .cashless-mobile-menu .mm-cta {
-        display: inline-flex;
-        align-items: center;
+        display: flex;
         justify-content: center;
-        margin-top: 12px;
-        padding: 14px 32px;
-        background: var(--accent);
-        color: var(--white) !important;
+        width: 100%;
+        margin-top: 30px;
+        padding: 14px 18px;
+        color: #fff !important;
         font-size: 14px;
-        letter-spacing: .1em;
+        font-weight: 700;
+        border-radius: 3px;
       }
+      .cashless-mobile-menu .mm-line { background: #06C755; }
+      .cashless-mobile-menu .mm-cta { margin-top: 10px; background: #4a90d9; }
     }
 
     /* ─── LINE追従バー ─── */
@@ -883,6 +893,7 @@
       <li><a href="#simulator">シミュレーター</a></li>
       <li><a href="#flow">導入の流れ</a></li>
       <li><a href="#faq">よくある質問</a></li>
+      <li><a class="mm-line" href="https://lin.ee/8MZB401J" target="_blank" rel="noopener">LINEで無料相談 →</a></li>
       <li><a class="mm-cta" href="/contact/">フォームで無料相談 →</a></li>
     </ul>
   </nav>
