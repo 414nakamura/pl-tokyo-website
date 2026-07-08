@@ -152,6 +152,31 @@
       .form-grid { grid-template-columns: 1fr; }
       .head-nav { display: none; }
     }
+
+    /* White contact theme — readability first */
+    body { background: var(--bg); color: var(--ink); font-weight: 400; font-size: 16px; }
+    header { background: rgba(250,250,250,.95); border-bottom-color: var(--line); }
+    .brand { color: var(--ink); }
+    .head-nav a { color: #555; font-size: 12px; font-weight: 600; }
+    .head-nav a:hover { color: var(--blue2); }
+    .head-nav .nav-cta { color: var(--blue2); border-color: var(--blue); }
+    .breadcrumb, .breadcrumb a { color: #666; font-size: 12px; }
+    .page-label { font-size: 13px; font-weight: 700; color: var(--blue2); }
+    .page-title { font-family: 'Noto Sans JP', sans-serif; font-size: clamp(34px,5vw,58px); font-weight: 700; line-height: 1.4; text-wrap: balance; }
+    .page-title em { font-style: normal; color: var(--blue); }
+    .page-desc { color: #444; font-size: 16px; font-weight: 400; }
+    .chip { border-color: var(--line); background: #fff; color: #444; font-size: 13px; font-weight: 500; }
+    .form-group { border-bottom-color: #c9c6c0; }
+    .form-label { color: #444; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: none; }
+    .form-input, .form-textarea { color: var(--ink); font-size: 16px; font-weight: 400; letter-spacing: .01em; }
+    .form-input::placeholder, .form-textarea::placeholder { color: #999; font-size: 14px; }
+    .form-note { color: #666; font-size: 12px; }
+    .form-submit { background: var(--blue); border-color: var(--blue); color: #fff; font-size: 14px; font-weight: 700; letter-spacing: .12em; }
+    .form-submit:hover { background: var(--blue2); border-color: var(--blue2); }
+    #form-success { background: #eaf3fc; color: var(--blue2); }
+    footer { border-top-color: var(--line); background: #f2f0eb; }
+    .foot { color: #666; font-size: 12px; }
+    .foot-logo { color: var(--ink); }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
@@ -213,7 +238,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="address" class="form-label">導入予定の店舗住所 / Address</label>
+          <label for="address" class="form-label">導入検討中の店舗（または事業所）の住所 / Address</label>
           <input type="text" id="address" name="address" class="form-input" placeholder="東京都渋谷区〇〇 1-2-3">
         </div>
         <div class="form-group">
