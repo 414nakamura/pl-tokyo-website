@@ -81,7 +81,7 @@
     .nav a:hover { color: var(--accent-dark); }
     .nav .nav-cta { border: 1px solid var(--accent); color: var(--accent-dark); padding: 11px 17px; }
 
-    .hero { min-height: 100svh; padding: 150px 0 90px; display: grid; align-items: center; position: relative; overflow: hidden; }
+    .hero { min-height: 100svh; padding: 110px 0 70px; display: grid; align-items: center; position: relative; overflow: hidden; }
     .hero::before { content: 'CASHLESS'; position: absolute; top: 48%; left: 50%; transform: translate(-50%,-50%); color: transparent; font-family: 'Bebas Neue', sans-serif; font-size: clamp(130px, 21vw, 320px); letter-spacing: -.02em; -webkit-text-stroke: 1px rgba(74,144,217,.09); pointer-events: none; white-space: nowrap; }
     .hero-grid { position: relative; display: grid; grid-template-columns: 1fr; gap: 56px; align-items: start; }
     .hero-title { margin-top: 24px; font-family: 'Noto Sans JP', sans-serif; font-size: clamp(44px, 6vw, 78px); font-weight: 700; letter-spacing: 0; line-height: 1.35; text-wrap: balance; }
@@ -266,7 +266,7 @@
       .header-inner { width: calc(100% - 36px); height: 70px; }
       .brand { font-size: 18px; }
       .nav-cta { padding: 8px 11px !important; font-size: 9px !important; }
-      .hero { padding: 120px 0 90px; }
+      .hero { padding: 88px 0 50px; }
       .hero-grid { gap: 42px; }
       .hero-title { font-size: clamp(22px, 7vw, 34px); word-break: normal; overflow-wrap: anywhere; line-height: 1.45; }
       .hero-copy { font-size: 13px; }
@@ -848,30 +848,6 @@
     calc();
   })();
   </script>
-  <script>
-  (function() {
-    const btn = document.querySelector('.hamburger');
-    const menu = document.getElementById('cashless-mobile-menu');
-    if (!btn || !menu) return;
-    btn.addEventListener('click', () => {
-      const isOpen = btn.classList.toggle('open');
-      btn.setAttribute('aria-expanded', isOpen);
-      menu.classList.toggle('open', isOpen);
-      menu.setAttribute('aria-hidden', !isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-    menu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        btn.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-        menu.classList.remove('open');
-        menu.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      });
-    });
-  })();
-  </script>
-
   <!-- ハンバーガーメニュー -->
   <nav class="cashless-mobile-menu" id="cashless-mobile-menu" aria-label="モバイルメニュー" aria-hidden="true">
     <ul>
@@ -883,6 +859,30 @@
       <li><a class="mm-cta" href="/contact/" target="_blank" rel="noopener">無料相談はこちら →</a></li>
     </ul>
   </nav>
+
+  <script>
+  (function() {
+    var btn = document.querySelector('.hamburger');
+    var menu = document.getElementById('cashless-mobile-menu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function() {
+      var isOpen = btn.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+      menu.classList.toggle('open', isOpen);
+      menu.setAttribute('aria-hidden', String(!isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    menu.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        menu.classList.remove('open');
+        menu.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      });
+    });
+  })();
+  </script>
 
   <script>
   (function(){
