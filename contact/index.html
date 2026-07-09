@@ -24,13 +24,9 @@
     gtag('js', new Date());
     gtag('config', 'G-XCETDXT170');
   </script>
-  <!-- Clarity -->
+  <!-- Clarity: INP対策のためアイドル後に読み込み -->
   <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window,document,"clarity","script","xirbqmt6z7");
+    (function(){function load(){if(window.__clarityLoaded)return;window.__clarityLoaded=1;(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xirbqmt6z7");}(window.requestIdleCallback||function(cb){setTimeout(cb,2200)})(load);})();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -262,7 +258,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="address" class="form-label">導入予定の店舗住所（任意）</label>
+          <label for="address" class="form-label">導入検討中の店舗（または事業所）の住所（任意）</label>
           <input type="text" id="address" name="address" class="form-input" placeholder="東京都渋谷区〇〇 1-2-3">
         </div>
         <div class="form-group">
@@ -270,23 +266,23 @@
           <div class="inquiry-options" role="group" aria-label="ご相談の内容">
             <label class="inquiry-option">
               <input type="checkbox" name="inquiry_type" value="手数料削減・コスト見直し">
-              <span>💳 決済手数料の削減・コスト見直しをしたい</span>
+              <span>決済手数料の削減・コスト見直しをしたい</span>
             </label>
             <label class="inquiry-option">
               <input type="checkbox" name="inquiry_type" value="全東信からの切替">
-              <span>🔄 全東信から別の決済サービスに切り替えたい</span>
+              <span>全東信から別の決済サービスに切り替えたい</span>
             </label>
             <label class="inquiry-option">
               <input type="checkbox" name="inquiry_type" value="キャッシュレス新規導入">
-              <span>✨ キャッシュレス決済を新規で導入したい</span>
+              <span>キャッシュレス決済を新規で導入したい</span>
             </label>
             <label class="inquiry-option">
               <input type="checkbox" name="inquiry_type" value="マーケティング・Web制作">
-              <span>📈 マーケティング支援・Webサイト制作について聞きたい</span>
+              <span>マーケティング支援・Webサイト制作について聞きたい</span>
             </label>
             <label class="inquiry-option">
               <input type="checkbox" name="inquiry_type" value="まず詳しく話を聞きたい">
-              <span>💬 まず詳しく話を聞きたい（内容未定でOK）</span>
+              <span>まず詳しく話を聞きたい（内容未定でOK）</span>
             </label>
           </div>
         </div>
@@ -363,6 +359,7 @@
           form.reset();
           if (typeof gtag === 'function') {
             gtag('event', 'generate_lead', { event_category: 'contact', event_label: 'contact_page' });
+            gtag('event', 'form_submit_success', { event_category: 'conversion', event_label: 'contact_page', page_path: location.pathname });
           }
         } else {
           errorMsg.style.display = 'block';
