@@ -16,6 +16,8 @@
   <link rel="preload" as="image" href="../../images/hero_payment.jpg" fetchpriority="high">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XCETDXT170"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XCETDXT170');</script>
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1528306210685204');fbq('track','PageView');</script><noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1528306210685204&ev=PageView&noscript=1"/></noscript>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@300;400&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -316,6 +318,9 @@ footer{padding:40px 0;background:#080808;color:#aaa}.foot{display:flex;justify-c
     <section class="section" id="faq"><div class="container"><p class="label">FAQ</p><h2 class="title">よくあるご質問</h2><div class="faq">
       <details><summary>PUNCHLINE TOKYOは全東信の公式な引継ぎ先ですか？</summary><p>いいえ。当社およびEPARKフィナンシャルパートナーズは、株式会社全東信、同社破産管財人、日本飲食団体連合会とは関係ありません。代替となるキャッシュレス決済の導入相談を受け付けています。</p></details>
       <details><summary>どのような業種が申し込めますか？</summary><p>飲食店、小売店、理美容、リラクゼーション、医療機関コードのある病院・クリニックなどが主な対象です。業態、取扱商品、前払い商品の有無などによって申込可否が異なります。</p></details>
+      <details><summary>契約期間の縛りや解約違約金はありますか？</summary><p>※ここに回答テキストが入ります。</p></details>
+      <details><summary>審査に通らなかった場合、費用はかかりますか？</summary><p>※ここに回答テキストが入ります。</p></details>
+      <details><summary>申し込みからどれくらいで使えるようになりますか？</summary><p>※ここに回答テキストが入ります。</p></details>
       <details><summary>未入金の売上について相談できますか？</summary><p>当窓口は代替決済の導入相談窓口であり、未入金売上の回収や破産手続に関する法的助言は行っていません。破産管財人または弁護士、税理士などの専門家へご相談ください。</p></details>
       <details><summary>導入後も相談できますか？</summary><p>端末導入後に操作や運用でお困りの場合は、お問い合わせに応じてご案内します。全件への定期的な自動フォローではありません。</p></details>
     </div></div></section>
@@ -417,5 +422,11 @@ footer{padding:40px 0;background:#080808;color:#aaa}.foot{display:flex;justify-c
     }
   </script>
   <script>document.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';var m=h.indexOf('lin.ee')>-1?'line':h.indexOf('/contact/')===0?'form':null;if(m&&typeof gtag==='function')gtag('event','contact_intent',{method:m,page_path:location.pathname});});</script>
+  <script>
+    // UTMパラメータをsessionStorageに保存（LP→フォームへ引き継ぎ）
+    (function(){var ks=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];var sp=new URLSearchParams(location.search);var o={};var has=false;ks.forEach(function(k){var v=sp.get(k);if(v){o[k]=v;has=true;}});if(has)sessionStorage.setItem('pl_utm',JSON.stringify(o));})();
+    // js-line-cta クリック → Meta Pixel Contact（遷移を妨げない）
+    document.querySelectorAll('.js-line-cta').forEach(function(el){el.addEventListener('click',function(){if(typeof fbq==='function')fbq('track','Contact');});});
+  </script>
 </body>
 </html>
