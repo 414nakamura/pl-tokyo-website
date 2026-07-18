@@ -28,7 +28,7 @@
     /* ===== Header ===== */
     header{position:fixed;inset:0 0 auto;z-index:100;background:rgba(250,250,250,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
     .head{width:min(1320px,calc(100% - 48px));max-width:100%;height:84px;margin:auto;display:flex;align-items:center;justify-content:space-between}
-    .brand{font-family:'Bebas Neue';font-size:23px;letter-spacing:.14em;text-decoration:none;color:var(--ink);white-space:nowrap}
+    .brand{font-family:'Bebas Neue';font-size:23px;letter-spacing:.14em;text-decoration:none;color:var(--ink);white-space:nowrap}.head-nav{display:flex;align-items:center;gap:18px}.head-nav a{font-size:11px;font-weight:700;text-decoration:none;color:var(--muted);white-space:nowrap}.head-nav a:hover{color:var(--blue2)}.head-nav .nav-item{position:relative}.head-nav .nav-item::after{content:'';position:absolute;left:-10px;right:-10px;top:100%;height:18px}.head-nav .nav-priority{padding:9px 12px;border:1px solid rgba(74,144,217,.38);background:rgba(74,144,217,.08);color:var(--blue2)}.head-nav .nav-trigger{display:inline-flex;align-items:center;gap:6px}.head-nav .nav-trigger::after{content:'⌄';font-size:11px;color:var(--blue2)}.head-nav .nav-cta{background:#06C755;color:#fff;padding:10px 14px;border-radius:4px}.head-nav .nav-dropdown{position:absolute;top:calc(100% + 12px);left:50%;min-width:270px;padding:10px;background:rgba(255,255,255,.98);border:1px solid var(--line);box-shadow:0 18px 40px rgba(17,17,17,.12);opacity:0;visibility:hidden;pointer-events:none;transform:translateX(-50%) translateY(8px);transition:.2s;z-index:150}.head-nav .nav-item:hover .nav-dropdown,.head-nav .nav-item:focus-within .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}.head-nav .nav-dropdown a{display:block;padding:10px 12px;border-radius:6px;color:var(--ink);font-size:12px;font-weight:600}.head-nav .nav-dropdown a:hover{background:rgba(74,144,217,.06);color:var(--blue2)}@media(max-width:980px){.head-nav{display:none}}
     .cashless-backbar{position:fixed;z-index:99;top:84px;left:0;right:0;height:38px;display:flex;align-items:center;padding:0 max(24px,calc((100vw - 1320px)/2 + 24px));background:rgba(250,250,250,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
     .back{color:var(--blue2);font-size:11px;font-weight:700;text-decoration:none;white-space:nowrap}
 
@@ -95,6 +95,17 @@
   <header>
     <div class="head">
       <a class="brand" href="/">PUNCHLINE TOKYO</a>
+      <nav class="head-nav" aria-label="グローバルナビゲーション">
+        <div class="nav-item">
+          <a class="nav-priority nav-trigger" href="/cashless/">キャッシュレス決済</a>
+          <div class="nav-dropdown"><a href="/cashless/">低コストキャッシュレス決済</a><a href="/cashless/fees/">料金・手数料</a><a href="/cashless/terminals/">決済端末</a><a href="/cashless/zentoshin-switch/">全東信 切替相談</a><a href="/cashless/industry/">業種別ガイド</a><a href="/cashless/industry/restaurant/">飲食店</a><a href="/cashless/industry/beauty-salon/">美容室・サロン</a><a href="/cashless/industry/clinic/">クリニック・医療機関</a><a href="/cashless/industry/retail/">小売店</a><a href="/cashless/industry/seitai/">整体・整骨院</a></div>
+        </div>
+        <a href="/web-production/">WEB制作</a>
+        <a href="/#about">事業案内</a>
+        <a href="/about/">会社概要</a>
+        <a href="/column/">コラム</a>
+        <a class="nav-cta" href="https://lin.ee/8MZB401J" target="_blank" rel="noopener">LINE相談</a>
+      </nav>
     </div>
   </header>
   <div class="cashless-backbar">
