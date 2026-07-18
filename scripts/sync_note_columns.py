@@ -240,7 +240,7 @@ def site_footer() -> str:
           <a href="/contact/">お問い合わせ</a>
         </nav>
       </div>
-      <a class="footer-note" href="{NOTE_TOP_URL}" target="_blank" rel="noopener" aria-label="PUNCHLINE TOKYOのnoteへ"><img src="/images/noteバナー.png" alt="PUNCHLINE TOKYO note"></a>
+      <a class="footer-note" href="{NOTE_TOP_URL}" target="_blank" rel="noopener" aria-label="PUNCHLINE TOKYOのnoteへ"><img src="/images/note-banner.png" alt="PUNCHLINE TOKYO note"></a>
       <div class="footer-meta">株式会社PUNCHLINE TOKYO<br>EPARKフィナンシャルパートナーズ正規代理店<br>© 2026 PUNCHLINE TOKYO</div>
     </div>
   </footer>
