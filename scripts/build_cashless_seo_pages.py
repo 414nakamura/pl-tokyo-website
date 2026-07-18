@@ -85,7 +85,7 @@ def css() -> str:
 
 
 def header() -> str:
-    links = "".join(
+    links = '<a href="/cashless/">低コストキャッシュレス決済</a><a href="/cashless/fees/">料金・手数料</a><a href="/cashless/terminals/">決済端末</a><a href="/cashless/zentoshin-switch/">全東信 切替相談</a><a href="/cashless/industry/">業種別ガイド</a>' + "".join(
         f'<a href="/cashless/industry/{item["slug"]}/">{item["label"]}</a>' for item in INDUSTRIES
     )
     mobile_links = "".join(
@@ -94,11 +94,7 @@ def header() -> str:
     return f"""<header class="site-header"><div class="container header-inner">
   <a class="brand" href="/">PUNCHLINE TOKYO</a>
   <nav class="nav" aria-label="グローバルナビゲーション">
-    <a class="nav-priority" href="/cashless/">キャッシュレス決済</a>
-    <div class="nav-item"><a class="nav-trigger" href="/cashless/industry/">業種別</a><div class="nav-dropdown">{links}</div></div>
-    <a href="/cashless/fees/">料金・手数料</a>
-    <a href="/cashless/terminals/">決済端末</a>
-    <a href="/cashless/zentoshin-switch/">全東信切替</a>
+    <div class="nav-item nav-cashless-group"><a class="nav-priority nav-trigger" href="/cashless/">キャッシュレス決済</a><div class="nav-dropdown">{links}</div></div>
     <a class="nav-secondary" href="/web-production/">WEB制作</a>
     <a class="nav-secondary" href="/#about">事業案内</a>
     <a class="nav-secondary" href="/about/">会社概要</a>
