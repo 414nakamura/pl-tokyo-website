@@ -99,13 +99,14 @@ def header() -> str:
     <a href="/cashless/fees/">料金・手数料</a>
     <a href="/cashless/terminals/">決済端末</a>
     <a href="/cashless/zentoshin-switch/">全東信切替</a>
-    <a class="nav-secondary" href="/#services">サービス</a>
-    <a class="nav-secondary" href="/#about">会社概要</a>
+    <a class="nav-secondary" href="/web-production/">WEB制作</a>
+    <a class="nav-secondary" href="/#about">事業案内</a>
+    <a class="nav-secondary" href="/about/">会社概要</a>
     <a class="nav-secondary" href="/column/">コラム</a>
     <a class="nav-line" href="{LINE_URL}" target="_blank" rel="noopener">LINE相談</a>
   </nav>
 </div></header>
-<div class="container mobile-menu"><details><summary>キャッシュレスメニュー</summary><a href="/cashless/">キャッシュレス決済</a><a href="/cashless/fees/">料金・手数料</a><a href="/cashless/terminals/">決済端末</a><a href="/cashless/zentoshin-switch/">全東信切替</a><a href="/cashless/industry/">業種別トップ</a>{mobile_links}<a href="/#services">サービス</a><a href="/#about">会社概要</a><a href="/column/">コラム</a></details></div>"""
+<div class="container mobile-menu"><details><summary>キャッシュレスメニュー</summary><a href="/cashless/">キャッシュレス決済</a><a href="/cashless/fees/">料金・手数料</a><a href="/cashless/terminals/">決済端末</a><a href="/cashless/zentoshin-switch/">全東信切替</a><a href="/cashless/industry/">業種別トップ</a>{mobile_links}<a href="/web-production/">WEB制作</a><a href="/#about">事業案内</a><a href="/about/">会社概要</a><a href="/column/">コラム</a></details></div>"""
 
 
 def footer() -> str:
@@ -115,7 +116,7 @@ def footer() -> str:
     <a class="footer-note" href="https://note.com/punchline_tokyo" target="_blank" rel="noopener" aria-label="PUNCHLINE TOKYOのnoteへ"><img src="/images/note-banner.png" alt="PUNCHLINE TOKYO note"></a>
   </div>
   <div class="footer-sitemap" aria-label="フッターサイトマップ">
-    <section class="footer-group"><h3>会社情報</h3><div class="footer-links"><a href="/">会社TOP</a><a href="/#about">私たちについて</a><a href="/#services">提供サービス</a><a href="/contact/">お問い合わせ</a></div></section>
+    <section class="footer-group"><h3>会社情報</h3><div class="footer-links"><a href="/">会社TOP</a><a href="/#about">事業案内</a><a href="/about/">会社概要</a><a href="/web-production/">WEB制作</a><a href="/contact/">お問い合わせ</a></div></section>
     <section class="footer-group"><h3>キャッシュレス</h3><div class="footer-links"><a href="/cashless/">低コストキャッシュレス決済</a><a href="/cashless/fees/">料金・手数料</a><a href="/cashless/terminals/">決済端末</a><a href="/cashless/zentoshin-switch/">全東信 切替相談</a></div></section>
     <section class="footer-group"><h3>業種別ガイド</h3><div class="footer-links"><a href="/cashless/industry/">業種別トップ</a><a href="/cashless/industry/restaurant/">飲食店</a><a href="/cashless/industry/beauty-salon/">美容室・サロン</a><a href="/cashless/industry/clinic/">クリニック・医療機関</a><a href="/cashless/industry/retail/">小売店</a><a href="/cashless/industry/seitai/">整体・整骨院</a></div></section>
     <section class="footer-group"><h3>情報発信・相談</h3><div class="footer-links"><a href="/column/">コラム</a><a href="https://note.com/punchline_tokyo" target="_blank" rel="noopener">note</a><a href="https://lin.ee/8MZB401J" target="_blank" rel="noopener">LINEで無料相談</a><a href="/contact/">フォーム相談</a></div></section>
