@@ -269,23 +269,28 @@ def site_footer() -> str:
       if (!a) return;
       var h = a.getAttribute('href') || '';
       var m = h.indexOf('lin.ee') > -1 ? 'line' : h.indexOf('/contact/') === 0 ? 'form' : null;
-      if (m && typeof gtag === 'function') gtag('event', 'contact_intent', {{ method: m, page_path: location.pathname }});
+      if (m && typeof gtag === 'function') {{
+        gtag('event', 'contact_intent', {{ method: m, page_path: location.pathname, link_text: (a.textContent || '').trim().slice(0, 80) }});
+        gtag('event', m === 'line' ? 'line_click' : 'form_click', {{ event_category: 'conversion_intent', event_label: h, page_path: location.pathname }});
+      }}
     }});
   </script>"""
 
 
 def article_schema(post: NotePost) -> str:
+    self_url = f"{SITE_URL}/column/{post.slug}/"
     data = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": post.title,
         "description": post.excerpt,
         "datePublished": post.published_iso,
-        "dateModified": post.published_iso,
-        "mainEntityOfPage": post.url,
-        "url": post.url,
+        "dateModified": datetime.now().date().isoformat(),
+        "mainEntityOfPage": self_url,
+        "url": self_url,
         "author": {"@type": "Organization", "name": SITE_NAME, "url": SITE_URL},
         "publisher": {"@type": "Organization", "name": SITE_NAME, "url": SITE_URL},
+        "isBasedOn": post.url,
     }
     if post.thumbnail:
         data["image"] = post.thumbnail
@@ -423,7 +428,7 @@ def write_outputs(root: Path, posts: list[NotePost]) -> None:
         (post_dir / "index.html").write_text(render_summary(post), encoding="utf-8")
 
 
-def update_sitemap(root: Path) -> None:
+def update_sitemap(root: Path, posts: Iterable[NotePost]) -> None:
     sitemap = root / "sitemap.xml"
     if not sitemap.exists():
         return
@@ -433,7 +438,7 @@ def update_sitemap(root: Path) -> None:
         entry = f"""  <url><loc>{SITE_URL}/column/</loc><lastmod>{today}</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 """
         content = content.replace("</urlset>", entry + "</urlset>")
-    for post in parse_posts(fetch_rss(NOTE_RSS_URL)):
+    for post in posts:
         loc = f"{SITE_URL}/column/{post.slug}/"
         if loc in content:
             continue
@@ -450,7 +455,7 @@ def main() -> int:
         print("No note posts found.", file=sys.stderr)
         return 1
     write_outputs(root, posts)
-    update_sitemap(root)
+    update_sitemap(root, posts)
     print(f"Generated {len(posts)} note column entries in {root}")
     return 0
 
