@@ -426,16 +426,27 @@
       color: rgba(74,144,217,0.12);
       line-height: 1;
     }
-    .services-list { max-width: 1200px; }
-    .service-item {
+    .services-list {
+      max-width: 1200px;
       display: grid;
-      grid-template-columns: 60px 1fr auto;
-      align-items: center;
-      gap: 40px;
-      padding: 36px 0;
-      border-bottom: 1px solid var(--border);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+    .service-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 190px;
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.72);
+      box-shadow: 0 14px 34px rgba(17,17,17,0.045);
       position: relative;
       overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     }
     .service-item::before {
       content: '';
@@ -445,32 +456,52 @@
       background: linear-gradient(90deg, transparent, rgba(74,144,217,0.04), transparent);
       transition: left 0.5s ease;
     }
+    .service-item:hover {
+      transform: translateY(-4px);
+      border-color: rgba(74,144,217,0.45);
+      box-shadow: 0 18px 44px rgba(17,17,17,0.08);
+    }
     .service-item:hover::before { left: 100%; }
-    .service-item:first-child { border-top: 1px solid var(--border); }
     .service-num {
       font-family: 'Cormorant Garamond', serif;
       font-size: 13px;
-      color: var(--text-dim);
+      color: var(--accent);
       letter-spacing: 0.1em;
     }
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      margin: 18px 0 22px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(74,144,217,0.10);
+      color: var(--accent);
+      font-size: 24px;
+      font-weight: 700;
+    }
     .service-name {
-      font-size: 16px;
+      font-size: 17px;
       letter-spacing: 0.06em;
       color: var(--text-light);
       transition: color 0.3s;
+      line-height: 1.55;
     }
     .service-item:hover .service-name { color: var(--white); }
     .service-name-en {
       font-size: 11px;
       color: var(--text-dim);
       letter-spacing: 0.15em;
-      margin-top: 4px;
+      margin-top: 8px;
+      line-height: 1.4;
     }
     .service-arrow {
-      width: 40px;
+      width: 34px;
       height: 1px;
       background: var(--border);
       position: relative;
+      margin-top: auto;
+      align-self: flex-end;
       transition: width 0.3s, background 0.3s;
     }
     .service-item:hover .service-arrow { width: 60px; background: var(--accent); }
@@ -711,7 +742,9 @@
       .about-heading { font-size: clamp(22px, 7.6vw, 36px); }
       .contact-heading { font-size: clamp(34px, 10.2vw, 52px); }
       .services-header { flex-direction: column; align-items: flex-start; gap: 16px; }
-      .service-item { grid-template-columns: 40px 1fr; gap: 20px; }
+      .services-list { grid-template-columns: 1fr; gap: 14px; }
+      .service-item { min-height: 0; padding: 24px; }
+      .service-icon { width: 48px; height: 48px; margin: 14px 0 18px; font-size: 21px; }
       .service-arrow { display: none; }
       .gallery-section { grid-template-columns: 1fr; }
       .gallery-item {
@@ -893,6 +926,7 @@
     <div class="services-list">
       <div class="service-item reveal">
         <span class="service-num">01</span>
+        <div class="service-icon" aria-hidden="true">W</div>
         <div>
           <div class="service-name">WEBページ制作</div>
           <div class="service-name-en">Web Design &amp; Development</div>
@@ -901,6 +935,7 @@
       </div>
       <div class="service-item reveal">
         <span class="service-num">02</span>
+        <div class="service-icon" aria-hidden="true">M</div>
         <div>
           <div class="service-name">デジタルマーケティング</div>
           <div class="service-name-en">Digital Marketing</div>
@@ -909,6 +944,7 @@
       </div>
       <div class="service-item reveal">
         <span class="service-num">03</span>
+        <div class="service-icon" aria-hidden="true">AD</div>
         <div>
           <div class="service-name">インターネット広告</div>
           <div class="service-name-en">Internet Advertising</div>
@@ -917,6 +953,7 @@
       </div>
       <a class="service-item reveal" href="/cashless/" style="text-decoration:none;color:inherit;cursor:pointer;">
         <span class="service-num">04</span>
+        <div class="service-icon" aria-hidden="true">¥</div>
         <div>
           <div class="service-name">低コスト型キャッシュレスサービス</div>
           <div class="service-name-en">Low-Cost Cashless Solutions</div>
@@ -925,6 +962,7 @@
       </a>
       <div class="service-item reveal">
         <span class="service-num">05</span>
+        <div class="service-icon" aria-hidden="true">S</div>
         <div>
           <div class="service-name">営業代行業務</div>
           <div class="service-name-en">Sales Outsourcing</div>
@@ -933,6 +971,7 @@
       </div>
       <div class="service-item reveal">
         <span class="service-num">06</span>
+        <div class="service-icon" aria-hidden="true">C</div>
         <div>
           <div class="service-name">セールスアウトソーシング コンサルティング</div>
           <div class="service-name-en">Sales Outsourcing Consulting</div>
