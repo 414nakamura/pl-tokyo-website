@@ -183,6 +183,9 @@
     footer { border-top-color: var(--line); background: #f2f0eb; }
     .foot { color: #666; font-size: 12px; }
     .foot-logo { color: var(--ink); }
+    .foot-note{display:inline-flex;max-width:160px;opacity:.9;transition:opacity .25s,transform .25s}
+    .foot-note:hover{opacity:1;transform:translateY(-1px)}
+    .foot-note img{display:block;width:100%;height:auto;border-radius:6px}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
@@ -308,6 +311,7 @@
     <div class="foot">
       <div class="foot-logo">PUNCHLINE TOKYO</div>
       <div>株式会社PUNCHLINE TOKYO｜EPARKフィナンシャルパートナーズ正規代理店｜<a href="/column/">コラム</a></div>
+      <a class="foot-note" href="https://note.com/punchline_tokyo" target="_blank" rel="noopener" aria-label="PUNCHLINE TOKYOのnoteへ"><img src="/images/noteバナー.png" alt="PUNCHLINE TOKYO note"></a>
       <div>© 2026 PUNCHLINE TOKYO</div>
     </div>
   </footer>
