@@ -374,6 +374,17 @@
   </script>
   <!-- PC右サイドLINEタブ -->
   <style>
+  .pc-cashless-tab{position:fixed;right:0;top:calc(50% + 178px);z-index:399;display:none;
+    width:132px;border-radius:14px 0 0 14px;background:#2369b0;overflow:hidden;
+    will-change:transform;transform:translateX(calc(100% + 2px)) translateY(-50%);
+    transition:transform .38s cubic-bezier(.4,0,.2,1);
+    box-shadow:-10px 0 26px rgba(35,105,176,.22),-2px 0 8px rgba(0,0,0,.12)}
+  .pc-cashless-tab.is-visible{transform:translateX(0) translateY(-50%)}
+  .pc-cashless-tab a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+    min-height:118px;padding:16px 12px;color:#fff;text-decoration:none;font-size:13px;font-weight:800;
+    line-height:1.5;text-align:center;letter-spacing:.04em;word-break:keep-all}
+  .pc-cashless-tab small{display:block;font-size:10px;font-weight:700;letter-spacing:.16em;opacity:.72;text-transform:uppercase}
+  .pc-cashless-tab span{display:block}
   .pc-line-tab{position:fixed;right:0;top:50%;z-index:400;display:none;
     will-change:transform;transform:translateX(calc(100% + 2px));
     transition:transform .38s cubic-bezier(.4,0,.2,1);
@@ -389,8 +400,14 @@
   .pc-line-tab svg{width:24px;height:24px;flex-shrink:0}
   .line-tab-label{display:block}
   .line-tab-qr{display:block;width:96px;height:96px;padding:5px;border-radius:8px;background:#fff;object-fit:contain;box-shadow:0 4px 12px rgba(0,0,0,.16)}
-  @media(min-width:769px){.pc-line-tab{display:block}}
+  @media(min-width:769px){.pc-line-tab,.pc-cashless-tab{display:block}}
   </style>
+  <div class="pc-cashless-tab" id="pc-cashless-tab" aria-hidden="true">
+    <a href="/cashless/" aria-label="低コストキャッシュレス決済サービスを見る">
+      <small>Cashless</small>
+      <span>低コスト<br>キャッシュレス<br>決済</span>
+    </a>
+  </div>
   <div class="pc-line-tab" id="pc-line-tab" aria-hidden="true">
     <a href="https://lin.ee/8MZB401J" target="_blank" rel="noopener" aria-label="LINEで無料相談">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
@@ -401,6 +418,15 @@
   <script>
   (function(){
     var el=document.getElementById('pc-line-tab');
+    if(!el)return;
+    var shown=false;
+    function tick(){var s=window.scrollY>380;if(s===shown)return;shown=s;el.classList.toggle('is-visible',s);el.setAttribute('aria-hidden',String(!s));}
+    window.addEventListener('scroll',tick,{passive:true});
+  })();
+  </script>
+  <script>
+  (function(){
+    var el=document.getElementById('pc-cashless-tab');
     if(!el)return;
     var shown=false;
     function tick(){var s=window.scrollY>380;if(s===shown)return;shown=s;el.classList.toggle('is-visible',s);el.setAttribute('aria-hidden',String(!s));}
