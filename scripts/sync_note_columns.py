@@ -181,7 +181,7 @@ def page_shell(title: str, description: str, body: str, canonical: str, og_type:
   <script type="text/javascript">(function(c,l,a,r,i,t,y){{c[a]=c[a]||function(){{(c[a].q=c[a].q||[]).push(arguments)}};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);}})(window,document,"clarity","script","xirbqmt6z7");</script>
   <style>
     *,*::before,*::after{{box-sizing:border-box}}html{{scroll-behavior:smooth}}body{{margin:0;background:#f7f5ef;color:#111;font-family:'Noto Sans JP',sans-serif;line-height:1.85;overflow-x:hidden}}a{{color:inherit}}img{{max-width:100%;display:block}}.container{{width:min(1120px,calc(100% - 40px));margin:auto}}
-    .site-header{{position:sticky;top:0;z-index:50;background:rgba(250,250,250,.94);backdrop-filter:blur(14px);border-bottom:1px solid #e5e1da}}.head{{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}}.brand{{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.14em;text-decoration:none;white-space:nowrap}}.nav{{display:flex;align-items:center;gap:24px}}.nav a{{font-size:12px;font-weight:700;letter-spacing:.08em;text-decoration:none;color:#555}}.nav .line{{background:#06C755;color:#fff;padding:10px 15px;border-radius:4px}}.nav .line:hover{{background:#049c43}}.hamburger{{display:none;background:none;border:0;width:42px;height:42px;position:relative}}.hamburger span{{position:absolute;left:8px;right:8px;height:2px;background:#111}}.hamburger span:nth-child(1){{top:13px}}.hamburger span:nth-child(2){{top:20px}}.hamburger span:nth-child(3){{top:27px}}
+    .site-header{{position:sticky;top:0;z-index:50;background:rgba(250,250,250,.94);backdrop-filter:blur(14px);border-bottom:1px solid #e5e1da}}.head{{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}}.brand{{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.14em;text-decoration:none;white-space:nowrap}}.nav{{display:flex;align-items:center;gap:20px}}.nav a{{font-size:12px;font-weight:600;letter-spacing:.06em;text-decoration:none;color:#555;white-space:nowrap}}.nav .priority{{padding:10px 14px;border:1px solid rgba(74,144,217,.38);background:rgba(74,144,217,.08);color:#2369b0;font-weight:800}}.nav .secondary{{color:#888;font-weight:500}}.nav .line{{background:#06C755;color:#fff;padding:10px 15px;border-radius:4px}}.nav .line:hover{{background:#049c43}}.hamburger{{display:none;background:none;border:0;width:42px;height:42px;position:relative}}.hamburger span{{position:absolute;left:8px;right:8px;height:2px;background:#111}}.hamburger span:nth-child(1){{top:13px}}.hamburger span:nth-child(2){{top:20px}}.hamburger span:nth-child(3){{top:27px}}
     .mobile-menu{{position:fixed;inset:0;z-index:60;background:rgba(20,35,40,.25);backdrop-filter:blur(3px);opacity:0;visibility:hidden;pointer-events:none;transition:.25s}}.mobile-menu.open{{opacity:1;visibility:visible;pointer-events:auto}}.mobile-menu ul{{margin:0 0 0 auto;padding:104px 34px 40px;list-style:none;width:min(86vw,360px);height:100%;background:rgba(250,250,250,.98);box-shadow:-20px 0 40px rgba(0,0,0,.12);transform:translateX(100%);transition:.3s}}.mobile-menu.open ul{{transform:translateX(0)}}.mobile-menu li+li{{margin-top:22px}}.mobile-menu a{{display:block;text-decoration:none;font-weight:700;color:#111}}.mobile-menu .line{{background:#06C755;color:#fff;text-align:center;padding:14px 18px;border-radius:4px}}
     .hero{{padding:92px 0 58px;background:linear-gradient(135deg,#fff,#eef6ff 58%,#f7f5ef)}}.eyebrow{{margin:0 0 18px;color:#4a90d9;font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase}}h1{{margin:0;color:#111;font-size:clamp(38px,7vw,80px);line-height:1.08;letter-spacing:-.03em;text-wrap:balance}}.hero p.lead{{max-width:760px;margin:24px 0 0;color:#555;font-size:clamp(15px,2vw,18px);font-weight:500}}.hero-actions{{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}}.btn{{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 22px;border:1px solid #111;text-decoration:none;font-size:13px;font-weight:800;letter-spacing:.04em}}.btn-primary{{background:#111;color:#fff}}.btn-line{{background:#06C755;border-color:#06C755;color:#fff}}.btn-line:hover{{background:#049c43;border-color:#049c43}}
     .section{{padding:82px 0}}.section.alt{{background:#fff}}.section-head{{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:34px}}.section-title{{margin:0;font-size:clamp(28px,4vw,46px);line-height:1.25;text-wrap:balance}}.section-lead{{max-width:680px;margin:14px 0 0;color:#555;font-weight:500}}.column-grid{{display:grid;grid-template-columns:1fr;gap:16px}}.column-card{{background:#fff;border:1px solid #e5e1da;border-radius:16px;overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,.05);display:grid;grid-template-columns:minmax(210px,31%) 1fr;align-items:stretch}}.column-card img{{width:100%;height:100%;min-height:174px;max-height:220px;aspect-ratio:16/9;object-fit:contain;background:#f6f7f8;padding:10px}}.column-card-body{{padding:22px 26px;display:flex;flex-direction:column;gap:8px;flex:1}}.column-card time,.summary-date{{color:#4a90d9;font-size:11px;font-weight:800;letter-spacing:.08em}}.column-card h2{{margin:0;font-size:clamp(18px,2vw,24px);line-height:1.45;text-wrap:balance}}.column-card p{{margin:0;color:#555;font-size:13px;font-weight:500;line-height:1.85}}.read-more{{margin-top:auto;color:#1f6db4;font-size:14px;font-weight:800;text-decoration:none}}.note-link-box{{margin-top:38px;padding:26px;background:#eef8f2;border:1px solid #bce9c9;border-radius:16px;display:flex;align-items:center;justify-content:space-between;gap:18px}}.note-link-box p{{margin:0;color:#244b33;font-weight:700}}
@@ -206,11 +206,13 @@ def site_header() -> str:
     <div class="container head">
       <a class="brand" href="/">PUNCHLINE TOKYO</a>
       <nav class="nav" aria-label="グローバルナビゲーション">
-        <a href="/">TOP</a>
-        <a href="/cashless/">CASHLESS</a>
-        <a href="/cashless/zentoshin-switch/">全東信切替相談</a>
-        <a href="/column/">COLUMN</a>
-        <a href="/contact/">CONTACT</a>
+        <a class="priority" href="/cashless/">キャッシュレス決済</a>
+        <a href="/cashless/fees/">料金・手数料</a>
+        <a href="/cashless/terminals/">決済端末</a>
+        <a href="/cashless/zentoshin-switch/">全東信切替</a>
+        <a class="secondary" href="/#services">サービス</a>
+        <a class="secondary" href="/#about">会社概要</a>
+        <a class="secondary" href="/column/">コラム</a>
         <a class="line" href="{LINE_URL}" target="_blank" rel="noopener">LINE相談</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
@@ -218,9 +220,12 @@ def site_header() -> str:
   </header>
   <nav class="mobile-menu" id="mobile-menu" aria-label="モバイルメニュー" aria-hidden="true">
     <ul>
-      <li><a href="/">TOP</a></li>
-      <li><a href="/cashless/">キャッシュレス総合</a></li>
-      <li><a href="/cashless/zentoshin-switch/">全東信切替相談</a></li>
+      <li><a href="/cashless/">キャッシュレス決済</a></li>
+      <li><a href="/cashless/fees/">料金・手数料</a></li>
+      <li><a href="/cashless/terminals/">決済端末</a></li>
+      <li><a href="/cashless/zentoshin-switch/">全東信切替</a></li>
+      <li><a href="/#services">サービス</a></li>
+      <li><a href="/#about">会社概要</a></li>
       <li><a href="/column/">コラム</a></li>
       <li><a href="/contact/">お問い合わせ</a></li>
       <li><a class="line" href="{LINE_URL}" target="_blank" rel="noopener">LINEで無料相談</a></li>

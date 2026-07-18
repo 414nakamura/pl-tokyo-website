@@ -272,7 +272,7 @@
     @media (max-width: 980px) {
       .container { width: min(100% - 64px, 900px); }
       .nav a { display: none; }
-      .nav .nav-line { display: inline-flex; }
+      .nav .nav-priority{padding:10px 14px;border:1px solid rgba(74,144,217,.38);background:rgba(74,144,217,.08);color:var(--accent-dark)!important;font-weight:700!important}.nav-secondary{color:#8a8a8a!important;font-weight:500!important}.nav-line { display: inline-flex; }
       .nav { margin-left: auto; margin-right: 54px; }
       .hero-grid, .story-grid, .cta-inner { grid-template-columns: 1fr; }
       .rate-panel { max-width: 620px; }
@@ -582,22 +582,20 @@
     <div class="header-inner">
       <a class="brand" href="/">PUNCHLINE TOKYO</a>
       <nav class="nav" aria-label="ページ内ナビゲーション">
-        <a href="/cashless/">低コストキャッシュレス決済サービス</a>
+        <a class="nav-priority" href="/cashless/">キャッシュレス決済</a>
         <div class="nav-item">
-          <a class="nav-trigger" href="/cashless/industry/">業種別ガイド</a>
+          <a class="nav-trigger" href="/cashless/industry/">業種別</a>
           <div class="nav-dropdown">
-            <a href="/cashless/industry/restaurant/">飲食店</a>
-            <a href="/cashless/industry/beauty-salon/">美容室・サロン</a>
-            <a href="/cashless/industry/clinic/">クリニック・医療機関</a>
-            <a href="/cashless/industry/retail/">小売店</a>
-            <a href="/cashless/industry/seitai/">整体・整骨院</a>
+            <a href="/cashless/industry/restaurant/">飲食店</a><a href="/cashless/industry/beauty-salon/">美容室・サロン</a><a href="/cashless/industry/clinic/">クリニック・医療機関</a><a href="/cashless/industry/retail/">小売店</a><a href="/cashless/industry/seitai/">整体・整骨院</a>
           </div>
         </div>
         <a href="/cashless/fees/">料金・手数料</a>
         <a href="/cashless/terminals/">決済端末</a>
-        <a href="/cashless/zentoshin-switch/">全東信スイッチ</a>
+        <a href="/cashless/zentoshin-switch/">全東信切替</a>
+        <a class="nav-secondary" href="/#services">サービス</a>
+        <a class="nav-secondary" href="/#about">会社概要</a>
+        <a class="nav-secondary" href="/column/">コラム</a>
         <a class="nav-line" href="https://lin.ee/8MZB401J" target="_blank" rel="noopener">LINE相談</a>
-        <a class="nav-cta" href="/contact/">フォーム相談</a>
       </nav>
       <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="cashless-mobile-menu">
         <span></span><span></span><span></span>
@@ -958,7 +956,7 @@
   <nav class="cashless-mobile-menu" id="cashless-mobile-menu" aria-label="モバイルメニュー" aria-hidden="true">
     <button class="cashless-mobile-close" type="button" aria-label="メニューを閉じる">×</button>
     <ul>
-      <li><a href="/cashless/">低コストキャッシュレス決済サービス</a></li>
+      <li><a href="/cashless/">キャッシュレス決済</a></li>
       <li><a href="/cashless/fees/">料金・手数料</a></li>
       <li><a href="/cashless/terminals/">決済端末</a></li>
       <li><a href="/cashless/zentoshin-switch/">全東信 切替相談</a></li>
@@ -969,7 +967,10 @@
       <li class="mobile-menu-child"><a href="/cashless/industry/clinic/">クリニック・医療機関</a></li>
       <li class="mobile-menu-child"><a href="/cashless/industry/retail/">小売店</a></li>
       <li class="mobile-menu-child"><a href="/cashless/industry/seitai/">整体・整骨院</a></li>
-      <li><a href="/column/">コラム</a></li>
+      <li class="mobile-menu-label">会社情報</li>
+      <li class="mobile-menu-child"><a href="/#services">サービス</a></li>
+      <li class="mobile-menu-child"><a href="/#about">会社概要</a></li>
+      <li class="mobile-menu-child"><a href="/column/">コラム</a></li>
       <li><a class="mm-line" href="https://lin.ee/8MZB401J" target="_blank" rel="noopener">LINEで無料相談 →</a></li>
       <li><a class="mm-cta" href="/contact/">フォームで無料相談 →</a></li>
     </ul>

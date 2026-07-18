@@ -923,8 +923,7 @@
     a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid rgba(74,144,217,.45);outline-offset:3px}
     .skip-link-global{position:fixed;left:12px;top:10px;z-index:10000;transform:translateY(-160%);background:#111;color:#fff;padding:10px 16px;font-size:14px;font-weight:700}.skip-link-global:focus{transform:none}
     nav{padding:18px 42px;background:rgba(250,250,250,.94);border-bottom:1px solid var(--border);backdrop-filter:blur(14px)}
-    nav::after{display:none}.nav-links{align-items:center;gap:30px}.nav-links a{font-size:12px;font-weight:400;letter-spacing:.12em}
-    .nav-cashless>a{padding:10px 15px;border:1px solid var(--accent);color:#2369b0!important}.nav-contact>a{padding:11px 17px;background:#111;color:#fff!important}
+    nav::after{display:none}.nav-links{align-items:center;gap:22px}.nav-links a{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:none;white-space:nowrap}.nav-links .nav-secondary a{color:#858585;font-weight:500}.nav-main-link{color:#555!important}.nav-cashless>a{padding:10px 16px;border:1px solid rgba(74,144,217,.38);background:rgba(74,144,217,.08);color:#2369b0!important;font-weight:700}.nav-contact>a{padding:11px 17px;background:#111;color:#fff!important}.nav-dropdown{top:calc(100% + 8px)}
     .hero-cta{display:flex;flex-wrap:wrap;gap:12px}.hero-cta .btn{min-height:56px;font-size:13px;font-weight:400}.hero-cta .btn-primary{background:#4a90d9;color:#fff;border-color:#4a90d9}.hero-cta .btn-line{background:#06c755;color:#fff;border-color:#06c755}
     .home-proof{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-block:1px solid var(--border)}.home-proof__item{padding:22px 14px;text-align:center;border-right:1px solid var(--border)}.home-proof__item:last-child{border-right:0}.home-proof__item strong{display:block;color:#2369b0;font-size:21px;font-weight:400}.home-proof__item span{display:block;margin-top:4px;color:#555;font-size:11px}
     @media(pointer:coarse),(hover:none){*{cursor:auto!important}.cursor,.cursor-ring{display:none!important}}
@@ -942,18 +941,21 @@
   <nav>
     <a href="/" class="nav-logo">PUNCHLINE TOKYO</a>
     <ul class="nav-links">
-      <li><a href="#about">会社概要</a></li>
-      <li><a href="#services">サービス</a></li>
-      <li><a href="/column/">コラム</a></li>
-      <li class="nav-has-dropdown nav-cashless"><a href="/cashless/">キャッシュレス</a>
+      <li class="nav-has-dropdown nav-cashless nav-primary"><a href="/cashless/">キャッシュレス決済</a>
         <ul class="nav-dropdown">
-          <li><a href="/cashless/">低コストキャッシュレス決済サービス</a></li>
+          <li><a href="/cashless/">低コストキャッシュレス決済</a></li>
           <li><a href="/cashless/industry/">業種別ガイド</a></li>
           <li><a href="/cashless/fees/">料金・手数料</a></li>
           <li><a href="/cashless/terminals/">決済端末</a></li>
-          <li><a href="/cashless/zentoshin-switch/">全東信スイッチ</a></li>
+          <li><a href="/cashless/zentoshin-switch/">全東信 切替相談</a></li>
         </ul>
       </li>
+      <li><a class="nav-main-link" href="/cashless/fees/">料金・手数料</a></li>
+      <li><a class="nav-main-link" href="/cashless/terminals/">決済端末</a></li>
+      <li><a class="nav-main-link" href="/cashless/zentoshin-switch/">全東信切替</a></li>
+      <li class="nav-secondary"><a href="#services">サービス</a></li>
+      <li class="nav-secondary"><a href="#about">会社概要</a></li>
+      <li class="nav-secondary"><a href="/column/">コラム</a></li>
       <li class="nav-contact"><a href="/contact/">お問い合わせ</a></li>
     </ul>
     <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
@@ -963,14 +965,14 @@
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <button class="mobile-menu-close" type="button" aria-label="メニューを閉じる">×</button>
     <ul>
-      <li><a href="#about">会社概要</a></li>
-      <li><a href="#services">サービス</a></li>
-      <li><a href="/cashless/" class="mobile-menu-cta">キャッシュレス</a></li>
-      <li class="mobile-menu-sub"><a href="/cashless/">低コストキャッシュレス決済サービス</a></li>
+      <li><a href="/cashless/" class="mobile-menu-cta">キャッシュレス決済</a></li>
+      <li class="mobile-menu-sub"><a href="/cashless/">低コストキャッシュレス決済</a></li>
       <li class="mobile-menu-sub"><a href="/cashless/industry/">業種別ガイド</a></li>
       <li class="mobile-menu-sub"><a href="/cashless/fees/">料金・手数料</a></li>
       <li class="mobile-menu-sub"><a href="/cashless/terminals/">決済端末</a></li>
       <li class="mobile-menu-sub"><a href="/cashless/zentoshin-switch/">全東信 切替相談</a></li>
+      <li><a href="#services">サービス</a></li>
+      <li><a href="#about">会社概要</a></li>
       <li><a href="/column/">コラム</a></li>
       <li><a href="#contact">お問い合わせ</a></li>
     </ul>
