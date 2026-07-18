@@ -69,6 +69,7 @@ def build_excerpt(title: str, raw_excerpt: str) -> str:
         "",
         excerpt,
     ).strip()
+    excerpt = re.sub(r"^[。．、，・\s]+", "", excerpt).strip()
 
     if "全東信" in title:
         return (
