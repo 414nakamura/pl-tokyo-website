@@ -5,7 +5,7 @@ Fetch PUNCHLINE TOKYO note RSS and generate HP column pages.
 Policy:
 - note is treated as the full article body.
 - The HP gets an indexable column listing page.
-- Each HP article page is a noindex summary page that links to the original note.
+- Each HP article page is an indexable summary page that links to the original note.
 """
 
 from __future__ import annotations
@@ -399,9 +399,9 @@ def render_summary(post: NotePost) -> str:
         f"{post.title}｜{SITE_NAME}",
         post.excerpt,
         body,
-        post.url,
+        f"{SITE_URL}/column/{post.slug}/",
         og_type="article",
-        robots="noindex, follow",
+        robots="index, follow",
     )
 
 
@@ -431,6 +431,13 @@ def update_sitemap(root: Path) -> None:
     today = datetime.now().date().isoformat()
     if f"{SITE_URL}/column/" not in content:
         entry = f"""  <url><loc>{SITE_URL}/column/</loc><lastmod>{today}</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+"""
+        content = content.replace("</urlset>", entry + "</urlset>")
+    for post in parse_posts(fetch_rss(NOTE_RSS_URL)):
+        loc = f"{SITE_URL}/column/{post.slug}/"
+        if loc in content:
+            continue
+        entry = f"""  <url><loc>{loc}</loc><lastmod>{today}</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 """
         content = content.replace("</urlset>", entry + "</urlset>")
     sitemap.write_text(content, encoding="utf-8")
