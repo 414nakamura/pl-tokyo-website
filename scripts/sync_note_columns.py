@@ -65,7 +65,7 @@ def build_excerpt(title: str, raw_excerpt: str) -> str:
     excerpt = re.sub(r"情報確認日[:：][^。]*", "", excerpt).strip()
     excerpt = re.sub(r"執筆[:：][^。]*", "", excerpt).strip()
     excerpt = re.sub(
-        r"本記事は、EPARKフィナンシャルパートナーズ公式代理店である株式会社PUNCHLINE TOKYOが運営・執筆しています。?",
+        r"本記事は、EPARKフィナンシャルパートナーズ正規代理店である株式会社PUNCHLINE TOKYOが運営・執筆しています。?",
         "",
         excerpt,
     ).strip()
@@ -240,7 +240,7 @@ def site_footer() -> str:
           <a href="/contact/">お問い合わせ</a>
         </nav>
       </div>
-      <div class="footer-meta">株式会社PUNCHLINE TOKYO<br>EPARKフィナンシャルパートナーズ公式代理店<br>© 2026 PUNCHLINE TOKYO</div>
+      <div class="footer-meta">株式会社PUNCHLINE TOKYO<br>EPARKフィナンシャルパートナーズ正規代理店<br>© 2026 PUNCHLINE TOKYO</div>
     </div>
   </footer>
   <div class="sticky-cta" aria-label="固定相談ボタン">

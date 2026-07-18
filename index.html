@@ -433,21 +433,24 @@
       line-height: 1;
     }
     .services-list {
-      max-width: 1200px;
+      max-width: 1040px;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
+      gap: 12px;
     }
     .service-item {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      grid-template-rows: auto auto;
       align-items: flex-start;
-      min-height: 156px;
-      padding: 22px 24px;
+      column-gap: 14px;
+      row-gap: 8px;
+      min-height: 108px;
+      padding: 18px 20px;
       border: 1px solid var(--border);
-      border-radius: 14px;
-      background: rgba(255,255,255,0.72);
-      box-shadow: 0 14px 34px rgba(17,17,17,0.045);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.78);
+      box-shadow: 0 10px 28px rgba(17,17,17,0.04);
       position: relative;
       overflow: hidden;
       text-decoration: none;
@@ -469,51 +472,68 @@
     }
     .service-item:hover::before { left: 100%; }
     .service-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 13px;
+      grid-column: 1;
+      grid-row: 1;
+      align-self: center;
+      min-width: 26px;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
       color: var(--accent);
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
     }
     .service-icon {
-      width: 44px;
-      height: 44px;
-      margin: 12px 0 18px;
-      border-radius: 12px;
+      grid-column: 2;
+      grid-row: 1;
+      width: 34px;
+      height: 34px;
+      margin: 0;
+      border-radius: 10px;
       display: grid;
       place-items: center;
       background: rgba(74,144,217,0.10);
       color: var(--accent);
     }
     .service-icon svg {
-      width: 24px;
-      height: 24px;
+      width: 19px;
+      height: 19px;
       stroke: currentColor;
-      stroke-width: 1.8;
+      stroke-width: 2;
       fill: none;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
     .service-name {
-      font-size: 15px;
-      letter-spacing: 0.06em;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
       color: var(--text-light);
       transition: color 0.3s;
-      line-height: 1.55;
+      line-height: 1.45;
+    }
+    .service-item > div:not(.service-icon):not(.service-arrow) {
+      grid-column: 1 / 4;
+      grid-row: 2;
     }
     .service-item:hover .service-name { color: var(--white); }
     .service-name-en {
-      font-size: 10px;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 9px;
+      font-weight: 500;
       color: var(--text-dim);
-      letter-spacing: 0.15em;
-      margin-top: 5px;
+      letter-spacing: 0.12em;
+      margin-top: 4px;
       line-height: 1.4;
     }
     .service-arrow {
-      width: 28px;
+      grid-column: 3;
+      grid-row: 1;
+      width: 24px;
       height: 1px;
       background: var(--border);
       position: relative;
-      margin-top: auto;
+      margin-top: 17px;
       align-self: flex-end;
       transition: width 0.3s, background 0.3s;
     }
@@ -672,6 +692,21 @@
       transition: color 0.3s;
     }
     .footer-links a:hover { color: var(--accent); }
+    .footer-note {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 180px;
+      opacity: 0.9;
+      transition: opacity 0.25s, transform 0.25s;
+    }
+    .footer-note:hover { opacity: 1; transform: translateY(-1px); }
+    .footer-note img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
 
     /* ─── ANIMATIONS ─── */
     @keyframes fadeUp {
@@ -756,8 +791,8 @@
       .contact-heading { font-size: clamp(34px, 10.2vw, 52px); }
       .services-header { flex-direction: column; align-items: flex-start; gap: 16px; }
       .services-list { grid-template-columns: 1fr; gap: 14px; }
-      .service-item { min-height: 0; padding: 20px; }
-      .service-icon { width: 42px; height: 42px; margin: 12px 0 16px; }
+      .service-item { min-height: 0; padding: 16px 18px; }
+      .service-icon { width: 32px; height: 32px; margin: 0; }
       .service-icon svg { width: 22px; height: 22px; }
       .service-arrow { display: none; }
       .gallery-section { grid-template-columns: 1fr; }
@@ -767,8 +802,9 @@
         aspect-ratio: 3 / 2;
       }
       .gallery-item img { object-position: center; }
-      footer { flex-direction: column; gap: 24px; text-align: center; }
+      footer { flex-direction: column; gap: 20px; text-align: center; }
       .footer-links { display: none; }
+      .footer-note { max-width: 170px; }
       body { padding-bottom: 56px; }
     }
 
@@ -894,7 +930,7 @@
     <div class="home-proof__item"><strong>2.45%〜</strong><span>決済手数料</span></div>
     <div class="home-proof__item"><strong>1.50%〜</strong><span>医療機関</span></div>
     <div class="home-proof__item"><strong>0円</strong><span>初期費用・月額固定費</span></div>
-    <div class="home-proof__item"><strong>公式代理店</strong><span>申込から導入まで支援</span></div>
+    <div class="home-proof__item"><strong>正規代理店</strong><span>申込から導入まで支援</span></div>
   </aside>
 
   <!-- ABOUT -->
@@ -1073,6 +1109,9 @@
   <footer>
     <div class="footer-logo">PUNCHLINE TOKYO</div>
     <p class="footer-copy">&copy; 2025 株式会社PUNCHLINE TOKYO. All rights reserved.</p>
+    <a class="footer-note" href="https://note.com/punchline_tokyo" target="_blank" rel="noopener" aria-label="PUNCHLINE TOKYOのnoteへ">
+      <img src="/images/noteバナー.png" alt="PUNCHLINE TOKYO note">
+    </a>
     <ul class="footer-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
