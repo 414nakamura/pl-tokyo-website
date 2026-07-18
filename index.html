@@ -11,9 +11,14 @@
   <meta property="og:description" content="SEO・MEO・GEO対策、Webサイト制作、キャッシュレス決済導入支援を東京を拠点に提供。飲食・美容・医療など幅広い業種でご対応します。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pl-tokyo.com/">
-  <meta property="og:image" content="https://pl-tokyo.com/images/hero_payment.jpg">
+  <meta property="og:image" content="https://pl-tokyo.com/images/office.jpg">
+  <meta property="og:image:width" content="1536">
+  <meta property="og:image:height" content="1024">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PUNCHLINE TOKYO｜マーケティング・Web制作・キャッシュレス導入支援">
+  <meta name="twitter:description" content="SEO・MEO・GEO対策、Webサイト制作、キャッシュレス決済導入支援を東京を拠点に提供。飲食・美容・医療など幅広い業種でご対応します。">
+  <meta name="twitter:image" content="https://pl-tokyo.com/images/office.jpg">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"Organization","name":"株式会社PUNCHLINE TOKYO","url":"https://pl-tokyo.com/","logo":{"@type":"ImageObject","url":"https://pl-tokyo.com/images/apple-touch-icon.png"},"sameAs":[],"areaServed":"JP","description":"SEO・MEO・GEO（AI検索対策）、Webサイト制作、キャッシュレス決済導入支援を提供するマーケティング会社。"},
@@ -410,7 +415,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      margin-bottom: 80px;
+      margin-bottom: 48px;
       max-width: 1200px;
     }
     .services-heading {
@@ -430,16 +435,16 @@
       max-width: 1200px;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
+      gap: 16px;
     }
     .service-item {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      min-height: 190px;
-      padding: 30px;
+      min-height: 156px;
+      padding: 22px 24px;
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 14px;
       background: rgba(255,255,255,0.72);
       box-shadow: 0 14px 34px rgba(17,17,17,0.045);
       position: relative;
@@ -469,19 +474,26 @@
       letter-spacing: 0.1em;
     }
     .service-icon {
-      width: 54px;
-      height: 54px;
-      margin: 18px 0 22px;
-      border-radius: 14px;
+      width: 44px;
+      height: 44px;
+      margin: 12px 0 18px;
+      border-radius: 12px;
       display: grid;
       place-items: center;
       background: rgba(74,144,217,0.10);
       color: var(--accent);
-      font-size: 24px;
-      font-weight: 700;
+    }
+    .service-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
     .service-name {
-      font-size: 17px;
+      font-size: 15px;
       letter-spacing: 0.06em;
       color: var(--text-light);
       transition: color 0.3s;
@@ -489,14 +501,14 @@
     }
     .service-item:hover .service-name { color: var(--white); }
     .service-name-en {
-      font-size: 11px;
+      font-size: 10px;
       color: var(--text-dim);
       letter-spacing: 0.15em;
-      margin-top: 8px;
+      margin-top: 5px;
       line-height: 1.4;
     }
     .service-arrow {
-      width: 34px;
+      width: 28px;
       height: 1px;
       background: var(--border);
       position: relative;
@@ -504,7 +516,7 @@
       align-self: flex-end;
       transition: width 0.3s, background 0.3s;
     }
-    .service-item:hover .service-arrow { width: 60px; background: var(--accent); }
+    .service-item:hover .service-arrow { width: 44px; background: var(--accent); }
     .service-arrow::after {
       content: '';
       position: absolute;
@@ -743,8 +755,9 @@
       .contact-heading { font-size: clamp(34px, 10.2vw, 52px); }
       .services-header { flex-direction: column; align-items: flex-start; gap: 16px; }
       .services-list { grid-template-columns: 1fr; gap: 14px; }
-      .service-item { min-height: 0; padding: 24px; }
-      .service-icon { width: 48px; height: 48px; margin: 14px 0 18px; font-size: 21px; }
+      .service-item { min-height: 0; padding: 20px; }
+      .service-icon { width: 42px; height: 42px; margin: 12px 0 16px; }
+      .service-icon svg { width: 22px; height: 22px; }
       .service-arrow { display: none; }
       .gallery-section { grid-template-columns: 1fr; }
       .gallery-item {
@@ -816,7 +829,7 @@
   <div class="cursor-ring" id="cursorRing"></div>
 
   <nav>
-    <a href="#hero" class="nav-logo">PUNCHLINE TOKYO</a>
+    <a href="/" class="nav-logo">PUNCHLINE TOKYO</a>
     <ul class="nav-links">
       <li><a href="#about">会社概要</a></li>
       <li><a href="#services">サービス</a></li>
@@ -926,7 +939,9 @@
     <div class="services-list">
       <div class="service-item reveal">
         <span class="service-num">01</span>
-        <div class="service-icon" aria-hidden="true">W</div>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="12" rx="2"/><path d="M4 9h16M9 20h6M12 17v3"/></svg>
+        </div>
         <div>
           <div class="service-name">WEBページ制作</div>
           <div class="service-name-en">Web Design &amp; Development</div>
@@ -935,7 +950,9 @@
       </div>
       <div class="service-item reveal">
         <span class="service-num">02</span>
-        <div class="service-icon" aria-hidden="true">M</div>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 18V8"/><path d="M9 18V5"/><path d="M14 18v-7"/><path d="M19 18V9"/><path d="M3 19h18"/><path d="M5 8l4-3 5 6 5-2"/></svg>
+        </div>
         <div>
           <div class="service-name">デジタルマーケティング</div>
           <div class="service-name-en">Digital Marketing</div>
@@ -944,7 +961,9 @@
       </div>
       <div class="service-item reveal">
         <span class="service-num">03</span>
-        <div class="service-icon" aria-hidden="true">AD</div>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 10v4l4 1 8 4V5L8 9Z"/><path d="M18 9.5a3 3 0 0 1 0 5"/><path d="M8 15l1.5 4"/></svg>
+        </div>
         <div>
           <div class="service-name">インターネット広告</div>
           <div class="service-name-en">Internet Advertising</div>
@@ -953,7 +972,9 @@
       </div>
       <a class="service-item reveal" href="/cashless/" style="text-decoration:none;color:inherit;cursor:pointer;">
         <span class="service-num">04</span>
-        <div class="service-icon" aria-hidden="true">¥</div>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3.5" y="6" width="17" height="12" rx="2"/><path d="M7 10h4M7 14h3"/><path d="M15 9l2 2 2-2"/><path d="M17 11v5"/><path d="M15 13h4"/></svg>
+        </div>
         <div>
           <div class="service-name">低コスト型キャッシュレスサービス</div>
           <div class="service-name-en">Low-Cost Cashless Solutions</div>
@@ -962,7 +983,9 @@
       </a>
       <div class="service-item reveal">
         <span class="service-num">05</span>
-        <div class="service-icon" aria-hidden="true">S</div>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M7 11a4 4 0 1 1 7.5 2"/><path d="M3 20a6 6 0 0 1 8-5.7"/><path d="M14 17l2 2 5-5"/><path d="M17 8h3M18.5 6.5v3"/></svg>
+        </div>
         <div>
           <div class="service-name">営業代行業務</div>
           <div class="service-name-en">Sales Outsourcing</div>
@@ -971,7 +994,9 @@
       </div>
       <div class="service-item reveal">
         <span class="service-num">06</span>
-        <div class="service-icon" aria-hidden="true">C</div>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M5 6h14v10H8l-3 3Z"/><path d="M8 9h8M8 12h5"/><path d="M16 18l2 2 3-4"/></svg>
+        </div>
         <div>
           <div class="service-name">セールスアウトソーシング コンサルティング</div>
           <div class="service-name-en">Sales Outsourcing Consulting</div>
