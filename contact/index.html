@@ -190,25 +190,24 @@
 .footer{background:#050505;color:#aaa;padding:54px 0 42px}.footer-inner{display:block}.footer-top{display:grid;grid-template-columns:minmax(240px,1fr) minmax(220px,320px);gap:30px;align-items:center;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.08)}.footer-brand{font-family:'Bebas Neue';color:#fff;letter-spacing:.15em;font-size:22px}.footer-copy{margin-top:12px;color:#8f8f8f;font-size:12px;line-height:1.9}.footer-note{display:inline-flex;justify-self:end;max-width:320px;opacity:.92;transition:opacity .25s,transform .25s}.footer-note:hover{opacity:1;transform:translateY(-1px)}.footer-note img{display:block;width:100%;height:auto;border-radius:8px}.footer-sitemap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin-top:30px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08)}.footer-group{min-height:205px;padding:24px 22px;background:#050505}.footer-group h3{position:relative;margin:0 0 16px;padding-left:22px;color:#fff;font-size:14px;font-weight:700;letter-spacing:.08em}.footer-group h3:before{content:'›';position:absolute;left:0;top:2px;display:grid;place-items:center;width:16px;height:16px;border-radius:50%;background:var(--blue,#4a90d9);color:#fff;font-size:13px;line-height:1}.footer-links{display:grid;gap:10px;margin-top:0}.footer-links a{position:relative;padding-left:18px;color:#bbb;font-size:12px;line-height:1.55;text-decoration:none;text-underline-offset:3px}.footer-links a:before{content:'›';position:absolute;left:0;color:#8ec2f5;font-weight:700}.footer-links a:hover{color:#8ec2f5}.footer-meta{margin-top:26px;color:#777;font-size:10px;line-height:1.8;text-align:right}
 @media(max-width:900px){.footer-top{grid-template-columns:1fr}.footer-note{justify-self:start;max-width:260px}.footer-sitemap{grid-template-columns:1fr}.footer-group{min-height:auto;padding:22px 20px}.footer-meta{text-align:left}}
 /* Editorial heading wrap */
+html,body{
+  max-width:100%;
+  overflow-x:hidden;
+}
 h1,h2,.section-title,.card h3{
   text-wrap:balance;
-  word-break:keep-all;
+  word-break:normal;
   line-break:strict;
-  overflow-wrap:break-word;
+  overflow-wrap:anywhere;
 }
 .heading-lines .title-line,
 .section-title .title-line,
 .hero h1 .h1-line{
   display:block;
+  width:auto!important;
   max-width:100%;
-}
-.heading-lines .title-line{
-  width:max-content;
-}
-@media(max-width:640px){
-  .heading-lines .title-line{
-    width:auto;
-  }
+  overflow-wrap:anywhere;
+  word-break:normal;
 }
 </style>
   <script type="application/ld+json">
@@ -423,7 +422,7 @@ h1,h2,.section-title,.card h3{
   .pc-cashless-tab.is-visible{transform:translateX(0) translateY(-50%)}
   .pc-cashless-tab a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
     min-height:118px;padding:16px 12px;color:#fff;text-decoration:none;font-size:13px;font-weight:800;
-    line-height:1.5;text-align:center;letter-spacing:.04em;word-break:keep-all}
+    line-height:1.5;text-align:center;letter-spacing:.04em;word-break:normal}
   .pc-cashless-tab small{display:block;font-size:10px;font-weight:700;letter-spacing:.16em;opacity:.72;text-transform:uppercase}
   .pc-cashless-tab span{display:block}
   .pc-line-tab{position:fixed;right:0;top:50%;z-index:400;display:none;
@@ -435,7 +434,7 @@ h1,h2,.section-title,.card h3{
   .pc-line-tab{width:132px;transform:translateX(calc(100% + 2px)) translateY(-50%)}
   .pc-line-tab a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
     padding:16px 12px 14px;color:#fff;text-decoration:none;font-size:14px;font-weight:800;
-    letter-spacing:.02em;line-height:1.45;text-align:center;word-break:keep-all;overflow-wrap:normal;
+    letter-spacing:.02em;line-height:1.45;text-align:center;word-break:normal;overflow-wrap:normal;
     writing-mode:horizontal-tb;-webkit-tap-highlight-color:transparent}
   .pc-line-tab a:active{background:#05a744}
   .pc-line-tab svg{width:24px;height:24px;flex-shrink:0}
