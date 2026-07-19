@@ -190,7 +190,27 @@ def page_shell(title: str, description: str, body: str, canonical: str, og_type:
     .sticky-cta{{position:fixed;right:18px;bottom:18px;z-index:55;display:flex;gap:10px}}.sticky-cta a{{display:flex;align-items:center;justify-content:center;min-height:46px;padding:12px 16px;border-radius:6px;text-decoration:none;font-size:12px;font-weight:800;box-shadow:0 12px 24px rgba(0,0,0,.16)}}.sticky-cta .line{{background:#06C755;color:#fff}}.sticky-cta .form{{background:#111;color:#fff}}.floating-line-qr{{position:fixed;right:0;top:50%;z-index:56;width:132px;border-radius:14px 0 0 14px;background:#06C755;overflow:hidden;box-shadow:-10px 0 30px rgba(6,199,85,.28),-2px 0 8px rgba(0,0,0,.14);transform:translateX(calc(100% + 2px)) translateY(-50%);transition:transform .38s cubic-bezier(.4,0,.2,1)}}.floating-line-qr.is-visible{{transform:translateX(0) translateY(-50%)}}.floating-line-qr a{{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:16px 12px 14px;color:#fff;text-decoration:none;font-size:14px;font-weight:900;line-height:1.45;text-align:center;word-break:keep-all}}.floating-line-qr img{{display:block;width:96px;height:96px;padding:5px;border-radius:8px;background:#fff;object-fit:contain;box-shadow:0 4px 12px rgba(0,0,0,.16)}}
     @media(max-width:900px){{.nav{{display:none}}.hamburger{{display:block}}.column-card{{grid-template-columns:1fr}}.column-card img{{height:auto;min-height:0}}.section-head{{display:block}}.footer-top{{grid-template-columns:1fr}}.footer-note{{justify-self:start;max-width:260px}}.footer-sitemap{{grid-template-columns:1fr}}.footer-group{{min-height:auto;padding:22px 20px}}.footer-meta{{text-align:left}}}}
     @media(max-width:640px){{.container{{width:calc(100% - 32px)}}.head{{height:68px}}.hero{{padding:64px 0 44px}}.hero-actions{{display:grid;grid-template-columns:1fr}}.btn{{width:100%}}.section{{padding:62px 0}}.column-grid{{gap:16px}}.column-card img{{max-height:none}}.column-card-body{{padding:18px}}.column-card h2{{font-size:19px}}.column-card p{{font-size:13px}}.note-link-box{{display:block}}.note-link-box .btn{{margin-top:16px}}.floating-line-qr{{display:none}}.sticky-cta{{left:0;right:0;bottom:0;gap:0}}.sticky-cta a{{flex:1;border-radius:0;min-height:54px}}body{{padding-bottom:54px}}}}
-  </style>
+
+/* Mobile fixed CTA safe-area unification */
+@media(max-width:980px){{
+  .sticky-cta,
+  .sticky-cta-bar,
+  .mobile-line-cta{{
+    bottom:0!important;
+    padding-bottom:env(safe-area-inset-bottom,0px)!important;
+    background:linear-gradient(90deg,#06C755 0 50%,#111 50% 100%)!important;
+  }}
+  .mobile-line-cta{{background:#06C755!important}}
+  .sticky-cta a,
+  .sticky-cta-bar a{{
+    min-height:56px!important;
+    border-radius:0!important;
+  }}
+  body{{
+    padding-bottom:calc(56px + env(safe-area-inset-bottom,0px))!important;
+  }}
+}}
+</style>
 </head>
 <body>
 {body}
