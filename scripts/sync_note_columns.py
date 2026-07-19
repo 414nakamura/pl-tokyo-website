@@ -58,6 +58,34 @@ def strip_tags(value: str) -> str:
     return value
 
 
+def render_title_lines(title: str) -> str:
+    parts = split_title(title)
+    return ''.join(f'<span class="title-line">{html.escape(part)}</span>' for part in parts)
+
+def split_title(title: str) -> list[str]:
+    custom = {
+        '店舗経営と集客に効く、実務目線のコラム。': ['店舗経営と集客に効く、', '実務目線のコラム。'],
+    }
+    title = title.strip()
+    if title in custom:
+        return custom[title]
+    parts: list[str] = []
+    current = ''
+    for ch in title:
+        current += ch
+        if ch in '、。？！」』）)' and current.strip():
+            parts.append(current.strip())
+            current = ''
+    if current.strip():
+        parts.append(current.strip())
+    if len(parts) == 1 and len(title) > 22:
+        for token in ['について、', 'として、', 'から、', 'まで、', 'とは、', 'でも、', 'は、']:
+            if token in title and not title.endswith(token):
+                left, right = title.split(token, 1)
+                parts = [left + token, right]
+                break
+    return [p for p in parts if p]
+
 def build_excerpt(title: str, raw_excerpt: str) -> str:
     """Create a reader-facing HP summary from note RSS text."""
     excerpt = raw_excerpt
@@ -191,6 +219,27 @@ def page_shell(title: str, description: str, body: str, canonical: str, og_type:
     @media(max-width:900px){{.nav{{display:none}}.hamburger{{display:block}}.column-card{{grid-template-columns:1fr}}.column-card img{{height:auto;min-height:0}}.section-head{{display:block}}.footer-top{{grid-template-columns:1fr}}.footer-note{{justify-self:start;max-width:260px}}.footer-sitemap{{grid-template-columns:1fr}}.footer-group{{min-height:auto;padding:22px 20px}}.footer-meta{{text-align:left}}}}
     @media(max-width:640px){{.container{{width:calc(100% - 32px)}}.head{{height:68px}}.hero{{padding:64px 0 44px}}.hero-actions{{display:grid;grid-template-columns:1fr}}.btn{{width:100%}}.section{{padding:62px 0}}.column-grid{{gap:16px}}.column-card img{{max-height:none}}.column-card-body{{padding:18px}}.column-card h2{{font-size:19px}}.column-card p{{font-size:13px}}.note-link-box{{display:block}}.note-link-box .btn{{margin-top:16px}}.floating-line-qr{{display:none}}.sticky-cta{{left:0;right:0;bottom:0;gap:0}}.sticky-cta a{{flex:1;border-radius:0;min-height:54px}}body{{padding-bottom:54px}}}}
 
+/* Editorial heading wrap */
+h1,h2,.section-title,.card h3{{
+  text-wrap:balance;
+  word-break:keep-all;
+  line-break:strict;
+  overflow-wrap:break-word;
+}}
+.heading-lines .title-line,
+.section-title .title-line,
+.hero h1 .h1-line{{
+  display:block;
+  max-width:100%;
+}}
+.heading-lines .title-line{{
+  width:max-content;
+}}
+@media(max-width:640px){{
+  .heading-lines .title-line{{
+    width:auto;
+  }}
+}}
 /* Mobile fixed CTA safe-area unification */
 @media(max-width:980px){{
   .sticky-cta,
@@ -352,7 +401,7 @@ def render_index(posts: Iterable[NotePost]) -> str:
     <section class="hero">
       <div class="container">
         <p class="eyebrow">PUNCHLINE TOKYO COLUMN</p>
-        <h1>店舗経営と集客に効く、<br>実務目線のコラム。</h1>
+        <h1 class="heading-lines"><span class="title-line">店舗経営と集客に効く、</span><span class="title-line">実務目線のコラム。</span></h1>
         <p class="lead">PUNCHLINE TOKYOがnoteで発信している、キャッシュレス決済・店舗運営・Webマーケティングに関する記事を要約して掲載しています。全文はnoteでご確認いただけます。</p>
         <div class="hero-actions">
           <a class="btn btn-line" href="{LINE_URL}" target="_blank" rel="noopener">LINEで無料相談</a>
@@ -411,7 +460,7 @@ def render_summary(post: NotePost) -> str:
         <div class="breadcrumb"><a href="/">ホーム</a> / <a href="/column/">コラム</a> / note要約</div>
         <p class="eyebrow">NOTE SUMMARY</p>
         <time class="summary-date" datetime="{html.escape(post.published_iso)}">{html.escape(post.published)}</time>
-        <h1>{html.escape(post.title)}</h1>
+        <h1 class="heading-lines">{render_title_lines(post.title)}</h1>
       </div>
     </section>
     <section class="section alt">

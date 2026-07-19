@@ -35,6 +35,27 @@
     @media(max-width:900px){.nav{display:none}.hamburger{display:block}.column-card{grid-template-columns:1fr}.column-card img{height:auto;min-height:0}.section-head{display:block}.footer-top{grid-template-columns:1fr}.footer-note{justify-self:start;max-width:260px}.footer-sitemap{grid-template-columns:1fr}.footer-group{min-height:auto;padding:22px 20px}.footer-meta{text-align:left}}
     @media(max-width:640px){.container{width:calc(100% - 32px)}.head{height:68px}.hero{padding:64px 0 44px}.hero-actions{display:grid;grid-template-columns:1fr}.btn{width:100%}.section{padding:62px 0}.column-grid{gap:16px}.column-card img{max-height:none}.column-card-body{padding:18px}.column-card h2{font-size:19px}.column-card p{font-size:13px}.note-link-box{display:block}.note-link-box .btn{margin-top:16px}.floating-line-qr{display:none}.sticky-cta{left:0;right:0;bottom:0;gap:0}.sticky-cta a{flex:1;border-radius:0;min-height:54px}body{padding-bottom:54px}}
 
+/* Editorial heading wrap */
+h1,h2,.section-title,.card h3{
+  text-wrap:balance;
+  word-break:keep-all;
+  line-break:strict;
+  overflow-wrap:break-word;
+}
+.heading-lines .title-line,
+.section-title .title-line,
+.hero h1 .h1-line{
+  display:block;
+  max-width:100%;
+}
+.heading-lines .title-line{
+  width:max-content;
+}
+@media(max-width:640px){
+  .heading-lines .title-line{
+    width:auto;
+  }
+}
 /* Mobile fixed CTA safe-area unification */
 @media(max-width:980px){
   .sticky-cta,
@@ -90,7 +111,7 @@
     <section class="hero">
       <div class="container">
         <p class="eyebrow">PUNCHLINE TOKYO COLUMN</p>
-        <h1>店舗経営と集客に効く、<br>実務目線のコラム。</h1>
+        <h1 class="heading-lines"><span class="title-line">店舗経営と集客に効く、</span><span class="title-line">実務目線のコラム。</span></h1>
         <p class="lead">PUNCHLINE TOKYOがnoteで発信している、キャッシュレス決済・店舗運営・Webマーケティングに関する記事を要約して掲載しています。全文はnoteでご確認いただけます。</p>
         <div class="hero-actions">
           <a class="btn btn-line" href="https://lin.ee/8MZB401J" target="_blank" rel="noopener">LINEで無料相談</a>
@@ -137,7 +158,7 @@
           <article class="column-card">
             <img src="https://assets.st-note.com/production/uploads/images/293031602/rectangle_large_type_2_efa0bf21d874210f3feff614b8552ef5.png?width=800" alt="なぜ現金主義から抜け出せないのか。個人店がキャッシュレスを入れない3つの本音と、数字で見るその答え" loading="lazy">
             <div class="column-card-body">
-              <time datetime="2026-07-09">2026.07.09</time>
+              <time datetime="2026-07-10">2026.07.10</time>
               <h2>なぜ現金主義から抜け出せないのか。個人店がキャッシュレスを入れない3つの本音と、数字で見るその答え</h2>
               <p>記事後半では自社が提供するキャッシュレス決済サービスも紹介していますが、前半の一般的な考え方の部分は、特定の商品・サービスを前提とせず整理しています。</p>
               <a class="read-more" href="/column/nc022ce79adad/">要約を読む →</a>
@@ -146,7 +167,7 @@
           <article class="column-card">
             <img src="https://assets.st-note.com/production/uploads/images/293021666/rectangle_large_type_2_32760480a41a94d96cf8eed213752e05.png?width=800" alt="決済会社の「入金サイクル」、資金繰りに直結します。全東信の件から考える、乗り換え先の見極め方" loading="lazy">
             <div class="column-card-body">
-              <time datetime="2026-07-09">2026.07.09</time>
+              <time datetime="2026-07-10">2026.07.10</time>
               <h2>決済会社の「入金サイクル」、資金繰りに直結します。全東信の件から考える、乗り換え先の見極め方</h2>
               <p>全東信の破産・サービス停止を受け、カード決済が使えない、または今後の入金や切替に不安がある事業者向けに、まず確認すべき公式情報、保管しておきたい売上明細・入金履歴・契約書類、代替決済サービスを選ぶ際の手数料・初期費用・端末・審査・サポートの見方を整理した記事です。</p>
               <a class="read-more" href="/column/n9a9c6f2d02e8/">要約を読む →</a>
@@ -155,7 +176,7 @@
           <article class="column-card">
             <img src="https://assets.st-note.com/production/uploads/images/292977881/rectangle_large_type_2_e30efc22a67b14771adb5c50b84677d9.png?width=800" alt="全東信の破産でカード決済が使えなくなった事業者へ。今のうちに確認しておきたいことと、乗り換え先の選び方" loading="lazy">
             <div class="column-card-body">
-              <time datetime="2026-07-09">2026.07.09</time>
+              <time datetime="2026-07-10">2026.07.10</time>
               <h2>全東信の破産でカード決済が使えなくなった事業者へ。今のうちに確認しておきたいことと、乗り換え先の選び方</h2>
               <p>全東信の破産・サービス停止を受け、カード決済が使えない、または今後の入金や切替に不安がある事業者向けに、まず確認すべき公式情報、保管しておきたい売上明細・入金履歴・契約書類、代替決済サービスを選ぶ際の手数料・初期費用・端末・審査・サポートの見方を整理した記事です。</p>
               <a class="read-more" href="/column/n2c07d3db6638/">要約を読む →</a>

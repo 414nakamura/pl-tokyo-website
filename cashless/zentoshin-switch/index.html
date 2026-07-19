@@ -209,6 +209,27 @@
       .zt-mobile-menu .mm-line{background:#06C755}.zt-mobile-menu .mm-cta{margin-top:10px;background:#4a90d9}
     }
 
+/* Editorial heading wrap */
+h1,h2,.section-title,.card h3{
+  text-wrap:balance;
+  word-break:keep-all;
+  line-break:strict;
+  overflow-wrap:break-word;
+}
+.heading-lines .title-line,
+.section-title .title-line,
+.hero h1 .h1-line{
+  display:block;
+  max-width:100%;
+}
+.heading-lines .title-line{
+  width:max-content;
+}
+@media(max-width:640px){
+  .heading-lines .title-line{
+    width:auto;
+  }
+}
 /* Mobile fixed CTA safe-area unification */
 @media(max-width:980px){
   .sticky-cta,
