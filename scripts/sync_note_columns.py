@@ -241,22 +241,41 @@ h1,h2,.section-title,.card h3{{
 }}
 /* Mobile fixed CTA safe-area unification */
 @media(max-width:980px){{
+  .sticky-lp-bar,
   .sticky-cta,
-  .sticky-cta-bar,
+  .sticky-cta-bar{{
+    bottom:env(safe-area-inset-bottom,0px)!important;
+    padding-bottom:0!important;
+    background:#fafafa!important;
+  }}
+  .sticky,
   .mobile-line-cta{{
-    bottom:0!important;
-    padding-bottom:env(safe-area-inset-bottom,0px)!important;
-    background:linear-gradient(90deg,#06C755 0 50%,#111 50% 100%)!important;
+    bottom:env(safe-area-inset-bottom,0px)!important;
+    padding-bottom:0!important;
   }}
   .mobile-line-cta{{background:#06C755!important}}
+  .sticky-lp-bar a,
   .sticky-cta a,
-  .sticky-cta-bar a{{
+  .sticky-cta-bar a,
+  .sticky a{{
     min-height:56px!important;
     border-radius:0!important;
   }}
-  body{{
-    padding-bottom:calc(56px + env(safe-area-inset-bottom,0px))!important;
+  .sticky-lp-bar::after,
+  .sticky-cta::after,
+  .sticky-cta-bar::after,
+  .sticky::after,
+  .mobile-line-cta::after{{
+    content:'';
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    height:env(safe-area-inset-bottom,0px);
+    background:#fafafa;
+    pointer-events:none;
   }}
+  body{{padding-bottom:calc(56px + env(safe-area-inset-bottom,0px))!important}}
 }}
 </style>
 </head>

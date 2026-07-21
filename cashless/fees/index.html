@@ -15,7 +15,44 @@
   <style>@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
 :root{--ink:#111;--body:#333;--muted:#6d6d6d;--blue:#4a90d9;--blue2:#2369b0;--line:#dedbd5;--paper:#f7f5ef;--pale:#edf7f3;--linegreen:#06C755}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fafafa;color:var(--ink);font-family:'Noto Sans JP',sans-serif;line-height:1.85;letter-spacing:.02em}a{color:inherit}.container{width:min(1120px,calc(100% - 48px));margin:auto}.site-header{position:sticky;top:0;z-index:50;background:rgba(250,250,250,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}.header-inner{height:78px;display:flex;align-items:center;gap:28px}.brand{font-family:'Bebas Neue';font-size:22px;letter-spacing:.15em;text-decoration:none;white-space:nowrap}.nav{margin-left:auto;display:flex;align-items:center;gap:20px}.nav a{font-size:12px;font-weight:600;letter-spacing:.06em;text-decoration:none;text-transform:none;color:var(--muted);white-space:nowrap}.nav-priority{padding:10px 14px;border:1px solid rgba(74,144,217,.38);background:rgba(74,144,217,.08);color:var(--blue2)!important;font-weight:700!important}.nav-secondary{color:#888!important;font-weight:500!important}.nav a:hover{color:var(--blue2)}.nav-item{position:relative}.nav-item::after{content:'';position:absolute;left:-10px;right:-10px;top:100%;height:18px}.nav-trigger{display:inline-flex;align-items:center;gap:6px;line-height:1;vertical-align:middle}.nav-trigger::after{content:'⌄';font-size:12px;color:var(--blue2)}.nav-dropdown{position:absolute;top:calc(100% + 12px);left:50%;min-width:260px;padding:10px;background:rgba(255,255,255,.98);border:1px solid var(--line);box-shadow:0 18px 40px rgba(17,17,17,.12);opacity:0;visibility:hidden;pointer-events:none;transform:translateX(-50%) translateY(8px);transition:.2s;z-index:80}.nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}.nav-dropdown a{display:block;padding:10px 12px;border-radius:6px;color:var(--ink);font-weight:500;letter-spacing:.08em;text-transform:none}.nav-dropdown a:hover{background:rgba(74,144,217,.06);color:var(--blue2)}.nav-line{background:#111;color:#fff!important;padding:11px 16px}.nav-cta{border:1px solid var(--blue);color:var(--blue2)!important;padding:9px 13px}.hero{padding:74px 0 54px;background:linear-gradient(100deg,rgba(250,250,250,.98),rgba(250,250,250,.72)),var(--hero) center/cover}.breadcrumbs{font-size:12px;color:var(--muted);margin-bottom:34px}.breadcrumbs a{color:var(--blue2);text-decoration:none}.eyebrow{color:var(--blue2);font-size:12px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}.hero-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(330px,.72fr);gap:clamp(32px,5vw,72px);align-items:center}.hero-grid>div:first-child{min-width:0;max-width:760px}.hero h1{margin:14px 0 0;font-size:clamp(34px,4.35vw,54px);line-height:1.18;letter-spacing:-.05em;text-wrap:balance;word-break:normal;line-break:strict}.hero h1 .h1-line,.section-title .title-line{display:block;width:auto!important;max-width:100%;overflow-wrap:anywhere;word-break:normal}.hero p{max-width:680px;color:var(--body)}.hero-card{position:relative;z-index:1;min-width:0;background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 20px 60px rgba(17,17,17,.08)}.rate{display:flex;align-items:baseline;gap:10px;color:var(--blue2)}.rate strong{font-size:clamp(54px,8vw,92px);line-height:1;letter-spacing:-.06em}.rate span{font-size:28px;font-weight:900}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:13px 20px;border:1px solid var(--line);font-size:13px;font-weight:900;text-decoration:none}.btn-line{background:var(--linegreen);border-color:var(--linegreen);color:#fff}.btn-primary{background:var(--blue);border-color:var(--blue);color:#fff}.section{padding:76px 0}.section.alt{background:var(--paper)}.section-title{font-size:clamp(28px,4vw,44px);line-height:1.35;letter-spacing:-.03em;text-wrap:balance;word-break:normal;line-break:strict}.lead{color:var(--body);max-width:720px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 14px 34px rgba(17,17,17,.055)}.card h3{font-size:18px;margin:0 0 10px;text-wrap:balance;word-break:normal;line-break:strict}.card p,.card li{color:var(--body);font-size:14px}.card ul{margin:0;padding-left:1.2em}.media{display:grid;grid-template-columns:.95fr 1.05fr;gap:42px;align-items:center}.media img{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 14px 34px rgba(17,17,17,.055)}.device-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}.device{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;text-align:center;box-shadow:0 14px 34px rgba(17,17,17,.055)}.device img{height:160px;width:100%;object-fit:contain}.device h3,.brand-card h3{text-wrap:balance;word-break:normal;line-break:strict}.brand-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.brand-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;text-align:center;box-shadow:0 12px 28px rgba(17,17,17,.05)}.brand-card img{height:54px;max-width:100%;object-fit:contain}.brand-card:nth-child(2) img{height:72px}.cta{background:#111;color:#fff;text-align:center}.cta p{color:#d5d5d5}.cta .section-title .title-line{margin-inline:auto}.footer{background:#050505;color:#aaa;padding:54px 0 42px}.footer-inner{display:block}.footer-top{display:grid;grid-template-columns:minmax(240px,1fr) minmax(220px,320px);gap:30px;align-items:center;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.08)}.footer-brand{font-family:'Bebas Neue';color:#fff;letter-spacing:.15em;font-size:22px}.footer-copy{margin-top:12px;color:#8f8f8f;font-size:12px;line-height:1.9}.footer-note{display:inline-flex;justify-self:end;max-width:320px;opacity:.92;transition:opacity .25s,transform .25s}.footer-note:hover{opacity:1;transform:translateY(-1px)}.footer-note img{display:block;width:100%;height:auto;border-radius:8px}.footer-sitemap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin-top:30px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08)}.footer-group{min-height:205px;padding:24px 22px;background:#050505}.footer-group h3{position:relative;margin:0 0 16px;padding-left:22px;color:#fff;font-size:14px;font-weight:700;letter-spacing:.08em}.footer-group h3:before{content:'›';position:absolute;left:0;top:2px;display:grid;place-items:center;width:16px;height:16px;border-radius:50%;background:var(--blue,#4a90d9);color:#fff;font-size:13px;line-height:1}.footer-links{display:grid;gap:10px;margin-top:0}.footer-links a{position:relative;padding-left:18px;color:#bbb;font-size:12px;line-height:1.55;text-decoration:none;text-underline-offset:3px}.footer-links a:before{content:'›';position:absolute;left:0;color:#8ec2f5;font-weight:700}.footer-links a:hover{color:#8ec2f5}.footer-meta{margin-top:26px;color:#777;font-size:10px;line-height:1.8;text-align:right}.mobile-menu{display:none}
-@media(max-width:900px){.footer-top{grid-template-columns:1fr}.footer-note{justify-self:start;max-width:260px}.footer-sitemap{grid-template-columns:1fr}.footer-group{min-height:auto;padding:22px 20px}.footer-meta{text-align:left}.container{width:calc(100% - 40px)}.nav{display:none}.hero{padding:46px 0}.hero-grid,.media{grid-template-columns:1fr;gap:30px}.hero h1{font-size:clamp(28px,7vw,40px);line-height:1.24;letter-spacing:-.04em}.hero h1 .h1-line,.section-title .title-line{width:auto}.section-title{font-size:clamp(25px,6.4vw,34px);line-height:1.38;letter-spacing:-.025em}.hero-card{padding:22px}.grid,.device-grid,.brand-grid{grid-template-columns:1fr}.section{padding:58px 0}.footer-top{grid-template-columns:1fr}.footer-note{justify-self:start;max-width:260px}.footer-sitemap{grid-template-columns:1fr}.footer-group{min-height:auto;padding:22px 20px}.footer-meta{text-align:left}.mobile-menu{display:block;margin-top:18px}.mobile-menu details{border:1px solid var(--line);background:#fff;padding:14px}.mobile-menu summary{font-weight:900;color:var(--blue2);cursor:pointer}.mobile-menu a{display:block;padding:9px 0;text-decoration:none}.device img{height:130px}}</style>
+@media(max-width:900px){.footer-top{grid-template-columns:1fr}.footer-note{justify-self:start;max-width:260px}.footer-sitemap{grid-template-columns:1fr}.footer-group{min-height:auto;padding:22px 20px}.footer-meta{text-align:left}.container{width:calc(100% - 40px)}.nav{display:none}.hero{padding:46px 0}.hero-grid,.media{grid-template-columns:1fr;gap:30px}.hero h1{font-size:clamp(28px,7vw,40px);line-height:1.24;letter-spacing:-.04em}.hero h1 .h1-line,.section-title .title-line{width:auto}.section-title{font-size:clamp(25px,6.4vw,34px);line-height:1.38;letter-spacing:-.025em}.hero-card{padding:22px}.grid,.device-grid,.brand-grid{grid-template-columns:1fr}.section{padding:58px 0}.footer-top{grid-template-columns:1fr}.footer-note{justify-self:start;max-width:260px}.footer-sitemap{grid-template-columns:1fr}.footer-group{min-height:auto;padding:22px 20px}.footer-meta{text-align:left}.mobile-menu{display:block;margin-top:18px}.mobile-menu details{border:1px solid var(--line);background:#fff;padding:14px}.mobile-menu summary{font-weight:900;color:var(--blue2);cursor:pointer}.mobile-menu a{display:block;padding:9px 0;text-decoration:none}.device img{height:130px}}
+/* Unified smartphone hamburger menu */
+.plt-menu-toggle{appearance:none;-webkit-appearance:none;background:transparent;border:0;cursor:pointer}
+.plt-mobile-menu{display:none}
+@media(max-width:900px){
+  .hamburger,.plt-menu-toggle{display:block!important;position:relative;width:44px;height:44px;min-width:44px;min-height:44px;margin-left:auto;padding:0;background:transparent!important;border:0!important;z-index:80}
+  .hamburger span,.plt-menu-toggle span{position:absolute;left:9px;right:9px;height:2px;background:#111!important;border-radius:999px;transition:transform .24s ease,opacity .24s ease}
+  .hamburger span:nth-child(1),.plt-menu-toggle span:nth-child(1){top:14px}
+  .hamburger span:nth-child(2),.plt-menu-toggle span:nth-child(2){top:21px}
+  .hamburger span:nth-child(3),.plt-menu-toggle span:nth-child(3){top:28px}
+  .plt-mobile-menu{position:fixed;inset:0;display:block!important;z-index:1000;background:#fff;color:#111;opacity:0;visibility:hidden;pointer-events:none;transform:translateX(100%);transition:transform .26s cubic-bezier(.4,0,.2,1),opacity .22s ease,visibility .22s ease}
+  .plt-mobile-menu.open{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(0)}
+  .plt-mobile-menu__panel{height:100%;display:flex;flex-direction:column;background:#fff}
+  .plt-mobile-menu__close{position:absolute;top:max(12px,env(safe-area-inset-top));right:14px;width:48px;height:48px;display:grid;place-items:center;border:0!important;background:transparent!important;color:#111!important;font-size:34px;font-weight:300;line-height:1;z-index:2;cursor:pointer}
+  .plt-mobile-menu__scroll{height:100%;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:calc(max(72px,env(safe-area-inset-top) + 58px)) 22px calc(36px + env(safe-area-inset-bottom))}
+  .plt-mobile-menu__list{display:block!important;width:100%!important;height:auto!important;margin:0!important;padding:0!important;list-style:none!important;background:transparent!important;box-shadow:none!important;transform:none!important}
+  .plt-mobile-menu__list li{margin:0!important;padding:0!important;border-bottom:1px solid #e7e3dc}
+  .plt-mobile-menu__link,.plt-mobile-menu__parent,.plt-mobile-menu__line{width:100%;min-height:58px;display:flex!important;align-items:center;justify-content:space-between;gap:18px;padding:0 4px;text-align:left;text-decoration:none!important;color:#111!important;background:transparent!important;border:0!important;border-radius:0!important;font-family:'Noto Sans JP',sans-serif;font-size:17px!important;font-weight:800;letter-spacing:.02em;line-height:1.5;cursor:pointer}
+  .plt-mobile-menu__line{color:#06C755!important}
+  .plt-mobile-menu__link span,.plt-mobile-menu__line span{color:#999;font-weight:500}
+  .plt-mobile-menu__parent[aria-expanded="true"]{color:#2369b0!important}
+  .plt-mobile-menu__arrow::before{content:'∨';display:inline-block;color:#999;font-size:18px;font-weight:500;transition:transform .24s ease}
+  .plt-mobile-menu__parent[aria-expanded="true"] .plt-mobile-menu__arrow::before{content:'∧';color:#2369b0}
+  .plt-mobile-menu__children{max-height:0;overflow:hidden;margin:0!important;padding:0!important;list-style:none!important;transition:max-height .26s ease}
+  .plt-mobile-menu__children.is-open{max-height:520px}
+  .plt-mobile-menu__children li{border-bottom:0!important}
+  .plt-mobile-menu__children a{display:block!important;min-height:46px;padding:10px 4px 10px 24px;color:#333!important;background:transparent!important;text-decoration:none!important;font-size:15px!important;font-weight:700;line-height:1.55;letter-spacing:.02em}
+  .plt-mobile-menu__children a.is-current,.plt-mobile-menu__link.is-current{color:#2369b0!important}
+  body.plt-menu-open{overflow:hidden;touch-action:none}
+  body.plt-menu-open .sticky-lp-bar,
+  body.plt-menu-open .sticky-cta,
+  body.plt-menu-open .sticky-cta-bar,
+  body.plt-menu-open .mobile-line-cta,
+  body.plt-menu-open .sticky{display:none!important}
+}
+@media(min-width:901px){.plt-mobile-menu{display:none!important}.plt-menu-toggle{display:none!important}}
+
+</style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://pl-tokyo.com/"},{"@type":"ListItem","position":2,"name":"キャッシュレス決済","item":"https://pl-tokyo.com/cashless/"},{"@type":"ListItem","position":3,"name":"キャッシュレス決済の手数料・料金","item":"https://pl-tokyo.com/cashless/fees/"}]}</script>
 </head>
 <body style="--hero:url('/images/store_out_day.jpg')">
@@ -28,9 +65,48 @@
     <a class="nav-secondary" href="/about/">会社概要</a>
     <a class="nav-secondary" href="/column/">コラム</a>
     <a class="nav-line" href="https://lin.ee/8MZB401J" target="_blank" rel="noopener">LINE相談</a>
-  </nav>
+        <button class="hamburger plt-menu-toggle" id="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+    </nav>
 </div></header>
-<div class="container mobile-menu"><details><summary>キャッシュレスメニュー</summary><a href="/cashless/">キャッシュレス決済</a><a href="/cashless/fees/">料金・手数料</a><a href="/cashless/terminals/">決済端末</a><a href="/cashless/zentoshin-switch/">全東信切替</a><a href="/cashless/industry/">業種別トップ</a><a href="/cashless/industry/restaurant/">飲食店</a><a href="/cashless/industry/beauty-salon/">美容室・サロン</a><a href="/cashless/industry/clinic/">クリニック・医療機関</a><a href="/cashless/industry/retail/">小売店</a><a href="/cashless/industry/seitai/">整体・整骨院</a><a href="/web-production/">WEB制作</a><a href="/#about">事業案内</a><a href="/about/">会社概要</a><a href="/column/">コラム</a></details></div>
+
+  <nav class="mobile-menu plt-mobile-menu" id="mobile-menu" aria-label="スマートフォンメニュー" aria-hidden="true">
+    <div class="plt-mobile-menu__panel" role="dialog" aria-modal="true" aria-label="メニュー">
+      <button class="plt-mobile-menu__close mobile-menu-close" type="button" aria-label="メニューを閉じる">×</button>
+      <div class="plt-mobile-menu__scroll">
+        <ul class="plt-mobile-menu__list">
+          <li><a class="plt-mobile-menu__link" href="/">HOME<span aria-hidden="true">＞</span></a></li>
+          <li class="plt-mobile-menu__group">
+            <button class="plt-mobile-menu__parent" type="button" aria-expanded="false" aria-controls="mobile-menu-cashless">キャッシュレス決済<span class="plt-mobile-menu__arrow" aria-hidden="true"></span></button>
+            <ul class="plt-mobile-menu__children" id="mobile-menu-cashless">
+              <li><a href="/cashless/">低コストキャッシュレス決済</a></li>
+              <li><a href="/cashless/fees/">料金・手数料</a></li>
+              <li><a href="/cashless/terminals/">決済端末</a></li>
+              <li><a href="/cashless/zentoshin-switch/">全東信 切替相談</a></li>
+              <li><a href="/cashless/industry/">業種別ガイド</a></li>
+            </ul>
+          </li>
+          <li class="plt-mobile-menu__group">
+            <button class="plt-mobile-menu__parent" type="button" aria-expanded="false" aria-controls="mobile-menu-industry">業種別<span class="plt-mobile-menu__arrow" aria-hidden="true"></span></button>
+            <ul class="plt-mobile-menu__children" id="mobile-menu-industry">
+              <li><a href="/cashless/industry/">業種別トップ</a></li>
+              <li><a href="/cashless/industry/restaurant/">飲食店</a></li>
+              <li><a href="/cashless/industry/beauty-salon/">美容室・サロン</a></li>
+              <li><a href="/cashless/industry/clinic/">クリニック・医療機関</a></li>
+              <li><a href="/cashless/industry/retail/">小売店</a></li>
+              <li><a href="/cashless/industry/seitai/">整体・整骨院</a></li>
+            </ul>
+          </li>
+          <li><a class="plt-mobile-menu__link" href="/web-production/">WEB制作<span aria-hidden="true">＞</span></a></li>
+          <li><a class="plt-mobile-menu__link" href="/#about">事業案内<span aria-hidden="true">＞</span></a></li>
+          <li><a class="plt-mobile-menu__link" href="/about/">会社概要<span aria-hidden="true">＞</span></a></li>
+          <li><a class="plt-mobile-menu__link" href="/column/">コラム<span aria-hidden="true">＞</span></a></li>
+          <li><a class="plt-mobile-menu__link" href="/contact/">お問い合わせ<span aria-hidden="true">＞</span></a></li>
+          <li><a class="plt-mobile-menu__line" href="https://lin.ee/8MZB401J" target="_blank" rel="noopener">LINEで無料相談<span aria-hidden="true">＞</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
 <main>
 <section class="hero"><div class="container"><div class="breadcrumbs"><a href="/">ホーム</a> / <a href="/cashless/">キャッシュレス</a> / 料金・手数料</div><div class="hero-grid"><div><div class="eyebrow">Fees & Cost</div><h1><span class="h1-line">キャッシュレス決済の料金を、</span><span class="h1-line">利益目線で比較する。</span></h1><p>キャッシュレス決済は、導入できることよりも「毎月いくら残るか」が重要です。決済手数料、初期費用、月額固定費、端末費用、入金サイクル、契約条件をまとめて確認しましょう。</p><div class="actions"><a class="btn btn-line" href="https://lin.ee/8MZB401J" target="_blank" rel="noopener">LINEで自店舗の料率を確認 →</a><a class="btn btn-primary" href="/cashless/terminals/">端末も見る →</a></div></div><div class="hero-card"><div class="rate"><strong>2.45</strong><span>%〜</span></div><p><strong>初期費用0円・月額固定費0円。</strong><br>医療機関は1.50%〜のご案内対象となる場合があります。</p><p style="font-size:13px;color:#555">決済手数料・提供条件は業種、取扱商品、審査結果、契約内容により異なります。</p></div></div></div></section>
 <section class="section alt"><div class="container"><div class="eyebrow">Answer First</div><h2 class="section-title"><span class="title-line">料金ページで</span><span class="title-line">まず確認すべき結論</span></h2><div class="grid"><div class="card"><h3>1. 手数料は2.45%〜</h3><p>一定条件を満たした店舗様は、キャッシュレス決済手数料2.45%〜でご案内可能です。</p></div><div class="card"><h3>2. 固定費は0円</h3><p>初期費用・月額固定費を抑えて、導入後の固定コストを増やしにくい設計です。</p></div><div class="card"><h3>3. 医療機関は1.50%〜</h3><p>医療機関コードを持つ病院・クリニック等は、医療機関向け料率の対象となる場合があります。</p></div></div></div></section>
@@ -87,27 +163,191 @@ h1,h2,.section-title,.card h3{
 }
 /* Mobile fixed CTA safe-area unification */
 @media(max-width:980px){
+  .sticky-lp-bar,
   .sticky-cta,
-  .sticky-cta-bar,
+  .sticky-cta-bar{
+    bottom:env(safe-area-inset-bottom,0px)!important;
+    padding-bottom:0!important;
+    background:#fafafa!important;
+  }
+  .sticky,
   .mobile-line-cta{
-    bottom:0!important;
-    padding-bottom:env(safe-area-inset-bottom,0px)!important;
-    background:linear-gradient(90deg,#06C755 0 50%,#111 50% 100%)!important;
+    bottom:env(safe-area-inset-bottom,0px)!important;
+    padding-bottom:0!important;
   }
   .mobile-line-cta{background:#06C755!important}
+  .sticky-lp-bar a,
   .sticky-cta a,
-  .sticky-cta-bar a{
+  .sticky-cta-bar a,
+  .sticky a{
     min-height:56px!important;
     border-radius:0!important;
   }
-  body{
-    padding-bottom:calc(56px + env(safe-area-inset-bottom,0px))!important;
+  .sticky-lp-bar::after,
+  .sticky-cta::after,
+  .sticky-cta-bar::after,
+  .sticky::after,
+  .mobile-line-cta::after{
+    content:'';
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    height:env(safe-area-inset-bottom,0px);
+    background:#fafafa;
+    pointer-events:none;
   }
+  body{padding-bottom:calc(56px + env(safe-area-inset-bottom,0px))!important}
 }
 
 </style>
 <div class="floating-line-qr" id="floating-line-qr" aria-hidden="true"><a href="https://lin.ee/8MZB401J" target="_blank" rel="noopener" aria-label="LINEで無料相談"><span>LINEで<br>無料相談</span><img src="/images/LINE_QRcode.png" alt="LINEで無料相談するQRコード" loading="lazy"></a></div>
 <a class="mobile-line-cta" href="https://lin.ee/8MZB401J" target="_blank" rel="noopener">LINEで無料相談</a>
 <script>(function(){var el=document.getElementById('floating-line-qr');if(!el)return;var shown=false;function tick(){var s=window.scrollY>380;if(s===shown)return;shown=s;el.classList.toggle('is-visible',s);el.setAttribute('aria-hidden',String(!s));}window.addEventListener('scroll',tick,{passive:true});tick();})();</script>
+
+<script>
+(function(){
+  const menu = document.getElementById('mobile-menu');
+  const toggles = Array.from(document.querySelectorAll('.hamburger, .plt-menu-toggle'));
+  if (!menu || !toggles.length || menu.dataset.pltReady === 'true') return;
+  menu.dataset.pltReady = 'true';
+  const closeBtn = menu.querySelector('.plt-mobile-menu__close');
+  const parents = Array.from(menu.querySelectorAll('.plt-mobile-menu__parent'));
+  const links = Array.from(menu.querySelectorAll('a'));
+  const focusablesSelector = 'a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])';
+  let scrollY = 0;
+  let pushedState = false;
+
+  function setActive(){
+    const path = location.pathname.replace(/index\.html$/,'');
+    links.forEach(link => {
+      const href = link.getAttribute('href') || '';
+      if (!href || href.startsWith('http') || href.startsWith('#')) return;
+      const url = new URL(href, location.origin);
+      const normalized = url.pathname.replace(/index\.html$/,'');
+      if (normalized === path) link.classList.add('is-current');
+    });
+    parents.forEach(parent => {
+      const child = document.getElementById(parent.getAttribute('aria-controls'));
+      if (child && child.querySelector('.is-current')) {
+        parent.setAttribute('aria-expanded','true');
+        child.classList.add('is-open');
+      }
+    });
+  }
+
+  function lockScroll(){
+    scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+    document.body.style.position = 'fixed';
+    document.body.style.top = '-' + scrollY + 'px';
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.width = '100%';
+    document.body.classList.add('plt-menu-open');
+  }
+
+  function unlockScroll(){
+    document.body.classList.remove('plt-menu-open');
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.width = '';
+    window.scrollTo(0, scrollY);
+  }
+
+  function openMenu(){
+    if (menu.classList.contains('open')) return;
+    menu.classList.add('open');
+    menu.setAttribute('aria-hidden','false');
+    toggles.forEach(btn => {
+      btn.setAttribute('aria-expanded','true');
+      btn.setAttribute('aria-label','メニューを閉じる');
+    });
+    lockScroll();
+    if (!pushedState) {
+      history.pushState({pltMobileMenu:true}, '', location.href);
+      pushedState = true;
+    }
+    setTimeout(() => closeBtn && closeBtn.focus({preventScroll:true}), 60);
+  }
+
+  function closeMenu(fromPop){
+    if (!menu.classList.contains('open')) return;
+    menu.classList.remove('open');
+    menu.setAttribute('aria-hidden','true');
+    toggles.forEach(btn => {
+      btn.setAttribute('aria-expanded','false');
+      btn.setAttribute('aria-label','メニューを開く');
+    });
+    unlockScroll();
+    if (fromPop) {
+      pushedState = false;
+      return;
+    }
+    if (pushedState) {
+      pushedState = false;
+      history.back();
+    }
+  }
+
+  toggles.forEach(btn => {
+    btn.classList.add('plt-menu-toggle');
+    btn.setAttribute('aria-controls','mobile-menu');
+    btn.addEventListener('click', function(event){
+      event.preventDefault();
+      menu.classList.contains('open') ? closeMenu(false) : openMenu();
+    });
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', () => closeMenu(false));
+
+  parents.forEach(parent => {
+    const child = document.getElementById(parent.getAttribute('aria-controls'));
+    parent.addEventListener('click', () => {
+      const open = parent.getAttribute('aria-expanded') === 'true';
+      parent.setAttribute('aria-expanded', String(!open));
+      if (child) child.classList.toggle('is-open', !open);
+    });
+  });
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('open');
+      menu.setAttribute('aria-hidden','true');
+      toggles.forEach(btn => btn.setAttribute('aria-expanded','false'));
+      unlockScroll();
+    });
+  });
+
+  document.addEventListener('keydown', event => {
+    if (!menu.classList.contains('open')) return;
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      closeMenu(false);
+      return;
+    }
+    if (event.key !== 'Tab') return;
+    const focusables = Array.from(menu.querySelectorAll(focusablesSelector)).filter(el => el.offsetParent !== null || el === closeBtn);
+    if (!focusables.length) return;
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+
+  window.addEventListener('popstate', () => {
+    if (menu.classList.contains('open')) closeMenu(true);
+  });
+
+  setActive();
+})();
+</script>
+
 </body>
 </html>
