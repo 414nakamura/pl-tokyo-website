@@ -119,14 +119,14 @@ h1,h2,.section-title,.card h3{
   .plt-mobile-menu__list li{margin:0!important;padding:0!important;border-bottom:1px solid #e7e3dc}
   .plt-mobile-menu__link,.plt-mobile-menu__parent,.plt-mobile-menu__line{width:100%;min-height:58px;display:flex!important;align-items:center;justify-content:space-between;gap:18px;padding:0 4px;text-align:left;text-decoration:none!important;color:#111!important;background:transparent!important;border:0!important;border-radius:0!important;font-family:'Noto Sans JP',sans-serif;font-size:17px!important;font-weight:800;letter-spacing:.02em;line-height:1.5;cursor:pointer}
   .plt-mobile-menu__line{color:#06C755!important}
-  .plt-mobile-menu__link span,.plt-mobile-menu__line span{color:#999;font-weight:500}
+  .plt-mobile-menu__link .plt-mobile-menu__direct,.plt-mobile-menu__line .plt-mobile-menu__direct{display:inline-grid;place-items:center;width:24px;height:24px;margin-left:auto;color:#aaa;font-size:14px;font-weight:500;line-height:1;letter-spacing:0}.plt-mobile-menu a::before,.plt-mobile-menu a::after,.plt-mobile-menu button::before,.plt-mobile-menu button::after{content:none!important}
   .plt-mobile-menu__parent[aria-expanded="true"]{color:#2369b0!important}
-  .plt-mobile-menu__arrow::before{content:'∨';display:inline-block;color:#999;font-size:18px;font-weight:500;transition:transform .24s ease}
-  .plt-mobile-menu__parent[aria-expanded="true"] .plt-mobile-menu__arrow::before{content:'∧';color:#2369b0}
+  .plt-mobile-menu__arrow::before{content:'＋';display:inline-grid;place-items:center;width:24px;height:24px;color:#999;font-size:18px;font-weight:500;line-height:1;transition:color .24s ease,transform .24s ease}
+  .plt-mobile-menu__parent[aria-expanded="true"] .plt-mobile-menu__arrow::before{content:'−';color:#2369b0}
   .plt-mobile-menu__children{max-height:0;overflow:hidden;margin:0!important;padding:0!important;list-style:none!important;transition:max-height .26s ease}
   .plt-mobile-menu__children.is-open{max-height:520px}
   .plt-mobile-menu__children li{border-bottom:0!important}
-  .plt-mobile-menu__children a{display:block!important;min-height:46px;padding:10px 4px 10px 24px;color:#333!important;background:transparent!important;text-decoration:none!important;font-size:15px!important;font-weight:700;line-height:1.55;letter-spacing:.02em}
+  .plt-mobile-menu__children a{display:block!important;min-height:48px;padding:11px 4px 11px 26px;color:#333!important;background:transparent!important;text-decoration:none!important;font-size:15px!important;font-weight:700;line-height:1.55;letter-spacing:.02em}
   .plt-mobile-menu__children a.is-current,.plt-mobile-menu__link.is-current{color:#2369b0!important}
   body.plt-menu-open{overflow:hidden;touch-action:none}
   body.plt-menu-open .sticky-lp-bar,
@@ -161,7 +161,7 @@ h1,h2,.section-title,.card h3{
       <button class="plt-mobile-menu__close mobile-menu-close" type="button" aria-label="メニューを閉じる">×</button>
       <div class="plt-mobile-menu__scroll">
         <ul class="plt-mobile-menu__list">
-          <li><a class="plt-mobile-menu__link" href="/">HOME<span aria-hidden="true">＞</span></a></li>
+          <li><a class="plt-mobile-menu__link" href="/">HOME<span class="plt-mobile-menu__direct" aria-hidden="true">▶︎</span></a></li>
           <li class="plt-mobile-menu__group">
             <button class="plt-mobile-menu__parent" type="button" aria-expanded="false" aria-controls="mobile-menu-cashless">キャッシュレス決済<span class="plt-mobile-menu__arrow" aria-hidden="true"></span></button>
             <ul class="plt-mobile-menu__children" id="mobile-menu-cashless">
@@ -183,12 +183,12 @@ h1,h2,.section-title,.card h3{
               <li><a href="/cashless/industry/seitai/">整体・整骨院</a></li>
             </ul>
           </li>
-          <li><a class="plt-mobile-menu__link" href="/web-production/">WEB制作<span aria-hidden="true">＞</span></a></li>
-          <li><a class="plt-mobile-menu__link" href="/#about">事業案内<span aria-hidden="true">＞</span></a></li>
-          <li><a class="plt-mobile-menu__link" href="/about/">会社概要<span aria-hidden="true">＞</span></a></li>
-          <li><a class="plt-mobile-menu__link" href="/column/">コラム<span aria-hidden="true">＞</span></a></li>
-          <li><a class="plt-mobile-menu__link" href="/contact/">お問い合わせ<span aria-hidden="true">＞</span></a></li>
-          <li><a class="plt-mobile-menu__line" href="https://lin.ee/8MZB401J" target="_blank" rel="noopener">LINEで無料相談<span aria-hidden="true">＞</span></a></li>
+          <li><a class="plt-mobile-menu__link" href="/web-production/">WEB制作<span class="plt-mobile-menu__direct" aria-hidden="true">▶︎</span></a></li>
+          <li><a class="plt-mobile-menu__link" href="/#about">事業案内<span class="plt-mobile-menu__direct" aria-hidden="true">▶︎</span></a></li>
+          <li><a class="plt-mobile-menu__link" href="/about/">会社概要<span class="plt-mobile-menu__direct" aria-hidden="true">▶︎</span></a></li>
+          <li><a class="plt-mobile-menu__link" href="/column/">コラム<span class="plt-mobile-menu__direct" aria-hidden="true">▶︎</span></a></li>
+          <li><a class="plt-mobile-menu__link" href="/contact/">お問い合わせ<span class="plt-mobile-menu__direct" aria-hidden="true">▶︎</span></a></li>
+          <li><a class="plt-mobile-menu__line" href="https://lin.ee/8MZB401J" target="_blank" rel="noopener">LINEで無料相談<span class="plt-mobile-menu__direct" aria-hidden="true">▶︎</span></a></li>
         </ul>
       </div>
     </div>
