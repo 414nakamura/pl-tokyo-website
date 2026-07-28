@@ -233,7 +233,22 @@ h1,h2,.section-title,.card h3{
     <a class="form" href="/contact/">フォーム相談</a>
   </div>
   <script>
-
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        const open = mobileMenu.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', String(open));
+        mobileMenu.setAttribute('aria-hidden', String(!open));
+      });
+      mobileMenu.addEventListener('click', (event) => {
+        if (event.target === mobileMenu || event.target.closest('a')) {
+          mobileMenu.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+          mobileMenu.setAttribute('aria-hidden', 'true');
+        }
+      });
+    }
     document.addEventListener('click', function(e) {
       var a = e.target.closest('a');
       if (!a) return;
@@ -245,153 +260,8 @@ h1,h2,.section-title,.card h3{
       }
     });
   </script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "キャッシュレス決済の「契約期間の縛り」、乗り換えられない本当の理由は、ここにあります。", "description": "記事後半では自社が提供するキャッシュレス決済サービスも紹介していますが、前半の一般的な考え方の部分は、特定の商品・サービスを前提とせず整理しています。", "datePublished": "2026-07-18", "dateModified": "2026-07-20", "mainEntityOfPage": "https://pl-tokyo.com/column/nf338417e0cd4/", "url": "https://pl-tokyo.com/column/nf338417e0cd4/", "author": {"@type": "Organization", "name": "株式会社PUNCHLINE TOKYO", "url": "https://pl-tokyo.com"}, "publisher": {"@type": "Organization", "name": "株式会社PUNCHLINE TOKYO", "url": "https://pl-tokyo.com"}, "isBasedOn": "https://note.com/punchline_tokyo/n/nf338417e0cd4", "image": "https://assets.st-note.com/production/uploads/images/295358702/rectangle_large_type_2_f4c0cd11ba10df280dee4fdeb48e7f6a.png?width=800"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "キャッシュレス決済の「契約期間の縛り」、乗り換えられない本当の理由は、ここにあります。", "description": "記事後半では自社が提供するキャッシュレス決済サービスも紹介していますが、前半の一般的な考え方の部分は、特定の商品・サービスを前提とせず整理しています。", "datePublished": "2026-07-18", "dateModified": "2026-07-27", "mainEntityOfPage": "https://pl-tokyo.com/column/nf338417e0cd4/", "url": "https://pl-tokyo.com/column/nf338417e0cd4/", "author": {"@type": "Organization", "name": "株式会社PUNCHLINE TOKYO", "url": "https://pl-tokyo.com"}, "publisher": {"@type": "Organization", "name": "株式会社PUNCHLINE TOKYO", "url": "https://pl-tokyo.com"}, "isBasedOn": "https://note.com/punchline_tokyo/n/nf338417e0cd4", "image": "https://assets.st-note.com/production/uploads/images/295358702/rectangle_large_type_2_f4c0cd11ba10df280dee4fdeb48e7f6a.png?width=800"}</script>
   <div class="floating-line-qr" id="floating-line-qr" aria-hidden="true"><a href="https://lin.ee/8MZB401J" target="_blank" rel="noopener" aria-label="LINEで無料相談"><span>LINEで<br>無料相談</span><img src="/images/LINE_QRcode.png" alt="LINEで無料相談するQRコード" loading="lazy"></a></div>
   <script>(function(){var el=document.getElementById('floating-line-qr');if(!el)return;var shown=false;function tick(){var s=window.scrollY>380;if(s===shown)return;shown=s;el.classList.toggle('is-visible',s);el.setAttribute('aria-hidden',String(!s));}window.addEventListener('scroll',tick,{passive:true});tick();})();</script>
-
-<script>
-(function(){
-  const menu = document.getElementById('mobile-menu');
-  const toggles = Array.from(document.querySelectorAll('.hamburger, .plt-menu-toggle'));
-  if (!menu || !toggles.length || menu.dataset.pltReady === 'true') return;
-  menu.dataset.pltReady = 'true';
-  const closeBtn = menu.querySelector('.plt-mobile-menu__close');
-  const parents = Array.from(menu.querySelectorAll('.plt-mobile-menu__parent'));
-  const links = Array.from(menu.querySelectorAll('a'));
-  const focusablesSelector = 'a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])';
-  let scrollY = 0;
-  let pushedState = false;
-
-  function setActive(){
-    const path = location.pathname.replace(/index\.html$/,'');
-    links.forEach(link => {
-      const href = link.getAttribute('href') || '';
-      if (!href || href.startsWith('http') || href.startsWith('#')) return;
-      const url = new URL(href, location.origin);
-      const normalized = url.pathname.replace(/index\.html$/,'');
-      if (normalized === path) link.classList.add('is-current');
-    });
-    parents.forEach(parent => {
-      const child = document.getElementById(parent.getAttribute('aria-controls'));
-      if (child && child.querySelector('.is-current')) {
-        parent.setAttribute('aria-expanded','true');
-        child.classList.add('is-open');
-      }
-    });
-  }
-
-  function lockScroll(){
-    scrollY = window.scrollY || document.documentElement.scrollTop || 0;
-    document.body.style.position = 'fixed';
-    document.body.style.top = '-' + scrollY + 'px';
-    document.body.style.left = '0';
-    document.body.style.right = '0';
-    document.body.style.width = '100%';
-    document.body.classList.add('plt-menu-open');
-  }
-
-  function unlockScroll(){
-    document.body.classList.remove('plt-menu-open');
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.left = '';
-    document.body.style.right = '';
-    document.body.style.width = '';
-    window.scrollTo(0, scrollY);
-  }
-
-  function openMenu(){
-    if (menu.classList.contains('open')) return;
-    menu.classList.add('open');
-    menu.setAttribute('aria-hidden','false');
-    toggles.forEach(btn => {
-      btn.setAttribute('aria-expanded','true');
-      btn.setAttribute('aria-label','メニューを閉じる');
-    });
-    lockScroll();
-    if (!pushedState) {
-      history.pushState({pltMobileMenu:true}, '', location.href);
-      pushedState = true;
-    }
-    setTimeout(() => closeBtn && closeBtn.focus({preventScroll:true}), 60);
-  }
-
-  function closeMenu(fromPop){
-    if (!menu.classList.contains('open')) return;
-    menu.classList.remove('open');
-    menu.setAttribute('aria-hidden','true');
-    toggles.forEach(btn => {
-      btn.setAttribute('aria-expanded','false');
-      btn.setAttribute('aria-label','メニューを開く');
-    });
-    unlockScroll();
-    if (fromPop) {
-      pushedState = false;
-      return;
-    }
-    if (pushedState) {
-      pushedState = false;
-      history.back();
-    }
-  }
-
-  toggles.forEach(btn => {
-    btn.classList.add('plt-menu-toggle');
-    btn.setAttribute('aria-controls','mobile-menu');
-    btn.addEventListener('click', function(event){
-      event.preventDefault();
-      menu.classList.contains('open') ? closeMenu(false) : openMenu();
-    });
-  });
-
-  if (closeBtn) closeBtn.addEventListener('click', () => closeMenu(false));
-
-  parents.forEach(parent => {
-    const child = document.getElementById(parent.getAttribute('aria-controls'));
-    parent.addEventListener('click', () => {
-      const open = parent.getAttribute('aria-expanded') === 'true';
-      parent.setAttribute('aria-expanded', String(!open));
-      if (child) child.classList.toggle('is-open', !open);
-    });
-  });
-
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      menu.classList.remove('open');
-      menu.setAttribute('aria-hidden','true');
-      toggles.forEach(btn => btn.setAttribute('aria-expanded','false'));
-      unlockScroll();
-    });
-  });
-
-  document.addEventListener('keydown', event => {
-    if (!menu.classList.contains('open')) return;
-    if (event.key === 'Escape') {
-      event.preventDefault();
-      closeMenu(false);
-      return;
-    }
-    if (event.key !== 'Tab') return;
-    const focusables = Array.from(menu.querySelectorAll(focusablesSelector)).filter(el => el.offsetParent !== null || el === closeBtn);
-    if (!focusables.length) return;
-    const first = focusables[0];
-    const last = focusables[focusables.length - 1];
-    if (event.shiftKey && document.activeElement === first) {
-      event.preventDefault();
-      last.focus();
-    } else if (!event.shiftKey && document.activeElement === last) {
-      event.preventDefault();
-      first.focus();
-    }
-  });
-
-  window.addEventListener('popstate', () => {
-    if (menu.classList.contains('open')) closeMenu(true);
-  });
-
-  setActive();
-})();
-</script>
-
 </body>
 </html>
