@@ -54,6 +54,30 @@
 
 </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://pl-tokyo.com/"},{"@type":"ListItem","position":2,"name":"キャッシュレス決済","item":"https://pl-tokyo.com/cashless/"},{"@type":"ListItem","position":3,"name":"キャッシュレス決済の手数料・料金","item":"https://pl-tokyo.com/cashless/fees/"}]}</script>
+<!-- PLT structured data enhancement -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://pl-tokyo.com/cashless/fees/#service",
+      "name": "キャッシュレス決済の料金・手数料相談",
+      "description": "キャッシュレス決済の手数料、初期費用、月額固定費、端末費用、入金サイクル、契約条件を比較。PUNCHLINE TOKYOでは条件に合う店舗様へ2.45%〜、医療機関1.50%〜の導入相談を行います。",
+      "serviceType": "キャッシュレス決済手数料・料金比較",
+      "provider": {
+        "@id": "https://pl-tokyo.com/#organization"
+      },
+      "areaServed": "JP",
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "店舗・事業者"
+      },
+      "url": "https://pl-tokyo.com/cashless/fees/"
+    }
+  ]
+}
+</script>
 </head>
 <body style="--hero:url('/images/store_out_day.jpg')">
 <header class="site-header"><div class="container header-inner">

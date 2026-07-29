@@ -94,6 +94,128 @@ h1,h2,.section-title,.card h3{
   body{padding-bottom:calc(56px + env(safe-area-inset-bottom,0px))!important}
 }
 </style>
+<!-- PLT structured data enhancement -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://pl-tokyo.com/#organization",
+      "name": "株式会社PUNCHLINE TOKYO",
+      "legalName": "株式会社PUNCHLINE TOKYO",
+      "url": "https://pl-tokyo.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://pl-tokyo.com/images/og-home.jpg"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "postalCode": "107-0061",
+        "addressRegion": "東京都",
+        "addressLocality": "港区",
+        "streetAddress": "北青山3-3-1 アールキューブ青山3階",
+        "addressCountry": "JP"
+      },
+      "areaServed": "JP",
+      "sameAs": [
+        "https://note.com/punchline_tokyo"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://pl-tokyo.com/#website",
+      "url": "https://pl-tokyo.com/",
+      "name": "PUNCHLINE TOKYO",
+      "publisher": {
+        "@id": "https://pl-tokyo.com/#organization"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://pl-tokyo.com/column/#webpage",
+      "url": "https://pl-tokyo.com/column/",
+      "name": "コラム｜株式会社PUNCHLINE TOKYO",
+      "description": "PUNCHLINE TOKYOがnoteで発信しているキャッシュレス決済・店舗運営・Webマーケティングに関するコラムの要約一覧です。",
+      "isPartOf": {
+        "@id": "https://pl-tokyo.com/#website"
+      },
+      "publisher": {
+        "@id": "https://pl-tokyo.com/#organization"
+      }
+    },
+    {
+      "@type": "Blog",
+      "@id": "https://pl-tokyo.com/column/#blog",
+      "name": "PUNCHLINE TOKYO コラム",
+      "url": "https://pl-tokyo.com/column/",
+      "description": "PUNCHLINE TOKYOがnoteで発信しているキャッシュレス決済・店舗運営・Webマーケティングに関するコラムの要約一覧です。",
+      "publisher": {
+        "@id": "https://pl-tokyo.com/#organization"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://pl-tokyo.com/column/#itemlist",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://pl-tokyo.com/column/n080d11479945/",
+          "name": "年間50万円以上損している店舗に共通する3つの見落とし。あなたの店舗は大丈夫ですか"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://pl-tokyo.com/column/n1d801a04eb1b/",
+          "name": "手数料の安さだけで選んでいませんか？キャッシュレス決済の「見えないコスト」の正体"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://pl-tokyo.com/column/nf338417e0cd4/",
+          "name": "キャッシュレス決済の「契約期間の縛り」、乗り換えられない本当の理由は、ここにあります。"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://pl-tokyo.com/column/nc022ce79adad/",
+          "name": "なぜ現金主義から抜け出せないのか。個人店がキャッシュレスを入れない3つの本音と、数字で見るその答え"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "url": "https://pl-tokyo.com/column/n9a9c6f2d02e8/",
+          "name": "決済会社の「入金サイクル」、資金繰りに直結します。全東信の件から考える、乗り換え先の見極め方"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "url": "https://pl-tokyo.com/column/n2c07d3db6638/",
+          "name": "全東信の破産でカード決済が使えなくなった事業者へ。今のうちに確認しておきたいことと、乗り換え先の選び方"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "https://pl-tokyo.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "コラム",
+          "item": "https://pl-tokyo.com/column/"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <header class="site-header">

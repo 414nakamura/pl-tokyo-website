@@ -54,6 +54,59 @@
 
 </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://pl-tokyo.com/"},{"@type":"ListItem","position":2,"name":"キャッシュレス決済","item":"https://pl-tokyo.com/cashless/"},{"@type":"ListItem","position":3,"name":"小売店のキャッシュレス決済導入","item":"https://pl-tokyo.com/cashless/industry/retail/"}]}</script>
+<!-- PLT structured data enhancement -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://pl-tokyo.com/cashless/industry/retail/#service",
+      "name": "小売店向けキャッシュレス決済導入支援",
+      "description": "小売店・物販店向けのキャッシュレス決済導入相談。クレジットカード、電子マネー、PayPay等の対応ブランドと手数料を整理し、申込手続きを支援します。",
+      "serviceType": "小売店向けキャッシュレス決済導入支援",
+      "provider": {
+        "@id": "https://pl-tokyo.com/#organization"
+      },
+      "areaServed": "JP",
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "小売店の店舗・事業者"
+      },
+      "url": "https://pl-tokyo.com/cashless/industry/retail/"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "小売店でもキャッシュレス決済を導入できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "業種、営業形態、取扱商品、審査結果により異なります。現在の状況を確認したうえで、申込対象となり得るかをご案内します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "手数料はどのくらいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "一定条件を満たした場合、キャッシュレス決済手数料2.45%〜でご案内できる場合があります。詳細条件は個別に確認します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "どの端末を選べばよいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "据え置き型、非接触型、モバイル型などから、会計場所、スタッフ動線、利用シーンに合わせて整理します。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body style="--hero:url('/images/buppan.jpg')">
 <header class="site-header"><div class="container header-inner">

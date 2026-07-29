@@ -138,6 +138,121 @@ h1,h2,.section-title,.card h3{
 @media(min-width:901px){.plt-mobile-menu{display:none!important}.plt-menu-toggle{display:none!important}}
 
 </style>
+<!-- PLT structured data enhancement -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://pl-tokyo.com/#organization",
+      "name": "株式会社PUNCHLINE TOKYO",
+      "legalName": "株式会社PUNCHLINE TOKYO",
+      "url": "https://pl-tokyo.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://pl-tokyo.com/images/og-home.jpg"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "postalCode": "107-0061",
+        "addressRegion": "東京都",
+        "addressLocality": "港区",
+        "streetAddress": "北青山3-3-1 アールキューブ青山3階",
+        "addressCountry": "JP"
+      },
+      "areaServed": "JP",
+      "sameAs": [
+        "https://note.com/punchline_tokyo"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://pl-tokyo.com/#website",
+      "url": "https://pl-tokyo.com/",
+      "name": "PUNCHLINE TOKYO",
+      "publisher": {
+        "@id": "https://pl-tokyo.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://pl-tokyo.com/web-production/#webpage",
+      "url": "https://pl-tokyo.com/web-production/",
+      "name": "WEBページ制作｜問い合わせにつながるサイト制作｜PUNCHLINE TOKYO",
+      "description": "PUNCHLINE TOKYOのWEBページ制作サービス。事業理解、スマホUI、SEO・AIO、問い合わせ導線まで含めて、成果につながるWEBサイト・LP・専門ページを制作します。",
+      "isPartOf": {
+        "@id": "https://pl-tokyo.com/#website"
+      },
+      "publisher": {
+        "@id": "https://pl-tokyo.com/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "https://pl-tokyo.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "WEB制作",
+          "item": "https://pl-tokyo.com/web-production/"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://pl-tokyo.com/web-production/#service",
+      "name": "WEBページ制作・サイト改善支援",
+      "description": "PUNCHLINE TOKYOのWEBページ制作サービス。事業理解、スマホUI、SEO・AIO、問い合わせ導線まで含めて、成果につながるWEBサイト・LP・専門ページを制作します。",
+      "serviceType": "WEBページ制作・LP制作・SEO/AIO設計",
+      "provider": {
+        "@id": "https://pl-tokyo.com/#organization"
+      },
+      "areaServed": "JP",
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "企業・店舗・医療機関"
+      },
+      "url": "https://pl-tokyo.com/web-production/"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "スマートフォン対応のWEBページ制作はできますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。スマートフォンでの文字サイズ、余白、CTA、フォーム導線まで含めて設計・制作します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "SEOやAI検索を意識したページ制作はできますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。title、description、見出し、内部リンク、構造化データ、サイトマップまで確認し、検索・AI検索に理解されやすい構成を目指します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "既存サイトの改善だけでも相談できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可能です。現在のページを確認し、CV導線、UIUX、表示崩れ、SEO観点から改善点を整理します。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <header class="site-header"><div class="container header-inner">

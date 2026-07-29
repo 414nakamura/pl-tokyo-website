@@ -54,6 +54,30 @@
 
 </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://pl-tokyo.com/"},{"@type":"ListItem","position":2,"name":"キャッシュレス決済","item":"https://pl-tokyo.com/cashless/"},{"@type":"ListItem","position":3,"name":"キャッシュレス決済端末の選び方","item":"https://pl-tokyo.com/cashless/terminals/"}]}</script>
+<!-- PLT structured data enhancement -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://pl-tokyo.com/cashless/terminals/#service",
+      "name": "キャッシュレス決済端末の選定支援",
+      "description": "店舗の会計導線に合わせて、据え置き型・非接触型・モバイル型のキャッシュレス決済端末を比較。対応ブランド、端末選びの失敗例、業種別の選び方までPUNCHLINE TOKYOが解説します。",
+      "serviceType": "キャッシュレス決済端末選定",
+      "provider": {
+        "@id": "https://pl-tokyo.com/#organization"
+      },
+      "areaServed": "JP",
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "店舗・事業者"
+      },
+      "url": "https://pl-tokyo.com/cashless/terminals/"
+    }
+  ]
+}
+</script>
 </head>
 <body style="--hero:url('/images/terminal_product.jpg')">
 <header class="site-header"><div class="container header-inner">
