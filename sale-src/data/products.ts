@@ -734,6 +734,9 @@ export const products: Product[] = [
     tags: ["防災", "高単価"],
     recommendationReason:
       "停電やアウトドアに備えたい家庭向けの高単価アイテム。容量と重さのバランスを、セール時にじっくり比較する価値があります。",
+    image: "/images/products/item-portable-power.webp",
+    imageAlt: "山と湖を望むテーブルに置いたポータブル電源のイメージ",
+    imageFit: "cover",
     amazonUrl: search("ポータブル電源"),
     addedAt: "2026-10-16",
     basePriority: 63,
