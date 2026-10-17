@@ -68,6 +68,9 @@ export const products: Product[] = [
     tags: ["詰め替え", "大容量"],
     recommendationReason:
       "洗濯の回数が多い家庭ほど減りが早いもの。いつも使っている銘柄の詰め替えがあるか、ついでに確認しておくと買い忘れを防げます。",
+    image: "/images/products/item-laundry-detergent.webp",
+    imageAlt: "衣料用洗剤のボトルと詰め替えパックのイメージ",
+    imageFit: "cover",
     amazonUrl: search("洗濯洗剤 詰め替え 大容量"),
     addedAt: "2026-10-10",
     basePriority: 85,
@@ -82,6 +85,9 @@ export const products: Product[] = [
     tags: ["日用品", "3,000円以下"],
     recommendationReason:
       "花粉や風邪の季節に一気に減るので、残りが少ない家庭は今のうちに補充しておくと安心です。",
+    image: "/images/products/item-box-tissues.webp",
+    imageAlt: "ボックスティッシュのまとめ買いイメージ",
+    imageFit: "cover",
     amazonUrl: search("ボックスティッシュ まとめ買い"),
     addedAt: "2026-10-11",
     basePriority: 80,
@@ -96,6 +102,9 @@ export const products: Product[] = [
     tags: ["詰め替え", "3,000円以下"],
     recommendationReason:
       "なくなってから気づきがちな消耗品の代表。詰め替えを1つストックしておくだけで、急な買い出しが減ります。",
+    image: "/images/products/item-dish-soap.webp",
+    imageAlt: "食器用洗剤のボトルと詰め替えパックのイメージ",
+    imageFit: "cover",
     amazonUrl: search("食器用洗剤 詰め替え"),
     addedAt: "2026-10-11",
     basePriority: 70,
@@ -110,6 +119,9 @@ export const products: Product[] = [
     tags: ["日用品", "3,000円以下"],
     recommendationReason:
       "使う量が決まっているので、まとめて買っても無駄になりにくいアイテム。自治体指定がない地域なら確認しておく価値があります。",
+    image: "/images/products/item-trash-bags.webp",
+    imageAlt: "45Lゴミ袋とまとめ買いパックのイメージ",
+    imageFit: "cover",
     amazonUrl: search("ゴミ袋 45L"),
     addedAt: "2026-10-12",
     basePriority: 60,
@@ -146,6 +158,9 @@ export const products: Product[] = [
     tags: ["コーヒー", "在宅ワーク"],
     recommendationReason:
       "毎日飲む人なら、1杯あたりの単価が気になるもの。いつもの銘柄や好みの焙煎があるか、セール時に見比べておくと良いアイテムです。",
+    image: "/images/products/item-drip-coffee.webp",
+    imageAlt: "ドリップコーヒーの個包装とコーヒーカップのイメージ",
+    imageFit: "cover",
     amazonUrl: search("ドリップコーヒー 大容量"),
     addedAt: "2026-10-12",
     basePriority: 75,
@@ -160,6 +175,9 @@ export const products: Product[] = [
     tags: ["まとめ買い", "飲料"],
     recommendationReason:
       "毎日飲む習慣がある人は、ケースで持っておくと買い物の回数が減らせます。重い飲料は配送が便利です。",
+    image: "/images/products/item-sparkling-water.webp",
+    imageAlt: "炭酸水のボトルとレモン入りグラスのイメージ",
+    imageFit: "cover",
     amazonUrl: search("炭酸水 500ml ケース"),
     addedAt: "2026-10-13",
     basePriority: 65,
@@ -174,6 +192,9 @@ export const products: Product[] = [
     tags: ["備蓄", "時短"],
     recommendationReason:
       "忙しい日の食事にも、非常時の備えにも使える食品。賞味期限が長めなので、ストックの入れ替えにも向いています。",
+    image: "/images/products/item-pack-rice.webp",
+    imageAlt: "パックごはんと温かいごはんのイメージ",
+    imageFit: "cover",
     amazonUrl: search("パックごはん まとめ買い"),
     addedAt: "2026-10-13",
     basePriority: 62,
@@ -188,6 +209,9 @@ export const products: Product[] = [
     tags: ["3,000円以下", "飲料"],
     recommendationReason:
       "麦茶や緑茶を家で作る家庭なら、大容量パックがあると買い足しの手間が減ります。",
+    image: "/images/products/item-green-tea.webp",
+    imageAlt: "緑茶のティーバッグとティーカップのイメージ",
+    imageFit: "cover",
     amazonUrl: search("麦茶 ティーバッグ 大容量"),
     addedAt: "2026-10-14",
     basePriority: 50,
@@ -224,6 +248,9 @@ export const products: Product[] = [
     tags: ["子育て", "3,000円以下"],
     recommendationReason:
       "おしり以外にも手や口まわり、テーブル拭きにも使うので、想像以上に早く減るアイテムです。",
+    image: "/images/products/item-baby-wipes.webp",
+    imageAlt: "おしりふきのパックとベビー用品のイメージ",
+    imageFit: "cover",
     amazonUrl: search("おしりふき 詰め替え"),
     addedAt: "2026-10-11",
     basePriority: 78,
