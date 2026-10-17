@@ -153,7 +153,7 @@ export const products: Product[] = [
     id: "sample_012",
     name: "ドリップコーヒー 個包装 大容量",
     category: "food",
-    scenes: ["daily-refill", "food-stock", "work"],
+    scenes: ["food-stock"],
     target: ["remote-work", "daily-use", "couple"],
     tags: ["コーヒー", "在宅ワーク"],
     recommendationReason:
@@ -526,7 +526,7 @@ export const products: Product[] = [
     id: "sample_063",
     name: "猫砂 まとめ買い",
     category: "pet",
-    scenes: ["pet", "bulk", "daily-refill"],
+    scenes: ["pet"],
     target: ["pet-cat", "bulk"],
     tags: ["猫", "トイレ用品"],
     recommendationReason: "重くてかさばる猫砂は、配送で受け取れるとかなりラク。残りが少なければ確認しておきたいものです。",
@@ -734,6 +734,9 @@ export const products: Product[] = [
     tags: ["防災", "高単価"],
     recommendationReason:
       "停電やアウトドアに備えたい家庭向けの高単価アイテム。容量と重さのバランスを、セール時にじっくり比較する価値があります。",
+    image: "/images/products/item-portable-power.webp",
+    imageAlt: "山と湖を望むテーブルに置いたポータブル電源のイメージ",
+    imageFit: "cover",
     amazonUrl: search("ポータブル電源"),
     addedAt: "2026-10-16",
     basePriority: 63,
