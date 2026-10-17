@@ -153,7 +153,7 @@ export const products: Product[] = [
     id: "sample_012",
     name: "ドリップコーヒー 個包装 大容量",
     category: "food",
-    scenes: ["daily-refill", "food-stock", "work"],
+    scenes: ["food-stock"],
     target: ["remote-work", "daily-use", "couple"],
     tags: ["コーヒー", "在宅ワーク"],
     recommendationReason:
@@ -526,7 +526,7 @@ export const products: Product[] = [
     id: "sample_063",
     name: "猫砂 まとめ買い",
     category: "pet",
-    scenes: ["pet", "bulk", "daily-refill"],
+    scenes: ["pet"],
     target: ["pet-cat", "bulk"],
     tags: ["猫", "トイレ用品"],
     recommendationReason: "重くてかさばる猫砂は、配送で受け取れるとかなりラク。残りが少なければ確認しておきたいものです。",

@@ -17,7 +17,7 @@ export const sections: SceneSection[] = [
     image: "/images/scenes/scene-daily-refill.webp",
     imageAlt: "残りわずかになった洗面所のストック棚",
     title: "毎日使うものを補充するなら",
-    lead: "洗剤、ティッシュ、水、コーヒーなど。切らすと困るものから。",
+    lead: "洗剤、ティッシュ、トイレットペーパーなど。切らすと困るものから。",
     initialCount: 4,
     maxCount: 7,
     size: "lg",
