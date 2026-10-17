@@ -72,11 +72,15 @@ export function ProductCard({
     );
 
   const meta = (
-    <p className="flex flex-wrap items-baseline gap-x-2 text-[11.5px] leading-5 text-muted">
-      {index ? <span className="text-[13px] font-bold text-ink">{String(index).padStart(2, "0")}</span> : null}
-      <span>{product.categoryName}</span>
-      {product.campaignComment ? <span className="rounded-full bg-accent-soft px-2 text-[11px] font-bold text-accent">{product.campaignComment}</span> : null}
-    </p>
+    <div className="grid grid-rows-[1.25rem_auto] gap-y-1 text-[11.5px] leading-5 text-muted">
+      <p className="flex items-baseline gap-x-2">
+        {index ? <span className="text-[13px] font-bold text-ink">{String(index).padStart(2, "0")}</span> : null}
+        <span>{product.categoryName}</span>
+      </p>
+      <div data-card-part="tag" className="min-h-5">
+        {product.campaignComment ? <span className="inline-block rounded-full bg-accent-soft px-2 text-[11px] font-bold text-accent">{product.campaignComment}</span> : null}
+      </div>
+    </div>
   );
 
   const priceNote = (
@@ -123,13 +127,14 @@ export function ProductCard({
   }
 
   const compact = variant === "compact";
+  // 親の商品一覧の7行を共有し、文章量や注釈の有無が違っても各要素を揃える。
   return (
     <article
-      className="h-full rounded-[var(--radius-card)] border border-line bg-card p-3.5"
+      className={`row-span-7 grid grid-rows-subgrid gap-x-3 rounded-[var(--radius-card)] border border-line bg-card p-3.5 ${compact ? "grid-cols-[72px_minmax(0,1fr)]" : "grid-cols-[88px_minmax(0,1fr)]"}`}
       data-track-view={JSON.stringify(viewParams)}
       aria-label={product.name}
     >
-      <div className="flex gap-3">
+      <div className="col-start-1 row-span-3 row-start-1 self-start">
         {outLink(
           "image",
           <ProductImage
@@ -141,22 +146,24 @@ export function ProductCard({
             fit={product.imageFit}
             className="rounded-[10px] border border-line"
           />,
-          "shrink-0 self-start",
+          "block",
         )}
-        <div className="min-w-0 flex-1">
-          {meta}
-          <h3 className="mt-0.5 line-clamp-3 text-[15px] font-bold leading-snug">
-            {outLink("title", product.name, "underline-offset-4 active:underline")}
-          </h3>
-          {who ? <p className="mt-1 text-[12px] leading-snug text-muted">{who}に</p> : null}
-        </div>
       </div>
-      {product.reason ? (
-        <p className={`mt-2.5 text-[13.5px] leading-[1.8] text-ink-soft ${compact ? "line-clamp-2" : ""}`}>{product.reason}</p>
-      ) : null}
-      {imageNote}
-      <div className="mt-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
-        {priceNote}
+      <div data-card-part="meta" className="col-start-2 row-start-1 min-w-0">{meta}</div>
+      <h3 data-card-part="title" className="col-start-2 row-start-2 mt-0.5 line-clamp-3 min-w-0 text-[15px] font-bold leading-snug">
+        {outLink("title", product.name, "underline-offset-4 active:underline")}
+      </h3>
+      <p data-card-part="audience" className="col-start-2 row-start-3 mt-1 min-w-0 text-[12px] leading-snug text-muted">
+        {who ? `${who}に` : null}
+      </p>
+      <div data-card-part="reason" className="col-span-2 row-start-4 pt-2.5">
+        {product.reason ? (
+          <p className={`text-[13.5px] leading-[1.8] text-ink-soft ${compact ? "line-clamp-2" : ""}`}>{product.reason}</p>
+        ) : null}
+      </div>
+      <div data-card-part="note" className="col-span-2 row-start-5">{imageNote}</div>
+      <div data-card-part="price" className="col-span-2 row-start-6 pt-3">{priceNote}</div>
+      <div data-card-part="cta" className="col-span-2 row-start-7 pt-2.5">
         <AmazonLink product={product} section={section} position={position} variant="pill" />
       </div>
     </article>

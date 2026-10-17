@@ -73,14 +73,14 @@ export function ProductCarousel({ products, section, variant, numbered, priority
     <div className="relative left-1/2 w-screen -translate-x-1/2"
       style={{ "--product-row-inset": "max(1rem, calc((100vw - 64rem) / 2 + 1rem))" } as CSSProperties}>
       <ul ref={listRef} aria-labelledby={labelledBy} tabIndex={0}
-        className="no-scrollbar relative flex w-full items-stretch gap-3 overflow-x-auto overscroll-x-contain py-1 [scroll-padding-left:var(--product-row-inset)]">
+        className="no-scrollbar relative grid w-full grid-flow-col auto-cols-[min(20rem,calc((100vw_-_2rem)*0.84))] grid-rows-[repeat(7,auto)] gap-x-3 overflow-x-auto overscroll-x-contain py-1 [scroll-padding-left:var(--product-row-inset)] sm:auto-cols-[20rem]">
         {Array.from({ length: sideCopies * 2 + 1 }, (_, copy) => products.map((product, index) => {
           const original = copy === sideCopies;
           return (
             <li key={`${copy}:${product.id}`} aria-hidden={original ? undefined : true}
               data-carousel-copy={original ? undefined : ""}
               data-carousel-product={product.id}
-              className="relative w-[calc((100vw_-_2rem)*0.84)] max-w-80 shrink-0 sm:w-80">
+              className="relative row-span-7 grid grid-rows-subgrid">
               <ProductCard product={product} section={section} position={index + 1} variant={variant}
                 index={numbered ? index + 1 : undefined} priorityImage={original && index < priorityImages} />
             </li>
