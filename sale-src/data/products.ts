@@ -291,6 +291,39 @@ export const products: Product[] = [
     isSample: true,
   },
 
+  {
+    id: "product_formula_can",
+    name: "粉ミルク 缶タイプ",
+    category: "baby",
+    scenes: ["family-kids"],
+    target: ["kids", "family"],
+    tags: ["授乳用品", "ストック"],
+    recommendationReason:
+      "いつも使っている粉ミルクの残量を確認するタイミングに。対象月齢や内容量、開封後の使用期限を確認して、使い切れる量を選びましょう。",
+    image: "/images/products/item-formula-can.webp",
+    imageAlt: "粉ミルク缶と哺乳びんのイメージ",
+    imageFit: "cover",
+    amazonUrl: "https://www.amazon.co.jp/s?k=%E7%B2%89%E3%83%9F%E3%83%AB%E3%82%AF%E7%BC%B6&i=pbdd&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=1SH0DKDXWKQBV&sprefix=%E7%B2%89%E3%83%9F%E3%83%AB%E3%82%AF%E3%81%8B%E3%82%93%2Cpbdd%2C239&linkCode=ll2&tag=punchlinetoky-22&linkId=11d9e0f183b7f4a3dc32283f6b7f549b&ref_=as_li_ss_tl",
+    addedAt: "2026-10-18",
+    basePriority: 77,
+  },
+  {
+    id: "product_baby_food",
+    name: "離乳食 セット・まとめ買い",
+    category: "baby",
+    scenes: ["family-kids"],
+    target: ["kids", "family"],
+    tags: ["離乳食", "ストック"],
+    recommendationReason:
+      "毎日の食事や外出時に使う離乳食のストックを確認。対象月齢、原材料・アレルギー表示、賞味期限を確認して、食べ慣れたものから選びましょう。",
+    image: "/images/products/item-baby-food.webp",
+    imageAlt: "パウチや瓶入りの離乳食セットのイメージ",
+    imageFit: "cover",
+    amazonUrl: "https://www.amazon.co.jp/s?k=%E9%9B%A2%E4%B9%B3%E9%A3%9F&i=pbdd&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=2488LGD7BTZVK&sprefix=%E3%82%8A%E3%81%AB%E3%82%85%E3%81%86%E3%81%97%E3%82%87k%2Cpbdd%2C291&linkCode=ll2&tag=punchlinetoky-22&linkId=8b1380caa63172ce99d47c082904cbc5&ref_=as_li_ss_tl",
+    addedAt: "2026-10-18",
+    basePriority: 76,
+  },
+
   /* ---------- 美容・ヘルスケア ---------- */
   {
     id: "sample_031",

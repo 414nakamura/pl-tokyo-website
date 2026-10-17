@@ -80,9 +80,12 @@ export function getSceneProducts(
   campaignId = getActiveCampaignId(),
 ): ResolvedProduct[] {
   const entries = campaignEntries(campaignId);
+  const order = new Map((section.productOrder ?? []).map((id, index) => [id, index]));
   const list = getAllProducts(campaignId)
     .filter((p) => p.scenes.includes(section.id) || entries.get(p.id)?.section === section.id)
-    .sort((a, b) => Number(alreadyShown.has(a.id)) - Number(alreadyShown.has(b.id)) || byPriority(a, b))
+    .sort((a, b) =>
+      (order.get(a.id) ?? Number.MAX_SAFE_INTEGER) - (order.get(b.id) ?? Number.MAX_SAFE_INTEGER) ||
+      Number(alreadyShown.has(a.id)) - Number(alreadyShown.has(b.id)) || byPriority(a, b))
     .slice(0, section.maxCount ?? 8);
   // 最初に見える件数分だけ「表示済み」にする（もっと見るの中は重複してもよい）
   list.slice(0, section.initialCount).forEach((p) => alreadyShown.add(p.id));

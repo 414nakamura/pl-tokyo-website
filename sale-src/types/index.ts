@@ -159,6 +159,8 @@ export interface SceneSection {
   lead: string;
   /** 初期表示件数（残りは「もっと見る」） */
   initialCount: number;
+  /** この順で先頭に表示する商品ID（表示済み商品の並べ替えより優先） */
+  productOrder?: string[];
   /** 最大件数 */
   maxCount?: number;
   /** 表示の大きさ（上位ほど lg） */
