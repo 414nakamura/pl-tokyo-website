@@ -5,7 +5,7 @@ import { ProductCarousel } from "@/components/ProductCarousel";
 import { ProductCard, type CardVariant } from "@/components/ProductCard";
 import type { ResolvedProduct } from "@/types";
 
-const GRID = "grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3";
+const GRID = "grid grid-cols-1 gap-x-2.5 sm:grid-cols-2 lg:grid-cols-3";
 
 /**
  * 商品一覧。grid は initialCount 件＋「もっと見る」、horizontal は全件を横1列で表示
@@ -56,7 +56,7 @@ export function ProductGrid({
     <>
       <ul className={GRID} aria-labelledby={labelledBy}>
         {products.map((p, i) => (
-          <li key={p.id} hidden={!open && i >= initialCount} className={feature && i === 0 ? "sm:col-span-2 lg:col-span-1" : ""}>
+          <li key={p.id} hidden={!open && i >= initialCount} className={`row-span-7 grid grid-rows-subgrid pb-2.5 ${feature && i === 0 ? "sm:col-span-2 lg:col-span-1" : ""}`}>
             <ProductCard
               product={p}
               section={section}
