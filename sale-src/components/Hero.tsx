@@ -26,10 +26,10 @@ export function Hero({ mode, copy, image, imageAlt, banner, bannerAlt = "", genr
   return (
     <section aria-labelledby="hero-title">
       <div className="relative isolate overflow-hidden bg-paper-warm">
-        {/* スマホ（縦積み）のときは写真を透かしとして背景に敷く。装飾なので押せない（デッドクリックにならない） */}
+        {/* 写真を全幅の薄い透かしとして敷き、ベージュの余白にもつなげる。 */}
         {photo ? (
           <img src={assetPath(photo.src)} alt="" aria-hidden="true" width={photo.width} height={photo.height}
-            className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover object-[75%_center] opacity-20 sm:hidden" />
+            className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover object-[75%_center] opacity-20 sm:opacity-15" />
         ) : null}
         <div className={`mx-auto max-w-7xl ${photo ? "sm:grid sm:grid-cols-2" : ""}`}>
           <div className="flex flex-col justify-center px-5 pb-6 pt-8 sm:px-8 sm:py-12 lg:px-12">
