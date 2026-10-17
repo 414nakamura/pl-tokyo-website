@@ -1,5 +1,6 @@
 import { AmazonLink } from "@/components/AmazonLink";
 import { ProductImage } from "@/components/ProductImage";
+import { siteConfig } from "@/config/site";
 import { formatJstDateTime, formatYen } from "@/lib/format";
 import { targetText } from "@/lib/labels";
 import type { ResolvedProduct } from "@/types";
@@ -51,11 +52,30 @@ export function ProductCard({
       <p className="mt-2 text-[11px] text-muted">※画像はイメージです。実際の商品はAmazonでご確認ください。</p>
     ) : null;
 
+  // デッドクリック対策：商品画像と商品名もボタンと同じAmazonページへ（押した時だけ遷移）
+  const newTab = siteConfig.amazonOpensInNewTab;
+  const outLink = (kind: "image" | "title", children: React.ReactNode, className = "") =>
+    product.outboundUrl ? (
+      <a
+        href={product.outboundUrl}
+        rel="sponsored nofollow noopener"
+        target={newTab ? "_blank" : undefined}
+        data-track="amazon_click"
+        data-track-params={JSON.stringify({ ...viewParams, product_name: product.name.slice(0, 80), link_type: kind })}
+        className={className}
+        {...(kind === "image" ? { tabIndex: -1, "aria-hidden": true } : {})}
+      >
+        {children}
+      </a>
+    ) : (
+      children
+    );
+
   const meta = (
     <p className="flex flex-wrap items-baseline gap-x-2 text-[11.5px] leading-5 text-muted">
       {index ? <span className="text-[13px] font-bold text-ink">{String(index).padStart(2, "0")}</span> : null}
       <span>{product.categoryName}</span>
-      {product.campaignComment ? <span className="font-bold text-accent">{product.campaignComment}</span> : null}
+      {product.campaignComment ? <span className="rounded-full bg-accent-soft px-2 text-[11px] font-bold text-accent">{product.campaignComment}</span> : null}
     </p>
   );
 
@@ -81,11 +101,15 @@ export function ProductCard({
         aria-label={product.name}
       >
         <div className={`relative w-full border-b border-line ${product.imageFit === "cover" ? "aspect-square" : "aspect-[4/3]"}`}>
-          <ProductImage src={product.image} alt={product.imageAlt || product.name} icon={product.categoryIcon} size="fill" priority={priorityImage} fit={product.imageFit} />
+          {outLink(
+            "image",
+            <ProductImage src={product.image} alt={product.imageAlt || product.name} icon={product.categoryIcon} size="fill" priority={priorityImage} fit={product.imageFit} />,
+            "block h-full w-full",
+          )}
         </div>
         <div className="p-4 pb-5">
           {meta}
-          <h3 className="mt-1 text-[18px] font-bold leading-snug">{product.name}</h3>
+          <h3 className="mt-1 text-[18px] font-bold leading-snug">{outLink("title", product.name, "underline-offset-4 active:underline")}</h3>
           {who ? <p className="mt-1 text-[12.5px] text-muted">{who}に</p> : null}
           {product.reason ? <p className="mt-3 text-[14px] leading-[1.85] text-ink-soft">{product.reason}</p> : null}
           {imageNote}
@@ -106,18 +130,24 @@ export function ProductCard({
       aria-label={product.name}
     >
       <div className="flex gap-3">
-        <ProductImage
-          src={product.image}
-          alt={product.imageAlt || product.name}
-          icon={product.categoryIcon}
-          size={compact ? 72 : 88}
-          priority={priorityImage}
-          fit={product.imageFit}
-          className="rounded-[10px] border border-line"
-        />
+        {outLink(
+          "image",
+          <ProductImage
+            src={product.image}
+            alt={product.imageAlt || product.name}
+            icon={product.categoryIcon}
+            size={compact ? 72 : 88}
+            priority={priorityImage}
+            fit={product.imageFit}
+            className="rounded-[10px] border border-line"
+          />,
+          "shrink-0 self-start",
+        )}
         <div className="min-w-0 flex-1">
           {meta}
-          <h3 className="mt-0.5 line-clamp-3 text-[15px] font-bold leading-snug">{product.name}</h3>
+          <h3 className="mt-0.5 line-clamp-3 text-[15px] font-bold leading-snug">
+            {outLink("title", product.name, "underline-offset-4 active:underline")}
+          </h3>
           {who ? <p className="mt-1 text-[12px] leading-snug text-muted">{who}に</p> : null}
         </div>
       </div>

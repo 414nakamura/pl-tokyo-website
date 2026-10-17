@@ -8,6 +8,7 @@ import { ProductGrid } from "@/components/ProductGrid";
 import { CategoryAmazonLink } from "@/components/CategoryAmazonLink";
 import { getCategories, getCategory, getCategoryOutbound, getCategoryProducts, toCardData } from "@/lib/products";
 import { pageMetadata } from "@/lib/seo";
+import { siteConfig } from "@/config/site";
 import { siteImage } from "@/lib/images";
 import { absoluteUrl, assetPath } from "@/lib/site";
 
@@ -64,7 +65,28 @@ export default async function CategoryPage({ params }: { params: Promise<{ id: s
         </nav>
 
         {catImage ? (
-          <Image
+          outbound ? (
+            <a
+              href={outbound.url}
+              rel="sponsored nofollow noopener"
+              target={siteConfig.amazonOpensInNewTab ? "_blank" : undefined}
+              data-track="amazon_click"
+              data-track-params={JSON.stringify({ category: category.id, section: `category_page_${category.id}`, page_position: "category_page:image", link_type: "category_image" })}
+              className="-mx-4 mt-4 block sm:mx-0"
+              aria-label={outbound.label}
+            >
+              <Image
+            src={assetPath(catImage.src)}
+            alt=""
+            width={catImage.width}
+            height={catImage.height}
+            sizes="(max-width: 1024px) 100vw, 1024px"
+            priority
+            className="aspect-[2/1] w-full object-cover sm:rounded-[var(--radius-card)]"
+          />
+            </a>
+          ) : (
+            <Image
             src={assetPath(catImage.src)}
             alt=""
             width={catImage.width}
@@ -73,6 +95,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ id: s
             priority
             className="-mx-4 mt-4 aspect-[2/1] w-[calc(100%+2rem)] max-w-none object-cover sm:mx-0 sm:w-full sm:rounded-[var(--radius-card)]"
           />
+          )
         ) : null}
         <header className="mt-5 flex items-start gap-3">
           <div>

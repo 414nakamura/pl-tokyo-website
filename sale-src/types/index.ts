@@ -166,6 +166,8 @@ export interface SceneSection {
   /** 見出し画像（public/ からのパス・横長3:2）。ファイルが無ければ画像なしで表示 */
   image?: string;
   imageAlt?: string;
+  /** 見出し写真を押したときに開くジャンル（categories.ts の id。そのジャンルのAmazonリンクへ） */
+  linkCategory?: string;
   /** 背景トーン（交互に切り替えてスクロールを止める） */
   tone: "plain" | "warm" | "tint";
   order: number;

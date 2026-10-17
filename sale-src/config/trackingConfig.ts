@@ -2,7 +2,10 @@
  * 計測設定
  * ========================================================= */
 export const trackingConfig = {
-  ga4Id: process.env.NEXT_PUBLIC_GA4_ID ?? "",
+  /** GA4 測定ID（企業サイトと同じプロパティ。/sale/ はページパスで絞り込んで分析） */
+  ga4Id: process.env.NEXT_PUBLIC_GA4_ID || "G-XCETDXT170",
+  /** Microsoft Clarity プロジェクトID（ヒートマップ・セッション録画・デッドクリック分析） */
+  clarityId: process.env.NEXT_PUBLIC_CLARITY_ID || "xirbqmt6z7",
   metaPixelId: process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "",
   /** true でコンソールにイベントを表示 */
   debug: process.env.NEXT_PUBLIC_DEBUG_TRACKING === "true",

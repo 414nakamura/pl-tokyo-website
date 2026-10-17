@@ -31,7 +31,6 @@ export function FeaturedProducts({
         initialCount={products.length}
         variant="row"
         numbered
-        featureFirst
         priorityImages={1}
       />
     </section>

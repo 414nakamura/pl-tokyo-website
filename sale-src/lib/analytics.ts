@@ -19,6 +19,7 @@ declare global {
     dataLayer?: unknown[];
     gtag?: (...args: unknown[]) => void;
     fbq?: (...args: unknown[]) => void;
+    clarity?: ((...args: unknown[]) => void) & { q?: unknown[] };
   }
 }
 
@@ -58,6 +59,13 @@ export function initVendors() {
     }
     w.gtag("js", new Date());
     w.gtag("config", trackingConfig.ga4Id, { send_page_view: false });
+  }
+
+  if (trackingConfig.clarityId && typeof w.clarity !== "function") {
+    const c = function (...args: unknown[]) {
+      (c.q = c.q || []).push(args);
+    } as ((...args: unknown[]) => void) & { q?: unknown[] };
+    w.clarity = c;
   }
 
   if (trackingConfig.metaPixelId && typeof w.fbq !== "function") {
@@ -118,6 +126,22 @@ export function track(name: TrackEventName, params: TrackParams = {}) {
     if (meta && trackingConfig.metaPixelId && typeof window.fbq === "function") {
       if (meta.standard) window.fbq("track", meta.standard, payload);
       else if (meta.custom) window.fbq("trackCustom", meta.custom, payload);
+    }
+  } catch {
+    /* noop */
+  }
+
+  try {
+    // Clarity：流入元・キャンペーンをタグとして付け、Amazonクリックをイベントとして記録（録画の絞り込み用）
+    if (trackingConfig.clarityId && typeof window.clarity === "function") {
+      if (name === "page_view") {
+        for (const k of ["campaign_id", "creative_id", "utm_source", "utm_medium", "utm_campaign", "utm_content", "hero_variant"]) {
+          const v = payload[k];
+          if (v !== undefined) window.clarity("set", k, String(v));
+        }
+      } else if (name === "amazon_click" || name === "category_click" || name === "hero_cta_click") {
+        window.clarity("event", name);
+      }
     }
   } catch {
     /* noop */

@@ -51,6 +51,13 @@ export default function PrivacyPage() {
             </a>
             をご確認ください。
           </li>
+          <li>
+            Microsoft Clarity（Microsoft Corporation）：サイトの使いやすさの改善のため、クリック・スクロールなどの操作を記録・分析します。詳細は
+            <a href="https://privacy.microsoft.com/ja-jp/privacystatement" target="_blank" rel="noopener noreferrer">
+              Microsoftのプライバシーに関する声明
+            </a>
+            をご確認ください。
+          </li>
           <li>Amazonアソシエイト（アマゾンジャパン合同会社）：紹介料の計測のため（Amazonへ移動した際に、Amazon側でCookieが利用されます）。</li>
         </ul>
         <p>Cookieはブラウザの設定により無効にできます。また、流入元パラメータは利用者のブラウザ内（セッションストレージ等）に一時的に保存されます。</p>

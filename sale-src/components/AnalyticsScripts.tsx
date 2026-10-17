@@ -10,12 +10,13 @@ import { trackingConfig } from "@/config/trackingConfig";
  * Cookie同意（CMP）を導入する場合：lib/consent.ts が false の間はここも読み込まないよう分岐を追加
  */
 export function AnalyticsScripts() {
-  const { ga4Id, metaPixelId } = trackingConfig;
+  const { ga4Id, metaPixelId, clarityId } = trackingConfig;
   return (
     <>
       {ga4Id ? (
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`} strategy="afterInteractive" />
       ) : null}
+      {clarityId ? <Script src={`https://www.clarity.ms/tag/${clarityId}`} strategy="afterInteractive" /> : null}
       {metaPixelId ? <Script src="https://connect.facebook.net/en_US/fbevents.js" strategy="afterInteractive" /> : null}
     </>
   );

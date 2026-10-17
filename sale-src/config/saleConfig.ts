@@ -34,8 +34,7 @@ export const saleConfig = {
    * FVの写真を押したときのAmazonリンク（空欄なら写真はリンクにしない）
    * 写真の下に「Amazonで◯◯を見る」と表示し、押すとAmazonへ移動することが分かるようにしている
    */
-  heroImageLink:
-    "https://www.amazon.co.jp?&linkCode=ll2&tag=punchlinetoky-22&linkId=9ab0768de5094257077d5799700e4dac&ref_=as_li_ss_tl",
+  heroImageLink: "https://www.amazon.co.jp/primeappreciation?ref_=nav_cs_td_pbdd_dt_cr",
   heroImageLinkLabel: "Amazonで商品を探す",
   /**
    * セール用の写真（横長・文字なし）。設定してファイルがあればHero写真として使用。コピーとボタンはHTMLで表示
@@ -45,7 +44,8 @@ export const saleConfig = {
   heroBanner: {
     image: "/images/hero/hero-shopping-v2.webp",
     alt: "自然光の入る部屋に置いた、日用品と食品のストック",
-    link: "https://www.amazon.co.jp?&linkCode=ll2&tag=punchlinetoky-22&linkId=9ab0768de5094257077d5799700e4dac&ref_=as_li_ss_tl",
+    // プライム感謝祭のセールトップ（tag は自動付与）。セール終了後は次のセールのURLに差し替え
+    link: "https://www.amazon.co.jp/primeappreciation?ref_=nav_cs_td_pbdd_dt_cr",
   },
   /** SNS共有画像（public/og/ に置いたファイル名）。セールごとに差し替え可 */
   ogImage: "/og/shopping-guide-v2.png",

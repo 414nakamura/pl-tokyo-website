@@ -6,12 +6,14 @@ import type { SceneSection } from "@/types";
  * 商品側の scenes: ["daily-refill"] のように id を書くと、自動でここに並びます。
  *   initialCount : 最初に見せる件数（残りは「もっと見る」）
  *   size         : lg（大きいカード）/ md / sm（コンパクト）
+ *   linkCategory : 見出し写真を押したときに開くジャンル（categories.ts の id）
  *   image        : 見出し写真（public/images/scenes/・横長3:2）。無ければ写真なしで表示
  *   tone         : 背景（plain / warm / tint）を交互にするとスクロールが止まりやすい
  * ========================================================= */
 export const sections: SceneSection[] = [
   {
     id: "daily-refill",
+    linkCategory: "daily",
     image: "/images/scenes/scene-daily-refill.webp",
     imageAlt: "残りわずかになった洗面所のストック棚",
     title: "毎日使うものを補充するなら",
@@ -24,6 +26,7 @@ export const sections: SceneSection[] = [
   },
   {
     id: "bulk",
+    linkCategory: "daily",
     image: "/images/scenes/scene-bulk.webp",
     imageAlt: "玄関に届いた段ボールと水のケース",
     title: "まとめ買い派なら",
@@ -36,6 +39,7 @@ export const sections: SceneSection[] = [
   },
   {
     id: "family-kids",
+    linkCategory: "baby",
     image: "/images/scenes/scene-family-kids.webp",
     imageAlt: "おもちゃとおむつのストックがあるリビング",
     title: "子育て家庭なら",
@@ -48,6 +52,7 @@ export const sections: SceneSection[] = [
   },
   {
     id: "food-stock",
+    linkCategory: "food",
     image: "/images/scenes/scene-food-stock.webp",
     imageAlt: "食品や飲料が並ぶパントリー棚",
     title: "食品・飲料をストックするなら",
@@ -60,6 +65,7 @@ export const sections: SceneSection[] = [
   },
   {
     id: "pet",
+    linkCategory: "pet",
     image: "/images/scenes/scene-pet.webp",
     imageAlt: "窓辺で眠る犬とフードボウル",
     title: "犬・猫がいる家庭なら",
@@ -72,6 +78,7 @@ export const sections: SceneSection[] = [
   },
   {
     id: "work",
+    linkCategory: "pc",
     image: "/images/scenes/scene-work.webp",
     imageAlt: "夕方の在宅ワークのデスク",
     title: "仕事環境を整えるなら",
@@ -84,6 +91,7 @@ export const sections: SceneSection[] = [
   },
   {
     id: "emergency",
+    linkCategory: "emergency",
     image: "/images/scenes/scene-emergency.webp",
     imageAlt: "防災リュックと備蓄品",
     title: "防災用品を見直すなら",
@@ -96,6 +104,7 @@ export const sections: SceneSection[] = [
   },
   {
     id: "under-3000",
+    linkCategory: "daily",
     image: "/images/scenes/scene-under-3000.webp",
     imageAlt: "小さな日用品を並べた様子",
     title: "3,000円以下で買いやすい",
@@ -108,6 +117,7 @@ export const sections: SceneSection[] = [
   },
   {
     id: "big-ticket",
+    linkCategory: "electronics",
     image: "/images/scenes/scene-big-ticket.webp",
     imageAlt: "ロボット掃除機とポータブル電源があるリビング",
     title: "セール時に検討したい高単価アイテム",
