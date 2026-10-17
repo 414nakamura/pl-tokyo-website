@@ -25,7 +25,12 @@ export function Hero({ mode, copy, image, imageAlt, banner, bannerAlt = "", genr
   const newTab = siteConfig.amazonOpensInNewTab;
   return (
     <section aria-labelledby="hero-title">
-      <div className="bg-paper-warm">
+      <div className="relative isolate overflow-hidden bg-paper-warm">
+        {/* スマホ（縦積み）のときは写真を透かしとして背景に敷く。装飾なので押せない（デッドクリックにならない） */}
+        {photo ? (
+          <img src={assetPath(photo.src)} alt="" aria-hidden="true" width={photo.width} height={photo.height}
+            className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover object-[75%_center] opacity-20 sm:hidden" />
+        ) : null}
         <div className={`mx-auto max-w-7xl ${photo ? "sm:grid sm:grid-cols-2" : ""}`}>
           <div className="flex flex-col justify-center px-5 pb-6 pt-8 sm:px-8 sm:py-12 lg:px-12">
             <p className="text-[12px] font-bold text-accent">
@@ -52,7 +57,7 @@ export function Hero({ mode, copy, image, imageAlt, banner, bannerAlt = "", genr
                 <a href={outbound} rel="sponsored nofollow noopener" target={newTab ? "_blank" : undefined}
                   data-track="amazon_click"
                   data-track-params={JSON.stringify({ link_type: banner ? "hero_banner_image" : "hero_image", section: "hero", page_position: "hero:image" })}
-                  tabIndex={-1} aria-hidden="true" className="flex min-w-0 flex-1 flex-col transition active:opacity-90">
+                  tabIndex={-1} aria-hidden="true" className="hidden min-w-0 flex-1 flex-col transition active:opacity-90 sm:flex">
                 <img src={assetPath(photo.src)}
                   srcSet={banner ? `${assetPath(banner.small)} 800w, ${assetPath(photo.src)} ${photo.width}w` : undefined}
                   sizes="(min-width: 1280px) 640px, (min-width: 640px) 50vw, 100vw"
@@ -64,13 +69,13 @@ export function Hero({ mode, copy, image, imageAlt, banner, bannerAlt = "", genr
                 srcSet={banner ? `${assetPath(banner.small)} 800w, ${assetPath(photo.src)} ${photo.width}w` : undefined}
                 sizes="(min-width: 1280px) 640px, (min-width: 640px) 50vw, 100vw"
                 alt={alt} width={photo.width} height={photo.height} fetchPriority="high"
-                className="block aspect-[16/9] w-full object-cover object-right sm:aspect-auto sm:min-h-80 sm:flex-1" />
+                className="hidden aspect-[16/9] w-full object-cover object-right sm:block sm:aspect-auto sm:min-h-80 sm:flex-1" />
               )}
               {outbound ? (
                 <a href={outbound} rel="sponsored nofollow noopener" target={newTab ? "_blank" : undefined}
                   data-track="amazon_click"
                   data-track-params={JSON.stringify({ link_type: banner ? "hero_banner" : "hero_image", section: "hero", page_position: "hero:link" })}
-                  className="flex min-h-12 items-center justify-between gap-3 border-t border-line bg-card px-5 py-3 text-[13px] font-bold text-accent hover:bg-accent-soft">
+                  className="flex min-h-12 items-center justify-between gap-3 border-t border-line bg-card/85 px-5 py-3 sm:bg-card text-[13px] font-bold text-accent hover:bg-accent-soft">
                   {saleConfig.heroImageLinkLabel}<Icon name="external" className="h-4 w-4 shrink-0" strokeWidth={2.2} />
                   {newTab ? <span className="sr-only">（新しいタブで開きます）</span> : null}
                 </a>
