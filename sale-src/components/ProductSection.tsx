@@ -13,7 +13,7 @@ const toneClass: Record<SceneSection["tone"], string> = {
 };
 
 /**
- * 生活シーン別セクション。写真（sections.ts の image）があれば見出しの上に大きく表示
+ * 生活シーン別セクション。写真は全幅の見出し背景に薄く敷き、独立した高さを持たせない
  * 商品0件ならセクションごと出さない
  */
 export function ProductSection({ section, products }: { section: SceneSection; products: ResolvedProduct[] }) {
@@ -22,21 +22,24 @@ export function ProductSection({ section, products }: { section: SceneSection; p
   const pad = section.size === "lg" ? "pb-12" : "pb-10";
   return (
     <section aria-labelledby={`sec-${section.id}`} className={toneClass[section.tone] ?? "bg-paper"}>
-      {image ? (
-        <div className="mx-auto max-w-5xl sm:px-4 sm:pt-10">
+      <div className="relative isolate overflow-hidden border-y border-line/60">
+        {image ? (
           <Image
             src={assetPath(image.src)}
-            alt={section.imageAlt ?? ""}
+            alt=""
+            aria-hidden="true"
             width={image.width}
             height={image.height}
-            sizes="(max-width: 1024px) 100vw, 1024px"
+            sizes="100vw"
             loading="lazy"
-            className={`w-full object-cover sm:rounded-[var(--radius-card)] aspect-[3/2]`}
+            className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover opacity-15"
           />
+        ) : null}
+        <div className="mx-auto max-w-5xl px-4 py-6 sm:py-8 [&>div]:mb-0">
+          <SectionHeading id={`sec-${section.id}`} title={section.title} lead={section.lead} size={section.size} />
         </div>
-      ) : null}
-      <div className={`mx-auto max-w-5xl px-4 ${image ? "pt-6" : "pt-10"} ${pad}`}>
-        <SectionHeading id={`sec-${section.id}`} title={section.title} lead={section.lead} size={section.size} />
+      </div>
+      <div className={`mx-auto max-w-5xl px-4 pt-5 ${pad}`}>
         <ProductGrid
           products={products.map(toCardData)}
           section={section.id}

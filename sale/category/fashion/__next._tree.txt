@@ -1,8 +1,8 @@
 :HL["/sale/_next/static/chunks/1hguzru0nur4z.css","style"]
 :HL["/sale/_next/static/chunks/0_l1ke1_70jnj.css","style"]
-:HL["/sale/_next/static/chunks/0wo2a036zu92h.css","style"]
+:HL["/sale/_next/static/chunks/16v070jy2x0pt.css","style"]
 :HC["/",""]
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"id","t":"d","k":"fashion","s":[]},"h":65632,"c":"$Q3"}]]
 1:[["children",{"s":"category","h":131136,"c":"$Q2"}]]
-0:{"b":"K0EmYyDMMSlfgWLMQFN-f","t":{"t":{"s":"","h":131088,"c":"$Q1"}}}
+0:{"b":"iX-pSGAaK79UNpomz6nkK","t":{"t":{"s":"","h":131088,"c":"$Q1"}}}
