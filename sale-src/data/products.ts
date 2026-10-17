@@ -61,7 +61,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_002",
-    name: "【サンプル】衣料用洗剤 詰め替え 大容量",
+    name: "衣料用洗剤 詰め替え 大容量",
     category: "daily",
     scenes: ["daily-refill", "bulk"],
     target: ["family", "daily-use"],
@@ -78,7 +78,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_003",
-    name: "【サンプル】ボックスティッシュ 5箱×複数パック",
+    name: "ボックスティッシュ 5箱×複数パック",
     category: "daily",
     scenes: ["daily-refill", "bulk", "under-3000"],
     target: ["family", "daily-use", "bulk"],
@@ -95,7 +95,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_004",
-    name: "【サンプル】食器用洗剤 詰め替え",
+    name: "食器用洗剤 詰め替え",
     category: "daily",
     scenes: ["daily-refill", "under-3000"],
     target: ["daily-use", "single", "family"],
@@ -112,7 +112,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_005",
-    name: "【サンプル】ゴミ袋 45L 大容量",
+    name: "ゴミ袋 45L 大容量",
     category: "daily",
     scenes: ["daily-refill", "bulk", "under-3000"],
     target: ["family", "single", "daily-use"],
@@ -151,7 +151,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_012",
-    name: "【サンプル】ドリップコーヒー 個包装 大容量",
+    name: "ドリップコーヒー 個包装 大容量",
     category: "food",
     scenes: ["daily-refill", "food-stock", "work"],
     target: ["remote-work", "daily-use", "couple"],
@@ -168,7 +168,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_013",
-    name: "【サンプル】炭酸水 500ml×ケース",
+    name: "炭酸水 500ml×ケース",
     category: "food",
     scenes: ["bulk", "food-stock"],
     target: ["single", "couple", "bulk"],
@@ -185,7 +185,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_014",
-    name: "【サンプル】パックごはん まとめ買い",
+    name: "パックごはん まとめ買い",
     category: "food",
     scenes: ["food-stock", "bulk", "emergency"],
     target: ["single", "family", "emergency"],
@@ -202,7 +202,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_015",
-    name: "【サンプル】お茶 ティーバッグ 大容量",
+    name: "お茶 ティーバッグ 大容量",
     category: "food",
     scenes: ["food-stock", "under-3000"],
     target: ["family", "daily-use"],
@@ -241,7 +241,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_022",
-    name: "【サンプル】おしりふき 詰め替え まとめ買い",
+    name: "おしりふき 詰め替え まとめ買い",
     category: "baby",
     scenes: ["family-kids", "bulk", "under-3000"],
     target: ["kids", "family"],
@@ -258,7 +258,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_023",
-    name: "【サンプル】子ども用 歯ブラシ・仕上げみがきセット",
+    name: "子ども用 歯ブラシ・仕上げみがきセット",
     category: "baby",
     scenes: ["family-kids", "under-3000"],
     target: ["kids", "family"],
@@ -275,7 +275,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_024",
-    name: "【サンプル】除菌ウェットティッシュ 携帯用",
+    name: "除菌ウェットティッシュ 携帯用",
     category: "baby",
     scenes: ["family-kids", "under-3000", "emergency"],
     target: ["kids", "family", "emergency"],
@@ -294,7 +294,7 @@ export const products: Product[] = [
   /* ---------- 美容・ヘルスケア ---------- */
   {
     id: "sample_031",
-    name: "【サンプル】シャンプー・コンディショナー 詰め替え",
+    name: "シャンプー・コンディショナー 詰め替え",
     category: "beauty",
     scenes: ["daily-refill", "bulk"],
     target: ["daily-use", "family", "beauty"],
@@ -311,7 +311,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_032",
-    name: "【サンプル】歯みがき粉・デンタルフロス セット",
+    name: "歯みがき粉・デンタルフロス セット",
     category: "beauty",
     scenes: ["daily-refill", "under-3000"],
     target: ["daily-use", "family"],
@@ -327,7 +327,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_033",
-    name: "【サンプル】保湿ボディクリーム 大容量",
+    name: "保湿ボディクリーム 大容量",
     category: "beauty",
     scenes: ["under-3000"],
     target: ["beauty", "family"],
@@ -366,7 +366,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_042",
-    name: "【サンプル】電気ケトル",
+    name: "電気ケトル",
     category: "electronics",
     scenes: ["work"],
     target: ["single", "remote-work", "couple"],
@@ -383,7 +383,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_043",
-    name: "【サンプル】布団乾燥機",
+    name: "布団乾燥機",
     category: "electronics",
     scenes: ["big-ticket", "family-kids"],
     target: ["family", "kids"],
@@ -400,7 +400,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_044",
-    name: "【サンプル】加湿器",
+    name: "加湿器",
     category: "electronics",
     scenes: ["big-ticket"],
     target: ["family", "remote-work"],
@@ -419,7 +419,7 @@ export const products: Product[] = [
   /* ---------- キッチン ---------- */
   {
     id: "sample_051",
-    name: "【サンプル】保存容器セット（電子レンジ対応）",
+    name: "保存容器セット（電子レンジ対応）",
     category: "kitchen",
     scenes: ["under-3000", "food-stock"],
     target: ["cooking", "family", "single"],
@@ -436,7 +436,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_052",
-    name: "【サンプル】キッチンペーパー まとめ買い",
+    name: "キッチンペーパー まとめ買い",
     category: "kitchen",
     scenes: ["daily-refill", "bulk"],
     target: ["cooking", "daily-use", "family"],
@@ -474,7 +474,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_062",
-    name: "【サンプル】キャットフード ドライ まとめ買い",
+    name: "キャットフード ドライ まとめ買い",
     category: "pet",
     scenes: ["pet", "bulk"],
     target: ["pet-cat"],
@@ -491,7 +491,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_063",
-    name: "【サンプル】猫砂 まとめ買い",
+    name: "猫砂 まとめ買い",
     category: "pet",
     scenes: ["pet", "bulk", "daily-refill"],
     target: ["pet-cat", "bulk"],
@@ -507,7 +507,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_064",
-    name: "【サンプル】ペットシーツ レギュラー 大容量",
+    name: "ペットシーツ レギュラー 大容量",
     category: "pet",
     scenes: ["pet", "bulk"],
     target: ["pet-dog", "bulk"],
@@ -525,7 +525,7 @@ export const products: Product[] = [
   /* ---------- ファッション ---------- */
   {
     id: "sample_071",
-    name: "【サンプル】靴下 まとめ買いセット",
+    name: "靴下 まとめ買いセット",
     category: "fashion",
     scenes: ["under-3000"],
     target: ["family", "single"],
@@ -541,7 +541,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_072",
-    name: "【サンプル】あったか肌着（インナー）",
+    name: "あったか肌着（インナー）",
     category: "fashion",
     scenes: ["under-3000"],
     target: ["family", "single"],
@@ -579,7 +579,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_082",
-    name: "【サンプル】USB-C ケーブル 2本セット",
+    name: "USB-C ケーブル 2本セット",
     category: "pc",
     scenes: ["work", "under-3000"],
     target: ["remote-work", "gadget", "family"],
@@ -595,7 +595,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_083",
-    name: "【サンプル】ノートPCスタンド",
+    name: "ノートPCスタンド",
     category: "pc",
     scenes: ["work"],
     target: ["remote-work"],
@@ -611,7 +611,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_084",
-    name: "【サンプル】ワイヤレスマウス",
+    name: "ワイヤレスマウス",
     category: "pc",
     scenes: ["work", "under-3000"],
     target: ["remote-work", "gadget"],
@@ -627,7 +627,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_085",
-    name: "【サンプル】ノイズキャンセリングイヤホン",
+    name: "ノイズキャンセリングイヤホン",
     category: "pc",
     scenes: ["work", "big-ticket"],
     target: ["remote-work", "gadget", "single"],
@@ -645,7 +645,7 @@ export const products: Product[] = [
   /* ---------- 防災・備蓄 ---------- */
   {
     id: "sample_091",
-    name: "【サンプル】モバイルバッテリー 大容量",
+    name: "モバイルバッテリー 大容量",
     category: "emergency",
     scenes: ["emergency", "work"],
     target: ["emergency", "gadget", "family"],
@@ -662,7 +662,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_092",
-    name: "【サンプル】長期保存 非常食セット",
+    name: "長期保存 非常食セット",
     category: "emergency",
     scenes: ["emergency", "food-stock"],
     target: ["emergency", "family"],
@@ -678,7 +678,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_093",
-    name: "【サンプル】LEDランタン",
+    name: "LEDランタン",
     category: "emergency",
     scenes: ["emergency", "under-3000"],
     target: ["emergency", "family"],
@@ -694,7 +694,7 @@ export const products: Product[] = [
   },
   {
     id: "sample_094",
-    name: "【サンプル】ポータブル電源",
+    name: "ポータブル電源",
     category: "emergency",
     scenes: ["emergency", "big-ticket"],
     target: ["emergency", "family", "gadget"],
