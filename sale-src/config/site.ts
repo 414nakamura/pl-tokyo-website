@@ -81,3 +81,10 @@ export const disclosure = {
   price:
     "商品の価格・在庫・セール対象かどうかは変動します。最新の情報は必ずAmazonの商品ページでご確認ください。",
 };
+
+/** 横スクロールの商品一覧の案内 */
+export const carouselLabels = {
+  scroll: "SCROLL",
+  next: "次の商品へ横スクロール",
+  instructions: "左右にスワイプ、または横スクロールして商品をご覧ください。SCROLLボタンでも次の商品へ進めます。",
+};
