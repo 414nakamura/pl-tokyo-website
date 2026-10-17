@@ -4,7 +4,7 @@ import { formatJstDateTime } from "@/lib/format";
 import { toCardData } from "@/lib/products";
 import type { ResolvedProduct, SiteMode } from "@/types";
 
-/** 今日の注目（FV直下。1件目を大きく、残りは番号つきのリストで） */
+/** 今日の注目（FV直下。同じ幅のカードを番号つきの横1列で表示） */
 export function FeaturedProducts({
   products,
   latestUpdatedAt,
@@ -28,6 +28,8 @@ export function FeaturedProducts({
       <ProductGrid
         products={products.map(toCardData)}
         section="today"
+        layout="horizontal"
+        labelledBy="today-title"
         initialCount={products.length}
         variant="row"
         numbered

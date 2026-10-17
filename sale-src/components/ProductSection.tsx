@@ -43,6 +43,8 @@ export function ProductSection({ section, products }: { section: SceneSection; p
         <ProductGrid
           products={products.map(toCardData)}
           section={section.id}
+          layout="horizontal"
+          labelledBy={`sec-${section.id}`}
           initialCount={Math.max(1, section.initialCount)}
           variant={section.size === "lg" ? "row" : "compact"}
         />

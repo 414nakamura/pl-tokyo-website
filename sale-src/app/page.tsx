@@ -69,7 +69,7 @@ export default function Home() {
         <section aria-labelledby="new-items" className="border-t border-line">
           <div className="mx-auto max-w-5xl px-4 py-9">
             <SectionHeading id="new-items" kicker="更新" title="最近追加したもの" size="sm" />
-            <ProductGrid products={newItems.map(toCardData)} section="new" initialCount={2} variant="compact" />
+            <ProductGrid products={newItems.map(toCardData)} section="new" layout="horizontal" labelledBy="new-items" initialCount={2} variant="compact" />
           </div>
         </section>
       ) : null}
