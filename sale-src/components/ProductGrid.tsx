@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ProductCarousel } from "@/components/ProductCarousel";
 import { ProductCard, type CardVariant } from "@/components/ProductCard";
 import type { ResolvedProduct } from "@/types";
 
@@ -44,22 +45,18 @@ export function ProductGrid({
       </p>
     );
   }
+  if (layout === "horizontal") {
+    return <ProductCarousel products={products} section={section} variant={variant} numbered={numbered}
+      priorityImages={priorityImages} labelledBy={labelledBy} />;
+  }
   const rest = products.length - initialCount;
   // 1件目を大きく見せるのは、商品画像がある場合だけ（画像なしで大きくすると間延びするため）
-  const horizontal = layout === "horizontal";
-  const feature = !horizontal && featureFirst && !!products[0]?.image;
+  const feature = featureFirst && !!products[0]?.image;
   return (
     <>
-      <ul
-        aria-labelledby={labelledBy}
-        tabIndex={horizontal ? 0 : undefined}
-        className={horizontal
-          ? "relative flex snap-x snap-proximity items-stretch gap-3 overflow-x-auto overscroll-x-contain pb-3 [scrollbar-width:thin] [scrollbar-color:var(--color-line)_transparent]"
-          : GRID}
-      >
+      <ul className={GRID} aria-labelledby={labelledBy}>
         {products.map((p, i) => (
-          <li key={p.id} hidden={!horizontal && !open && i >= initialCount}
-            className={horizontal ? "relative w-[84%] max-w-80 shrink-0 snap-start sm:w-80" : feature && i === 0 ? "sm:col-span-2 lg:col-span-1" : ""}>
+          <li key={p.id} hidden={!open && i >= initialCount} className={feature && i === 0 ? "sm:col-span-2 lg:col-span-1" : ""}>
             <ProductCard
               product={p}
               section={section}
@@ -71,7 +68,7 @@ export function ProductGrid({
           </li>
         ))}
       </ul>
-      {!horizontal && rest > 0 && !open ? (
+      {rest > 0 && !open ? (
         <div className="mt-4 flex justify-center">
           <button
             type="button"
