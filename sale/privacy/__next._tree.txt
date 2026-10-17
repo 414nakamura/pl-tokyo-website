@@ -1,7 +1,7 @@
 :HL["/sale/_next/static/chunks/1hguzru0nur4z.css","style"]
 :HL["/sale/_next/static/chunks/0_l1ke1_70jnj.css","style"]
-:HL["/sale/_next/static/chunks/1a4tc7-h3ez92.css","style"]
+:HL["/sale/_next/static/chunks/1bu96-4c-tyvw.css","style"]
 :HC["/",""]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"privacy","h":64,"c":"$Q2"}]]
-0:{"b":"tTACgRAQJq76BCcKomAE0","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"KM0mzf_pZcf5tfDSPCyML","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
