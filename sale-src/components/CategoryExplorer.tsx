@@ -100,7 +100,7 @@ export function CategoryExplorer({
               <button
                 type="button"
                 onClick={() => setSelected(null)}
-                className="flex h-10 w-10 items-center justify-center rounded-full text-muted"
+                className="flex h-11 w-11 items-center justify-center rounded-full text-muted"
                 aria-label="カテゴリの表示を閉じる"
               >
                 <Icon name="close" className="h-5 w-5" />

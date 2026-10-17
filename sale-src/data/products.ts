@@ -311,6 +311,9 @@ export const products: Product[] = [
     tags: ["時短家電", "高単価"],
     recommendationReason:
       "前から気になっていた人は、セール時に機能と価格を比較しておく価値がある家電。毎日の掃除の手間を減らしたい家庭向けです。",
+    image: "/images/products/item-robot-vacuum.webp",
+    imageAlt: "リビングを掃除するロボット掃除機と充電ステーションのイメージ",
+    imageFit: "cover",
     // セール対象の検索結果ページ（i=pbdd）。セール終了後は通常の検索・商品ページに差し替え
     amazonUrl:
       "https://www.amazon.co.jp/s?k=%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E6%8E%83%E9%99%A4%E6%A9%9F&i=pbdd&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=2DORXRR57W3V3&sprefix=%E3%82%8D%E3%81%BC%E3%81%A3%E3%81%A8%E3%81%9D%E3%81%86%E3%81%98%E3%81%8D%2Cpbdd%2C225&linkCode=ll2&tag=punchlinetoky-22&linkId=335a7411d141c0bea0532503aa375b50&ref_=as_li_ss_tl",

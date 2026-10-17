@@ -74,7 +74,10 @@ export function MobileMenu({
                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent-soft text-accent">
                       <Icon name={item.icon} className="h-5 w-5" />
                     </span>
-                    <span className="flex-1">{item.fullLabel}</span>
+                    <span className="flex-1">
+                      {item.fullLabel}
+                      {item.note ? <span className="block text-[12px] font-normal text-muted">{item.note}</span> : null}
+                    </span>
                     {item.external ? (
                       <Icon name="external" className="h-4 w-4 text-muted" />
                     ) : (

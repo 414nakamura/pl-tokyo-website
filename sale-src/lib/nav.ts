@@ -1,5 +1,7 @@
 import { siteConfig } from "@/config/site";
+import { buildAmazonUrl } from "@/lib/amazon";
 import { getCategories, getCategoryOutbound } from "@/lib/products";
+import { getSiteMode } from "@/lib/site";
 
 /** グローバルナビ・ジャンルボタン用の項目（categories.ts から自動生成） */
 export type GenreNavItem = {
@@ -11,6 +13,8 @@ export type GenreNavItem = {
   /** true = Amazonへ移動（外部リンク） */
   external: boolean;
   isSale: boolean;
+  /** メニューで名前の下に出す補足（例：Amazonセールトップ） */
+  note?: string;
 };
 
 export function getGenreNavItems(): GenreNavItem[] {
@@ -26,4 +30,17 @@ export function getGenreNavItems(): GenreNavItem[] {
       isSale: !!out?.isSale,
     };
   });
+}
+
+/** グローバルナビ・メニュー用：ジャンル＋追加リンク（その他・セールトップなど） */
+export function getGlobalNavItems(): GenreNavItem[] {
+  const mode = getSiteMode();
+  const extra: GenreNavItem[] = [];
+  for (const l of siteConfig.navExtraLinks) {
+    if (l.saleOnly && mode !== "sale") continue;
+    const url = buildAmazonUrl(l.url);
+    if (!url) continue;
+    extra.push({ id: l.id, label: l.label, fullLabel: l.fullLabel, icon: l.icon, href: url, external: true, isSale: !!l.saleOnly, note: l.note });
+  }
+  return [...getGenreNavItems(), ...extra];
 }

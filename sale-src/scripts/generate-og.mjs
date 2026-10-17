@@ -12,13 +12,18 @@ const heroPath = process.env.OG_PHOTO || "public/images/hero/hero.webp";
 const photo = existsSync(heroPath) ? `data:image/webp;base64,${readFileSync(heroPath).toString("base64")}` : null;
 const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 
+const fontCss = readFileSync("node_modules/@fontsource/line-seed-jp/400.css", "utf8").replace(/url\(([^)]+)\)/g, (_, path) => {
+  const font = readFileSync(`node_modules/@fontsource/line-seed-jp/${path.replace(/^['"]|['"]$/g, "")}`);
+  return `url(data:font/woff2;base64,${font.toString("base64")})`;
+});
 const html = `<!doctype html><html lang="ja"><meta charset="utf-8"><style>
+${fontCss}
 *{margin:0;box-sizing:border-box}
-body{width:1200px;height:630px;background:#f7f3ec;color:#1c1c1e;position:relative;overflow:hidden;font-family:"Hiragino Sans","Noto Sans CJK JP",sans-serif}
+body{width:1200px;height:630px;background:#f7f3ec;color:#1c1c1e;position:relative;overflow:hidden;font-family:"LINE Seed JP",sans-serif}
 .photo{position:absolute;top:0;right:0;bottom:0;width:${photo ? "560px" : "0"};background:url(${photo ?? ""}) center/cover}
 .wrap{position:absolute;top:0;left:0;bottom:0;width:${photo ? "640px" : "1200px"};padding:72px 64px 60px 80px;display:flex;flex-direction:column;justify-content:space-between}
-.brand{font-family:"Hiragino Mincho ProN","Noto Serif CJK JP",serif;font-size:30px;font-weight:600;letter-spacing:.04em}
-h1{font-family:"Hiragino Mincho ProN","Noto Serif CJK JP",serif;font-size:${photo ? 68 : 84}px;line-height:1.3;font-weight:600;text-wrap:balance;word-break:keep-all}
+.brand{font-family:"LINE Seed JP",sans-serif;font-size:30px;font-weight:600;letter-spacing:.04em}
+h1{font-family:"LINE Seed JP",sans-serif;font-size:${photo ? 68 : 84}px;line-height:1.3;font-weight:600;text-wrap:balance;word-break:keep-all}
 p{font-size:26px;color:#3a3a3c;margin-top:22px;line-height:1.6}
 .foot{font-size:20px;color:#6b6b70}
 </style><body>${photo ? '<div class="photo"></div>' : ""}<div class="wrap">
@@ -29,6 +34,7 @@ p{font-size:26px;color:#3a3a3c;margin-top:22px;line-height:1.6}
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
 const page = await browser.newPage({ viewport: { width: 1200, height: 630 } });
 await page.setContent(html);
+await page.evaluate(() => document.fonts.ready);
 await page.screenshot({ path: `public/og/${name}.png` });
 await browser.close();
 console.log(`public/og/${name}.png を作成しました`);
