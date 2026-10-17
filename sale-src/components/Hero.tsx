@@ -47,11 +47,25 @@ export function Hero({ mode, copy, image, imageAlt, banner, bannerAlt = "", genr
           </div>
           {photo ? (
             <div className="flex min-w-0 flex-col">
+              {/* 写真を押してもセール会場へ（デッドクリック対策）。同じ移動先の文字リンクを下に表示 */}
+              {outbound ? (
+                <a href={outbound} rel="sponsored nofollow noopener" target={newTab ? "_blank" : undefined}
+                  data-track="amazon_click"
+                  data-track-params={JSON.stringify({ link_type: banner ? "hero_banner_image" : "hero_image", section: "hero", page_position: "hero:image" })}
+                  tabIndex={-1} aria-hidden="true" className="flex min-w-0 flex-1 flex-col transition active:opacity-90">
+                <img src={assetPath(photo.src)}
+                  srcSet={banner ? `${assetPath(banner.small)} 800w, ${assetPath(photo.src)} ${photo.width}w` : undefined}
+                  sizes="(min-width: 1280px) 640px, (min-width: 640px) 50vw, 100vw"
+                  alt={alt} width={photo.width} height={photo.height} fetchPriority="high"
+                  className="block aspect-[16/9] w-full object-cover object-right sm:aspect-auto sm:min-h-80 sm:flex-1" />
+                </a>
+              ) : (
               <img src={assetPath(photo.src)}
                 srcSet={banner ? `${assetPath(banner.small)} 800w, ${assetPath(photo.src)} ${photo.width}w` : undefined}
                 sizes="(min-width: 1280px) 640px, (min-width: 640px) 50vw, 100vw"
                 alt={alt} width={photo.width} height={photo.height} fetchPriority="high"
                 className="block aspect-[16/9] w-full object-cover object-right sm:aspect-auto sm:min-h-80 sm:flex-1" />
+              )}
               {outbound ? (
                 <a href={outbound} rel="sponsored nofollow noopener" target={newTab ? "_blank" : undefined}
                   data-track="amazon_click"

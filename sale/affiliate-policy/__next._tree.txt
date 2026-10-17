@@ -1,7 +1,7 @@
 :HL["/sale/_next/static/chunks/1hguzru0nur4z.css","style"]
 :HL["/sale/_next/static/chunks/0_l1ke1_70jnj.css","style"]
-:HL["/sale/_next/static/chunks/16v070jy2x0pt.css","style"]
+:HL["/sale/_next/static/chunks/2ohivkmdt1yhe.css","style"]
 :HC["/",""]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"affiliate-policy","h":64,"c":"$Q2"}]]
-0:{"b":"iX-pSGAaK79UNpomz6nkK","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"-x-YHoxolS3_pWROi9UJI","t":{"t":{"s":"","h":16,"c":"$Q1"}}}

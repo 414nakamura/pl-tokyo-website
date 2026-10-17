@@ -35,7 +35,7 @@ export const saleConfig = {
    * 写真の下に「Amazonで◯◯を見る」と表示し、押すとAmazonへ移動することが分かるようにしている
    */
   heroImageLink: "https://www.amazon.co.jp/primeappreciation?ref_=nav_cs_td_pbdd_dt_cr",
-  heroImageLinkLabel: "Amazonで商品を探す",
+  heroImageLinkLabel: "Amazonのセール会場を見る",
   /**
    * セール用の写真（横長・文字なし）。設定してファイルがあればHero写真として使用。コピーとボタンはHTMLで表示
    * スマホ用の軽い版（同名 + "-800"）も npm run images で自動作成される
