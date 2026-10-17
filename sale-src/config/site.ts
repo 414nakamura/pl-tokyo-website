@@ -24,6 +24,22 @@ export const siteConfig = {
    *   "category" : サイト内のカテゴリページ（/sale/category/{id}/）
    */
   genreNavTarget: "amazon" as "amazon" | "category",
+  /**
+   * グローバルナビ・ハンバーガーメニューの最後に追加するリンク
+   * saleOnly: true はセール期間中だけ表示（セール会場ページはセール終了で使えなくなるため）
+   * アソシエイトID（tag）が無いURLには自動で punchlinetoky-22 が付く
+   */
+  navExtraLinks: [
+    {
+      id: "sale-top",
+      label: "その他",
+      fullLabel: "その他",
+      note: "Amazonセールトップ",
+      icon: "sparkle",
+      url: "https://www.amazon.co.jp/primeappreciation?ref_=nav_cs_td_pbdd_dt_cr",
+      saleOnly: true,
+    },
+  ],
   /** Amazonリンクを新しいタブで開くか（開く場合はボタンにその旨を表示） */
   amazonOpensInNewTab: true,
   /** Amazonアソシエイト トラッキングID（環境変数で設定） */

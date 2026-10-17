@@ -36,19 +36,19 @@ export const saleConfig = {
    */
   heroImageLink:
     "https://www.amazon.co.jp?&linkCode=ll2&tag=punchlinetoky-22&linkId=9ab0768de5094257077d5799700e4dac&ref_=as_li_ss_tl",
-  heroImageLinkLabel: "Amazonでセール中の商品を見る",
+  heroImageLinkLabel: "Amazonで商品を探す",
   /**
-   * セール用のバナー（横長・文字入り）。設定してファイルがあれば、FVの一番上に横幅いっぱいで表示し、上の写真の代わりに使う
+   * セール用の写真（横長・文字なし）。設定してファイルがあればHero写真として使用。コピーとボタンはHTMLで表示
    * スマホ用の軽い版（同名 + "-800"）も npm run images で自動作成される
    * ⚠ Amazonのロゴ・primeロゴ・スマイルマーク、実在ブランドのロゴやパッケージが入った画像は使わない（アソシエイト規約）
    */
   heroBanner: {
-    image: "/images/hero/hero-banner.webp",
-    alt: "プライム感謝祭 セール会場をチェック（日用品・食品・ファッション・家電・ベビー・ペットなど）",
+    image: "/images/hero/hero-shopping-v2.webp",
+    alt: "自然光の入る部屋に置いた、日用品と食品のストック",
     link: "https://www.amazon.co.jp?&linkCode=ll2&tag=punchlinetoky-22&linkId=9ab0768de5094257077d5799700e4dac&ref_=as_li_ss_tl",
   },
   /** SNS共有画像（public/og/ に置いたファイル名）。セールごとに差し替え可 */
-  ogImage: "/og/sale-banner.png",
+  ogImage: "/og/shopping-guide-v2.png",
   /** ページの説明文（検索結果・SNS共有に表示） */
   metaDescription:
     "日用品・食品・ベビー用品・家電など、Amazonセールで今チェックしておきたいものを生活シーン別にまとめた買い物ガイドです。",

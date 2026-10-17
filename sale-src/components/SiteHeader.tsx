@@ -2,7 +2,7 @@ import { GenreLink } from "@/components/GenreLink";
 import { MobileMenu } from "@/components/MobileMenu";
 import { SiteLink as Link } from "@/components/SiteLink";
 import { disclosure, siteConfig } from "@/config/site";
-import { getGenreNavItems } from "@/lib/nav";
+import { getGlobalNavItems } from "@/lib/nav";
 
 /**
  * /sale/ 専用ヘッダー（企業サイトのヘッダー・ナビは使わない）
@@ -11,7 +11,7 @@ import { getGenreNavItems } from "@/lib/nav";
  * ロゴは /sale/ トップへ（企業サイトTOPへはリンクしない）
  */
 export function SiteHeader() {
-  const items = getGenreNavItems();
+  const items = getGlobalNavItems();
   const newTab = siteConfig.amazonOpensInNewTab;
   return (
     <header className="sticky top-0 z-30 border-b border-line bg-paper/95 backdrop-blur supports-[backdrop-filter]:bg-paper/85">
@@ -45,6 +45,7 @@ export function SiteHeader() {
                 className="flex min-h-11 items-center gap-1 px-2.5 text-[13px] font-bold text-ink-soft transition hover:text-accent"
               >
                 {item.label}
+                {item.note ? <span className="sr-only">（{item.note}）</span> : null}
               </GenreLink>
             </li>
           ))}
