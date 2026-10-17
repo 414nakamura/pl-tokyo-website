@@ -1,5 +1,5 @@
-:HL["/sale/_next/static/chunks/1a42pr57ah09k.css","style"]
+:HL["/sale/_next/static/chunks/06cqiooc1xm0_.css","style"]
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"id","t":"d","k":"fashion","s":[]},"h":65632,"c":"$Q3"}]]
 1:[["children",{"s":"category","h":131168,"c":"$Q2"}]]
-0:{"b":"7LVB0-ruoN90Pe3vTjiHN","t":{"t":{"s":"","h":131152,"c":"$Q1"}}}
+0:{"b":"lpuxbIWBzcup6Jz5nfZQO","t":{"t":{"s":"","h":131152,"c":"$Q1"}}}
