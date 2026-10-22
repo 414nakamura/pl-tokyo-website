@@ -53,7 +53,7 @@ export const products: Product[] = [
     imageFit: "cover",
     // セール対象の検索結果ページ（i=pbdd）。セール終了後は通常の検索・商品ページに差し替え
     amazonUrl:
-      "https://www.amazon.co.jp/s?k=%E5%A4%A7%E5%AE%B9%E9%87%8F%E3%83%88%E3%82%A4%E3%83%AC%E3%83%83%E3%83%88%E3%83%9A%E3%83%BC%E3%83%91%E3%83%BC&i=pbdd&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=1M8ATDGUTSKNJ&sprefix=%E5%A4%A7%E5%AE%B9%E9%87%8F%E3%83%88%E3%82%A4%E3%83%AC%E3%83%83%E3%83%88%E3%83%9A%E3%83%BC%E3%81%B1%E3%83%BC%2Cpbdd%2C235&linkCode=ll2&tag=punchlinetoky-22&linkId=ae6bd698efa1c20131e8183b30e59950&ref_=as_li_ss_tl",
+      "https://www.amazon.co.jp/s?k=%E5%A4%A7%E5%AE%B9%E9%87%8F%E3%83%88%E3%82%A4%E3%83%AC%E3%83%83%E3%83%88%E3%83%9A%E3%83%BC%E3%83%91%E3%83%BC&i=pbdd&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=1M8ATDGUTSKNJ&sprefix=%E5%A4%A7%E5%AE%B9%E9%87%8F%E3%83%88%E3%82%A4%E3%83%AC%E3%83%83%E3%83%88%E3%83%9A%E3%83%BC%E3%81%B1%E3%83%BC%2Cpbdd%2C235&linkCode=ll2&tag=kaiwasure-check-22&linkId=ae6bd698efa1c20131e8183b30e59950&ref_=as_li_ss_tl",
     updatedAt: "2026-10-17T18:00:00+09:00",
     showUpdatedAt: true,
     addedAt: "2026-10-10",
@@ -143,7 +143,7 @@ export const products: Product[] = [
     imageFit: "cover",
     // セール対象の検索結果ページ（i=pbdd）。セール終了後は通常の検索・商品ページに差し替え
     amazonUrl:
-      "https://www.amazon.co.jp/s?k=%E6%B0%B42L&i=pbdd&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=1QZDGLZ6T0T7L&sprefix=%E6%B0%B42l%2Cpbdd%2C259&linkCode=ll2&tag=punchlinetoky-22&linkId=e2f5a0ed57b0d42d7d8a92d79c2eda9a&ref_=as_li_ss_tl",
+      "https://www.amazon.co.jp/s?k=%E6%B0%B42L&i=pbdd&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=1QZDGLZ6T0T7L&sprefix=%E6%B0%B42l%2Cpbdd%2C259&linkCode=ll2&tag=kaiwasure-check-22&linkId=e2f5a0ed57b0d42d7d8a92d79c2eda9a&ref_=as_li_ss_tl",
     updatedAt: "2026-10-17T18:00:00+09:00",
     showUpdatedAt: true,
     addedAt: "2026-10-10",
@@ -233,7 +233,7 @@ export const products: Product[] = [
     imageFit: "cover",
     // セール対象の検索結果ページ（i=pbdd）。セール終了後は通常の検索・商品ページに差し替え
     amazonUrl:
-      "https://www.amazon.co.jp/s?k=%E3%81%8A%E3%82%80%E3%81%A4+%E5%AD%90%E4%BE%9B&i=pbdd&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=1LOKDTCHETYPV&sprefix=%E3%81%8A%E3%82%80%E3%81%A4+%E3%81%93%E3%81%A9%E3%82%82%2Cpbdd%2C278&linkCode=ll2&tag=punchlinetoky-22&linkId=23fb1204f79766e5d4e1613730c9611f&ref_=as_li_ss_tl",
+      "https://www.amazon.co.jp/s?k=%E3%81%8A%E3%82%80%E3%81%A4+%E5%AD%90%E4%BE%9B&i=pbdd&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=1LOKDTCHETYPV&sprefix=%E3%81%8A%E3%82%80%E3%81%A4+%E3%81%93%E3%81%A9%E3%82%82%2Cpbdd%2C278&linkCode=ll2&tag=kaiwasure-check-22&linkId=23fb1204f79766e5d4e1613730c9611f&ref_=as_li_ss_tl",
     updatedAt: "2026-10-17T18:00:00+09:00",
     showUpdatedAt: true,
     addedAt: "2026-10-10",
@@ -303,7 +303,7 @@ export const products: Product[] = [
     image: "/images/products/item-formula-can.webp",
     imageAlt: "粉ミルク缶と哺乳びんのイメージ",
     imageFit: "cover",
-    amazonUrl: "https://www.amazon.co.jp/s?k=%E7%B2%89%E3%83%9F%E3%83%AB%E3%82%AF%E7%BC%B6&i=pbdd&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=1SH0DKDXWKQBV&sprefix=%E7%B2%89%E3%83%9F%E3%83%AB%E3%82%AF%E3%81%8B%E3%82%93%2Cpbdd%2C239&linkCode=ll2&tag=punchlinetoky-22&linkId=11d9e0f183b7f4a3dc32283f6b7f549b&ref_=as_li_ss_tl",
+    amazonUrl: "https://www.amazon.co.jp/s?k=%E7%B2%89%E3%83%9F%E3%83%AB%E3%82%AF%E7%BC%B6&i=pbdd&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=1SH0DKDXWKQBV&sprefix=%E7%B2%89%E3%83%9F%E3%83%AB%E3%82%AF%E3%81%8B%E3%82%93%2Cpbdd%2C239&linkCode=ll2&tag=kaiwasure-check-22&linkId=11d9e0f183b7f4a3dc32283f6b7f549b&ref_=as_li_ss_tl",
     addedAt: "2026-10-18",
     basePriority: 77,
   },
@@ -319,7 +319,7 @@ export const products: Product[] = [
     image: "/images/products/item-baby-food.webp",
     imageAlt: "パウチや瓶入りの離乳食セットのイメージ",
     imageFit: "cover",
-    amazonUrl: "https://www.amazon.co.jp/s?k=%E9%9B%A2%E4%B9%B3%E9%A3%9F&i=pbdd&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=2488LGD7BTZVK&sprefix=%E3%82%8A%E3%81%AB%E3%82%85%E3%81%86%E3%81%97%E3%82%87k%2Cpbdd%2C291&linkCode=ll2&tag=punchlinetoky-22&linkId=8b1380caa63172ce99d47c082904cbc5&ref_=as_li_ss_tl",
+    amazonUrl: "https://www.amazon.co.jp/s?k=%E9%9B%A2%E4%B9%B3%E9%A3%9F&i=pbdd&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=2488LGD7BTZVK&sprefix=%E3%82%8A%E3%81%AB%E3%82%85%E3%81%86%E3%81%97%E3%82%87k%2Cpbdd%2C291&linkCode=ll2&tag=kaiwasure-check-22&linkId=8b1380caa63172ce99d47c082904cbc5&ref_=as_li_ss_tl",
     addedAt: "2026-10-18",
     basePriority: 76,
   },
@@ -391,7 +391,7 @@ export const products: Product[] = [
     imageFit: "cover",
     // セール対象の検索結果ページ（i=pbdd）。セール終了後は通常の検索・商品ページに差し替え
     amazonUrl:
-      "https://www.amazon.co.jp/s?k=%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E6%8E%83%E9%99%A4%E6%A9%9F&i=pbdd&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=2DORXRR57W3V3&sprefix=%E3%82%8D%E3%81%BC%E3%81%A3%E3%81%A8%E3%81%9D%E3%81%86%E3%81%98%E3%81%8D%2Cpbdd%2C225&linkCode=ll2&tag=punchlinetoky-22&linkId=335a7411d141c0bea0532503aa375b50&ref_=as_li_ss_tl",
+      "https://www.amazon.co.jp/s?k=%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E6%8E%83%E9%99%A4%E6%A9%9F&i=pbdd&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=2DORXRR57W3V3&sprefix=%E3%82%8D%E3%81%BC%E3%81%A3%E3%81%A8%E3%81%9D%E3%81%86%E3%81%98%E3%81%8D%2Cpbdd%2C225&linkCode=ll2&tag=kaiwasure-check-22&linkId=335a7411d141c0bea0532503aa375b50&ref_=as_li_ss_tl",
     updatedAt: "2026-10-17T18:00:00+09:00",
     showUpdatedAt: true,
     addedAt: "2026-10-15",
@@ -499,7 +499,7 @@ export const products: Product[] = [
     imageFit: "cover",
     // セール対象の検索結果ページ（i=pbdd）。セール終了後は通常の検索・商品ページに差し替え
     amazonUrl:
-      "https://www.amazon.co.jp/s?k=%E3%83%89%E3%83%83%E3%82%B0%E3%83%95%E3%83%BC%E3%83%89&i=pbdd&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=1N06XL5H04L2R&sprefix=%E3%81%A9%E3%81%A3%E3%81%90%E3%81%B5%E3%83%BC%E3%81%A9%2Cpbdd%2C258&linkCode=ll2&tag=punchlinetoky-22&linkId=27808b6f9c3f9aa29db96162c2dc6664&ref_=as_li_ss_tl",
+      "https://www.amazon.co.jp/s?k=%E3%83%89%E3%83%83%E3%82%B0%E3%83%95%E3%83%BC%E3%83%89&i=pbdd&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=1N06XL5H04L2R&sprefix=%E3%81%A9%E3%81%A3%E3%81%90%E3%81%B5%E3%83%BC%E3%81%A9%2Cpbdd%2C258&linkCode=ll2&tag=kaiwasure-check-22&linkId=27808b6f9c3f9aa29db96162c2dc6664&ref_=as_li_ss_tl",
     updatedAt: "2026-10-17T18:00:00+09:00",
     showUpdatedAt: true,
     addedAt: "2026-10-10",
@@ -604,7 +604,7 @@ export const products: Product[] = [
     imageFit: "cover",
     // セール対象の検索結果ページ（i=pbdd）。セール終了後は通常の検索・商品ページに差し替え
     amazonUrl:
-      "https://www.amazon.co.jp/s?k=usb-c+%E6%80%A5%E9%80%9F%E5%85%85%E9%9B%BB&i=pbdd&crid=1QOVHUHIBWDH&sprefix=USB-C+%E6%80%A5%E9%80%9F%2Cpbdd%2C255&linkCode=ll2&tag=punchlinetoky-22&linkId=35227c54cfc17279f5a518e4ca73da1b&ref_=as_li_ss_tl",
+      "https://www.amazon.co.jp/s?k=usb-c+%E6%80%A5%E9%80%9F%E5%85%85%E9%9B%BB&i=pbdd&crid=1QOVHUHIBWDH&sprefix=USB-C+%E6%80%A5%E9%80%9F%2Cpbdd%2C255&linkCode=ll2&tag=kaiwasure-check-22&linkId=35227c54cfc17279f5a518e4ca73da1b&ref_=as_li_ss_tl",
     updatedAt: "2026-10-17T18:00:00+09:00",
     showUpdatedAt: true,
     addedAt: "2026-10-15",

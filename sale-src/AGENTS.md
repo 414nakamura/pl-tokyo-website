@@ -17,13 +17,14 @@ npm install
 npm run dev              # http://localhost:3000/sale/
 npm run typecheck        # 型チェック（変更後は必ず通す）
 npm run check:data       # 商品・カテゴリデータの検証（エラー0件にする）
+npm run check:amazon     # ビルド後（out/）の全Amazonリンクが専用ID kaiwasure-check-22 か検証（エラー0件にする）
 npm run images           # images-src/ の画像を public/images/ にWebP変換
 npm run deploy:prepare   # 本番用ビルド → deploy/sale/ を作成
 ```
 
 ## 守ること（重要）
 1. **Amazonへの遷移はユーザーが押したときだけ**。自動リダイレクト、カード全体のリンク化はしない
-2. **Amazonのリンクは必ず `lib/amazon.ts` の `buildAmazonUrl()` を通す**（tag=punchlinetoky-22 付与・ドメイン検証）
+2. **Amazonのリンクは必ず `lib/amazon.ts` の `buildAmazonUrl()` を通す**（tag=kaiwasure-check-22 付与・ドメイン検証。買い忘れCHECK専用ID）
 3. **価格・割引率を手入力しない**。`priceSource: "api"` 以外の価格は表示しない
 4. **Amazonのロゴ・primeロゴ・スマイルマーク、実在ブランドのロゴは画像・UIに使わない**。サイト名・ロゴ周りに「Amazon」を入れない
 5. **流入元（UTM・creative_id）で表示やリンクを変えない**。UTMは分析専用

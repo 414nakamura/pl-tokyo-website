@@ -10,6 +10,7 @@
     "preview": "next build && node scripts/preview.mjs",
     "typecheck": "tsc --noEmit",
     "check:data": "node --experimental-strip-types --no-warnings scripts/check-data.ts",
+    "check:amazon": "node --experimental-strip-types --no-warnings scripts/check-amazon-tags.ts",
     "images": "node scripts/optimize-images.mjs",
     "deploy:prepare": "next build && node scripts/prepare-github-pages.mjs",
     "deploy": "next build && node scripts/deploy-to-site.mjs"
