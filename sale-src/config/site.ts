@@ -27,7 +27,7 @@ export const siteConfig = {
   /**
    * グローバルナビ・ハンバーガーメニューの最後に追加するリンク
    * saleOnly: true はセール期間中だけ表示（セール会場ページはセール終了で使えなくなるため）
-   * アソシエイトID（tag）が無いURLには自動で punchlinetoky-22 が付く
+   * アソシエイトID（tag）が無いURLには自動で kaiwasure-check-22（買い忘れCHECK専用ID）が付く
    */
   navExtraLinks: [
     {
@@ -43,7 +43,7 @@ export const siteConfig = {
   /** Amazonリンクを新しいタブで開くか（開く場合はボタンにその旨を表示） */
   amazonOpensInNewTab: true,
   /** Amazonアソシエイト トラッキングID（環境変数で設定） */
-  amazonAssociateTag: process.env.NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG || "punchlinetoky-22",
+  amazonAssociateTag: process.env.NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG || "kaiwasure-check-22",
 };
 
 /** 運営会社情報（/sale/company/ に表示）。TODO: 正式情報に差し替え */

@@ -475,7 +475,7 @@ pl-tokyo.com がリバースプロキシ（Vercel / Cloudflare 等）で `/sale/
 - [ ] 既存の企業サイトに `/sale/` へのリンクを**追加していない**
 - [ ] `/sale/` 内に企業サイトTOP（`https://pl-tokyo.com/`）へのリンクが**無い**
 - [ ] `npm run check:data` でエラー0件、サンプル商品0件
-- [ ] アソシエイトIDが全Amazonリンクに付いている（ボタンのリンク先URLに `tag=` があるか）
+- [ ] アソシエイトIDが全Amazonリンクに付いている（`npm run build` 後に `npm run check:amazon` がエラー0件。買い忘れCHECK専用ID `kaiwasure-check-22`）
 - [ ] 「Amazonで確認する」を押した時だけAmazonが開く
 - [ ] フッター・アフィリエイトポリシーに開示文が表示されている
 - [ ] 運営会社ページの情報が正式なものになっている
