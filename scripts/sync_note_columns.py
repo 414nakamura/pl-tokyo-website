@@ -278,6 +278,7 @@ h1,h2,.section-title,.card h3{{
   body{{padding-bottom:calc(56px + env(safe-area-inset-bottom,0px))!important}}
 }}
 </style>
+<link rel="stylesheet" href="/styles/raison-navigation.css">
 </head>
 <body>
 {body}
@@ -294,6 +295,7 @@ def site_header() -> str:
     <div class="container head">
       <a class="brand" href="/">PUNCHLINE TOKYO</a>
       <nav class="nav" aria-label="グローバルナビゲーション">
+        <a class="plt-raison-nav" href="/raison/">Raison</a>
         <div class="nav-item nav-cashless-group"><a class="priority nav-trigger" href="/cashless/">キャッシュレス決済</a><div class="nav-dropdown">{cashless_links}</div></div>
         <a class="secondary" href="/web-production/">WEB制作</a>
         <a class="secondary" href="/#about">事業案内</a>
@@ -306,6 +308,7 @@ def site_header() -> str:
   </header>
   <nav class="mobile-menu" id="mobile-menu" aria-label="モバイルメニュー" aria-hidden="true">
     <ul>
+      <li><a class="plt-raison-nav" href="/raison/">Raison（日本酒ギフト）</a></li>
       <li><a href="/cashless/">キャッシュレス決済</a></li>
       <li><a href="/cashless/fees/">料金・手数料</a></li>
       <li><a href="/cashless/terminals/">決済端末</a></li>

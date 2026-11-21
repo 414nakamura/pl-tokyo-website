@@ -104,7 +104,7 @@ h1,h2,.section-title,.card h3{
 /* Unified smartphone hamburger menu */
 .plt-menu-toggle{appearance:none;-webkit-appearance:none;background:transparent;border:0;cursor:pointer}
 .plt-mobile-menu{display:none}
-@media(max-width:900px){
+@media(max-width:1100px){
   .hamburger,.plt-menu-toggle{display:block!important;position:relative;width:44px;height:44px;min-width:44px;min-height:44px;margin-left:auto;padding:0;background:transparent!important;border:0!important;z-index:80}
   .hamburger span,.plt-menu-toggle span{position:absolute;left:9px;right:9px;height:2px;background:#111!important;border-radius:999px;transition:transform .24s ease,opacity .24s ease}
   .hamburger span:nth-child(1),.plt-menu-toggle span:nth-child(1){top:14px}
@@ -135,7 +135,7 @@ h1,h2,.section-title,.card h3{
   body.plt-menu-open .mobile-line-cta,
   body.plt-menu-open .sticky{display:none!important}
 }
-@media(min-width:901px){.plt-mobile-menu{display:none!important}.plt-menu-toggle{display:none!important}}
+@media(min-width:1101px){.plt-mobile-menu{display:none!important}.plt-menu-toggle{display:none!important}}
 
 </style>
 <!-- PLT structured data enhancement -->
@@ -254,11 +254,13 @@ h1,h2,.section-title,.card h3{
 }
 </script>
   <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xirbqmt6z7");</script>
+<link rel="stylesheet" href="/styles/raison-navigation.css">
 </head>
 <body>
   <header class="site-header"><div class="container header-inner">
     <a class="brand" href="/">PUNCHLINE TOKYO</a>
     <nav class="nav" aria-label="グローバルナビゲーション">
+        <a class="plt-raison-nav" href="/raison/">Raison</a>
         <div class="nav-item nav-cashless-group">
           <a class="nav-priority nav-trigger" href="/cashless/">キャッシュレス決済</a>
           <div class="nav-dropdown"><a href="/cashless/">低コストキャッシュレス決済</a><a href="/cashless/fees/">料金・手数料</a><a href="/cashless/terminals/">決済端末</a><a href="/cashless/zentoshin-switch/">全東信 切替相談</a><a href="/cashless/industry/">業種別ガイド</a><a href="/cashless/industry/restaurant/">飲食店</a><a href="/cashless/industry/beauty-salon/">美容室・サロン</a><a href="/cashless/industry/clinic/">クリニック・医療機関</a><a href="/cashless/industry/retail/">小売店</a><a href="/cashless/industry/seitai/">整体・整骨院</a></div>
@@ -268,8 +270,9 @@ h1,h2,.section-title,.card h3{
         <a class="nav-secondary" href="/about/">会社概要</a>
         <a class="nav-secondary" href="/column/">コラム</a>
         <a class="nav-line" href="https://lin.ee/8MZB401J" target="_blank" rel="noopener">LINE相談</a>
-            <button class="hamburger plt-menu-toggle" id="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+
     </nav>
+<button class="hamburger plt-menu-toggle" id="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
   </div></header>
 
   <nav class="mobile-menu plt-mobile-menu" id="mobile-menu" aria-label="スマートフォンメニュー" aria-hidden="true">
@@ -277,6 +280,7 @@ h1,h2,.section-title,.card h3{
       <button class="plt-mobile-menu__close mobile-menu-close" type="button" aria-label="メニューを閉じる">×</button>
       <div class="plt-mobile-menu__scroll">
         <ul class="plt-mobile-menu__list">
+          <li><a class="plt-mobile-menu__link plt-raison-nav" href="/raison/">Raison（日本酒ギフト）</a></li>
           <li><a class="plt-mobile-menu__link" href="/">HOME<span class="plt-mobile-menu__direct" aria-hidden="true">▶︎</span></a></li>
           <li class="plt-mobile-menu__group">
             <button class="plt-mobile-menu__parent" type="button" aria-expanded="false" aria-controls="mobile-menu-cashless">キャッシュレス決済<span class="plt-mobile-menu__arrow" aria-hidden="true"></span></button>

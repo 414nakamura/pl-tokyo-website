@@ -1,0 +1,7 @@
+/* Raison is the first corporate business entry across the website. */
+a.plt-raison-nav{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 14px;border:1px solid #142d50;border-radius:5px;background:#142d50;color:#fff!important;font-family:'Noto Sans JP',sans-serif;font-size:14px!important;font-weight:700!important;letter-spacing:.03em!important;text-decoration:none;white-space:nowrap}
+a.plt-raison-nav:hover{background:#254970;color:white!important}.nav-cashless>a,.nav-cashless-group>a{background:transparent!important;border-color:transparent!important;color:#555!important;font-weight:500!important;padding-left:0!important;padding-right:0!important}
+a.plt-raison-nav:focus-visible{outline:3px solid #b68d30;outline-offset:4px}.plt-mobile-menu a.plt-raison-nav{justify-content:flex-start;background:#edf5fb!important;color:#142d50!important;border:0!important;min-height:58px;padding:12px!important;border-radius:6px}.mobile-menu a.plt-raison-nav{white-space:normal}
+@media(min-width:981px) and (max-width:1250px){.site-header .header-inner,.site-header .head{gap:16px}.site-header .nav{gap:10px}.nav-links{gap:12px!important}.nav-links a{letter-spacing:0!important}}
+
+@media(max-width:1100px){.site-header .nav,.nav-links{display:none!important}.hamburger,.plt-menu-toggle{display:block!important}}

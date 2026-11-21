@@ -80,7 +80,7 @@ h1,h2,.section-title,.card h3{
 /* Unified smartphone hamburger menu */
 .plt-menu-toggle{appearance:none;-webkit-appearance:none;background:transparent;border:0;cursor:pointer}
 .plt-mobile-menu{display:none}
-@media(max-width:980px){
+@media(max-width:1100px){
   .hamburger,.plt-menu-toggle{display:block!important;position:relative;width:44px;height:44px;min-width:44px;min-height:44px;margin-left:auto;padding:0;background:transparent!important;border:0!important;z-index:80}
   .hamburger span,.plt-menu-toggle span{position:absolute;left:9px;right:9px;height:2px;background:#111!important;border-radius:999px;transition:transform .24s ease,opacity .24s ease}
   .hamburger span:nth-child(1),.plt-menu-toggle span:nth-child(1){top:14px}
@@ -111,7 +111,7 @@ h1,h2,.section-title,.card h3{
   body.plt-menu-open .mobile-line-cta,
   body.plt-menu-open .sticky{display:none!important}
 }
-@media(min-width:981px){.plt-mobile-menu{display:none!important}.plt-menu-toggle{display:none!important}}
+@media(min-width:1101px){.plt-mobile-menu{display:none!important}.plt-menu-toggle{display:none!important}}
 
 </style>
 <!-- PLT structured data enhancement -->
@@ -130,11 +130,13 @@ body{padding-bottom:0}.raison-main{--raison-ink:#142d50;--raison-gold:#88702f;co
 .raison-visit{margin:0 0 64px;padding:44px;background:#edf5fb;border:1px solid #d4e5ee;border-radius:16px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}.raison-visit p{margin:12px 0 0;font-size:1rem}.raison-button{display:inline-flex;min-height:54px;align-items:center;justify-content:center;padding:16px 26px;background:#142d50;color:white;border:1px solid #142d50;text-decoration:none;border-radius:999px;font-size:1rem;font-weight:700}.raison-button:hover{background:#254970;color:white}.raison-service-note{padding:0 0 60px;color:#555;font-size:.875rem}.raison-service-note p{margin:0 0 8px}.raison-main a:focus-visible{outline:3px solid #b68d30;outline-offset:5px}
 @media(max-width:700px){.raison-intro h1{font-size:1.5rem}.raison-intro{padding:28px 0}.raison-main .container{width:calc(100% - 36px)}.raison-cover{display:flex;flex-direction:column;min-height:0;align-items:stretch}.raison-cover img{position:static;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}.raison-cover-copy{padding:24px}.raison-wordmark{font-size:4.4rem}.raison-reading{margin-bottom:22px}.raison-story,.raison-route{grid-template-columns:1fr;gap:20px}.raison-story,.raison-explore{padding:40px 0}.raison-route{padding:24px 0;gap:8px}.raison-visit{grid-template-columns:1fr;padding:28px 24px;margin-bottom:36px}.raison-button{width:100%}.raison-service-note{padding-bottom:36px}}
 </style>
+<link rel="stylesheet" href="/styles/raison-navigation.css">
 </head>
 <body>
   <header class="site-header"><div class="container header-inner">
     <a class="brand" href="/">PUNCHLINE TOKYO</a>
     <nav class="nav" aria-label="グローバルナビゲーション">
+        <a class="plt-raison-nav" href="/raison/">Raison</a>
         <div class="nav-item nav-cashless-group">
           <a class="nav-priority nav-trigger" href="/cashless/">キャッシュレス決済</a>
           <div class="nav-dropdown"><a href="/cashless/">低コストキャッシュレス決済</a><a href="/cashless/fees/">料金・手数料</a><a href="/cashless/terminals/">決済端末</a><a href="/cashless/zentoshin-switch/">全東信 切替相談</a><a href="/cashless/industry/">業種別ガイド</a><a href="/cashless/industry/restaurant/">飲食店</a><a href="/cashless/industry/beauty-salon/">美容室・サロン</a><a href="/cashless/industry/clinic/">クリニック・医療機関</a><a href="/cashless/industry/retail/">小売店</a><a href="/cashless/industry/seitai/">整体・整骨院</a></div>
@@ -144,7 +146,7 @@ body{padding-bottom:0}.raison-main{--raison-ink:#142d50;--raison-gold:#88702f;co
         <a class="nav-secondary" href="/about/">会社概要</a>
         <a class="nav-secondary" href="/column/">コラム</a>
         <a class="nav-line" href="https://lin.ee/8MZB401J" target="_blank" rel="noopener">LINE相談</a>
-            
+
     </nav>
     <button class="hamburger plt-menu-toggle" id="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
   </div></header>
@@ -154,6 +156,7 @@ body{padding-bottom:0}.raison-main{--raison-ink:#142d50;--raison-gold:#88702f;co
       <button class="plt-mobile-menu__close mobile-menu-close" type="button" aria-label="メニューを閉じる">×</button>
       <div class="plt-mobile-menu__scroll">
         <ul class="plt-mobile-menu__list">
+          <li><a class="plt-mobile-menu__link plt-raison-nav" href="/raison/">Raison（日本酒ギフト）</a></li>
           <li><a class="plt-mobile-menu__link" href="/">HOME<span class="plt-mobile-menu__direct" aria-hidden="true">▶︎</span></a></li>
           <li class="plt-mobile-menu__group">
             <button class="plt-mobile-menu__parent" type="button" aria-expanded="false" aria-controls="mobile-menu-cashless">キャッシュレス決済<span class="plt-mobile-menu__arrow" aria-hidden="true"></span></button>
